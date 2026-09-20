@@ -2756,7 +2756,7 @@ function testTitle(def){
 }
 function resolveTestDefById(id){
   if(!id) return null;
-  if(id.indexOf('sub:')===0 || id.indexOf('grand:')===0) return getBuiltinTestDef(id);
+  if(id.indexOf('sub:')===0 || id.indexOf('grand:')===0 || id.indexOf('hifz:')===0) return getBuiltinTestDef(id);
   if(state.progress && state.progress.testId===id){
     return { id:id, title:state.progress.title, subjectId:state.progress.subjectId, kind:state.progress.kind, qids: state.progress.qids.slice() };
   }

@@ -3,7 +3,7 @@
 A self-contained MCQ practice site for the **Kun Faqeehan Level 1** syllabus. Every question and
 answer is drawn only from the uploaded course notes.
 
-- **594 questions** across all 7 syllabus subjects, split into Easy / Medium / Hard
+- **675 questions** across all 7 syllabus subjects, split into Easy / Medium / Hard
 - **Hifz section** for the 12 Umdatul-Ahkam hadiths set for memorisation, with a hide-the-matn drill
 - Practice mode (instant feedback + explanation) and Exam mode (feedback at the end)
 - Per-subject tests, Full Papers, 3 Grand Mock Exams, and a custom test builder
@@ -20,11 +20,11 @@ answer is drawn only from the uploaded course notes.
 | 3 | Qawa'id al-Lughat-il-'Arabiyyah | Tehseen-an-Nahw | 17 | 17 | 25 | 59 |
 | + | └ Pehchan (identification drill) | Tehseen-an-Nahw | 15 | 30 | 21 | 66 |
 | 4 | At-Tawheed | Thalathat al-Usul + Nawaqid al-Islam | 19 | 19 | 40 | 78 |
-| 5 | Fiqh | Aasan Fiqh (to p.59) | 20 | 26 | 43 | 89 |
-| 6 | Seerat | Tajalliyat-e-Nabuwat | 18 | 24 | 30 | 72 |
+| 5 | Fiqh | Aasan Fiqh (to p.59) | 21 | 33 | 51 | 105 |
+| 6 | Seerat | Tajalliyat-e-Nabuwat | 27 | 47 | 63 | 137 |
 | 7 | Ahadeeth al-Ahkam | Umdatul-Ahkam | 19 | 26 | 40 | 85 |
 | + | └ Hifz ki 12 Ahadith | Umdatul-Ahkam | 4 | 20 | 24 | 48 |
-| | | **Total** | **150** | **196** | **248** | **594** |
+| | | **Total** | **160** | **226** | **289** | **675** |
 
 **At-Taabeer** and **Al-Qira'ah wal-Kitabah** are examined orally, so their questions target
 vocabulary (*lughat*), useful phrases and spoken usage rather than written grammar analysis.
@@ -49,10 +49,10 @@ in Naskh regardless of the setting, since those are quoted text rather than pros
 | Al-Qira'ah wal-Kitabah | ✅ 52 / 52 |
 | Qawa'id (incl. Pehchan) | ✅ 125 / 125 |
 | At-Tawheed | ✅ 78 / 78 |
-| Fiqh | ✅ 89 / 89 |
-| Seerat | ✅ 72 / 72 |
+| Fiqh | ✅ 105 / 105 |
+| Seerat | ✅ 137 / 137 |
 | Ahadeeth al-Ahkam (incl. Hifz) | ✅ 133 / 133 |
-| **Total** | **✅ 594 / 594** |
+| **Total** | **✅ 675 / 675** |
 
 
 ## Hifz — the 12 memorisation hadiths
@@ -112,3 +112,158 @@ Isti'adhah, Istighathah, Dhabh and Nadhr. Raghbah, Rahbah and Khushoo' share one
 and the section says so explicitly, since that is how the matn presents them.
 
 **Qawa'id charts** — ten tables covering the whole grammar tree: Lafz → Kalimah, the four divisions
+of Ism, the three of Fi'l, the four i'rabi states, Huroof-e-Aamilah (17 / 6 / 5 / 4) and Ghair
+Aamilah (3 / 10) with the actual letters listed, Murakkab Taam and its ten Insha'iyah types,
+Murakkab Naqis and its six types, the alamaat of Ism/Fi'l/Harf, and the history of the science.
+
+Where the notes give a count but not the full list — Huroof-e-Jarra are "17" with only examples
+named, and Ma'rifah has 7 kinds of which the notes name 5 — the charts say exactly that rather than
+completing the list from outside the syllabus.
+
+## Question formats
+
+The bank now uses every format the papers actually ask in, not just multiple choice. Each question
+carries a style label shown above it in the runner:
+
+| Format | Label | Count |
+|---|---|---|
+| Multiple choice | Multiple choice | 479 |
+| Vocabulary recall | Lughat · vocabulary | 51 |
+| Spoken usage | Bol-chaal · speaking | 42 |
+| Evidence | Daleel · evidence | 37 |
+| Translation | Translation | 17 |
+| True / false | True or false | 13 |
+| Fill in the blank | Fill in the blank | 12 |
+| One-line answer | Short answer | 13 |
+| Long answer | Long answer | 8 |
+| Match the pair | Match the pair | 3 |
+
+Everything is still answered by tapping an option — a true/false question offers the statement plus
+the reason, a fill-in-the-blank shows the sentence with the gap and four candidates, and a long-answer
+question offers four complete multi-part answers to choose between. Nothing is typed, so marking
+stays instant.
+
+## Pehchan — the identification drill
+
+A dedicated test on the Qawa'id subject page. Each question hands you a word or a sentence and asks
+what it is and which category it belongs to, and every answer explains the reason rather than just
+naming the type. 66 questions covering:
+
+- **Ism / Fi'l / Harf** by their alamaat — Alif-Lam, Tanween, Jar, gol Ta, Musanna, Jama for Ism;
+  Qad, Seen/Sawfa, Jazm, Ta-e-Taanees Saakina, Ta-ul-Fa'il for Fi'l; absence of all for Harf
+- **Mufrad vs Murakkab**, then Taam vs Naqis
+- All six **Murakkab-e-Naqis** types — Tauseefi, Izafi, Ishari, Jari, Binai, Imtizaji
+- **Jumla Ismiyah vs Fi'liyah**, **Khabariyah vs Insha'iyah**, and the Insha'iyah subtypes
+- **Muzakkar/Muannas** with the three alamat-e-taanees, and the three kinds of **Jama**
+- **Ma'rifah vs Nakirah**, **Mu'rab vs Mabni**
+- The four **i'rabi halatein** and why each applies
+- **Fi'l**: Ma'roof/Majhool with Na'ib Fa'il, Lazim/Muta'addi, and zamana
+- Every kind of **harf** — Jarra, Mushabbahah, Jazimah, Nasibah, Istifham, Atf
+- Full **tarkeeb** of complete sentences
+
+It includes the traps the notes themselves flag — `الرَّجُلُ العَاقِلُ` is Tauseefi but
+`مُحَمَّدٌ عَاقِلٌ` is a Mubtada-Khabar sentence, and the Waw-Noon of `تَعْلَمُونَ` is a verb
+pronoun rather than a Jama-e-Muzakkar-Salim ending.
+
+## Nasab naama — the lineage
+
+A fourth tab in the Study section carries the Prophet's ص full lineage as a numbered spine, for
+self-study. The paternal line runs all 22 generations to Adnan, which is where scholarly consensus
+ends; above Adnan the notes record that names are disputed even though the broad chain to Ismail,
+Ibrahim and Adam (AS) is agreed.
+
+```
+Muhammad ﷺ ← Abdullah ← Abdul Muttalib ← Hashim ← Abd Manaf ← Qusai ← Kilab ←
+Murrah ← Ka'ab ← Luay ← Ghalib ← Fihr ← Malik ← An-Nadr ← Kinana ← Khuzaima ←
+Mudrikah ← Ilyas ← Mudar ← Nizar ← Ma'ad ← Adnan
+```
+
+Four ancestors are highlighted because the syllabus keeps returning to them:
+
+- **Kilab** — where the paternal and maternal lines meet
+- **Fihr** and **An-Nadr** — the two opinions on whose title "Quraysh" was
+- **Adnan** — the limit of consensus
+
+Each ancestor carries the detail the paper asks for: real names before the titles (Hashim was *Amr*,
+Abd Manaf was *Mughira*, Abdul Muttalib was *Shaybah*), why "Abdul Muttalib" stuck even though he was
+Muttalib's **nephew** rather than his slave, Qusai's five offices and his marriage to Hubba bint
+Hulail, and Hashim's two trade journeys.
+
+The maternal line (Aminah bint Wahb bin Abd Manaf bin Zuhra bin Kilab) is shown separately with a
+warning: its **Abd Manaf bin Zuhra** is a different man from **Abd Manaf bin Qusai** in the paternal
+line, and the two chains meet only at Kilab. That trips people up in exams, so it is flagged in the
+chart and tested in the questions.
+
+The tab closes with the principle the lecture builds to — Surah Al-Hujurat 13 and
+*bu'ithtu min khayri qurūni banī Ādam* — that lineage is for **ta'aruf**, while the measure with
+Allah is **taqwa**, illustrated by Abu Lahab and Abu Talib on one side and Bilal, Salman al-Farsi
+and Suhaib ar-Rumi (RA) on the other.
+
+25 questions cover all of it, including the full chain as a long-answer and the Quraysh dispute.
+
+## Seerat — second pass
+
+A second pass over the Seerat notes added 40 questions, mostly from Lectures 5, 6, 20 and 22, which
+were thinly covered the first time:
+
+- **Lecture 5–6**: the definition of *khamr* (anything that veils or overpowers the intellect —
+  drunk, inhaled or injected), halal/haram judged on benefit vs harm, the false notion of generosity
+  in drunkenness, the stepmother-inheritance custom, the four kinds of jahili marriage with their
+  mechanics, and the four Arab virtues including memorised camel and horse lineages
+- **Lecture 20**: the Prophet's ﷺ character before prophethood — zuhd, hilm, tawadu, his modesty
+  compared to a secluded virgin, Abu Talib's couplet, Abu Jahl's admission ("I do not doubt you, I
+  doubt what you say"), the two nights he intended to attend entertainment and was put to sleep, and
+  the three strands of his protection from shirk
+- **Lecture 22**: the pre-prophethood signs, the threefold *ghatt* in the cave with
+  "Mā anā bi-qāri'", and the first five ayat of Surah Al-Alaq
+
+## Fiqh — additions from the Aasan Fiqh notes
+
+16 questions were added from the uploaded Aasan Fiqh notes, covering material the bank did not
+already have. Existing questions were left alone where the notes agreed with them.
+
+- **Azaan and Iqamat phrase-by-phrase** — the 15 and 11 phrase breakdowns, including the difference
+  (shahadatain and hayya'alah once each in iqamat, plus `Qad qaamatis-salah` twice)
+- **Women**: azaan not obligatory / iqamat mustahab; mosque permitted with purdah but home is
+  better; going adorned or perfumed is haram
+- **Cigarette and bidi smell** alongside raw garlic and onion, for the same reason
+- **Tayammum**: dusty wall permitted on the raajeh qaul; blowing on the hands after striking
+- **Masah**: the three things that nullify it, as a set
+- **Haidh**: no delaying ghusl, and the one-rakat rule — if a woman becomes pure with enough time
+  left for a single rakat, that prayer must be made up
+- **Water**: predators' leftovers paak if plentiful and unchanged (Daraqutni); dog and pig saliva;
+  the fly ruling
+- **Qay** paak on the raajeh qaul and not a nullifier of wudu; the 40-day limit on nails and hair
+
+## Deploying on GitHub Pages
+
+Repo: **https://github.com/KalamPinjar/KF-Exams-Prep**
+
+The whole site is a single file with no build step, so deployment is just committing it.
+
+```bash
+git clone https://github.com/KalamPinjar/KF-Exams-Prep.git
+cd KF-Exams-Prep
+
+# copy the downloaded index.html into the repo root, then:
+git add index.html README.md
+git commit -m "Kun Faqeehan Level 1 — 610 questions, Urdu + Hifz + Study + Pehchan"
+git push origin main
+```
+
+Then on GitHub: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `(root)` → Save.**
+
+The site goes live at **https://kalampinjar.github.io/KF-Exams-Prep/** in about a minute.
+
+### Requirements and gotchas
+
+- The file **must** be named `index.html` and sit in the **repo root** for that URL to work.
+  If you put it in a `docs/` folder instead, choose `main / docs` as the Pages source.
+- The repo must be **public**, or you need GitHub Pro for Pages on a private repo.
+- No build step, no dependencies, no framework — do not add a workflow file; "Deploy from a
+  branch" is all this needs.
+- Pushing a new `index.html` later redeploys automatically within a minute. If you don't see the
+  change, hard-refresh (Ctrl/Cmd + Shift + R) — the browser caches aggressively.
+- Progress is stored per-browser in `localStorage`, keyed to the origin. Moving from a local file
+  to the Pages URL starts history fresh; that's expected, not data loss.
+

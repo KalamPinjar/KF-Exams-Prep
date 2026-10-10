@@ -3,7 +3,7 @@
 A self-contained MCQ practice site for the **Kun Faqeehan Level 1** syllabus. Every question and
 answer is drawn only from the uploaded course notes.
 
-- **675 questions** across all 7 syllabus subjects, split into Easy / Medium / Hard
+- **751 questions** across all 7 syllabus subjects, split into Easy / Medium / Hard
 - **Hifz section** for the 12 Umdatul-Ahkam hadiths set for memorisation, with a hide-the-matn drill
 - Practice mode (instant feedback + explanation) and Exam mode (feedback at the end)
 - Per-subject tests, Full Papers, 3 Grand Mock Exams, and a custom test builder
@@ -16,21 +16,26 @@ answer is drawn only from the uploaded course notes.
 | # | Subject | Book | Easy | Med | Hard | Total |
 |---|---------|------|-----:|----:|-----:|------:|
 | 1 | At-Taabeer *(oral)* | At-Taabeer | 18 | 16 | 11 | 45 |
+| + | └ Lughat, Lesson 1–6 *(new)* | At-Taabeer | 39 | 25 | 12 | 76 |
 | 2 | Al-Qira'ah wal-Kitabah *(oral)* | Al-Qira'ah wal-Kitabah + Mu'jam | 20 | 18 | 14 | 52 |
 | 3 | Qawa'id al-Lughat-il-'Arabiyyah | Tehseen-an-Nahw | 17 | 17 | 25 | 59 |
 | + | └ Pehchan (identification drill) | Tehseen-an-Nahw | 15 | 30 | 21 | 66 |
 | 4 | At-Tawheed | Thalathat al-Usul + Nawaqid al-Islam | 19 | 19 | 40 | 78 |
-| 5 | Fiqh | Aasan Fiqh (to p.59) | 21 | 33 | 51 | 105 |
-| 6 | Seerat | Tajalliyat-e-Nabuwat | 27 | 47 | 63 | 137 |
+| 5 | Fiqh | Aasan Fiqh (to p.59) | 21 | 35 | 49 | 105 |
+| 6 | Seerat | Tajalliyat-e-Nabuwat | 28 | 56 | 53 | 137 |
 | 7 | Ahadeeth al-Ahkam | Umdatul-Ahkam | 19 | 26 | 40 | 85 |
-| + | └ Hifz ki 12 Ahadith | Umdatul-Ahkam | 4 | 20 | 24 | 48 |
-| | | **Total** | **160** | **226** | **289** | **675** |
+| + | └ Hifz ki 12 Ahadith | Umdatul-Ahkam | 8 | 23 | 17 | 48 |
+| | | **Total** | **204** | **265** | **282** | **751** |
+
+At-Taabeer is the largest single jump: the full *al-kalimat al-jadidah* lists of Lessons 1–6 are
+now drilled word by word — see **Lughat** below.
 
 **At-Taabeer** and **Al-Qira'ah wal-Kitabah** are examined orally, so their questions target
 vocabulary (*lughat*), useful phrases and spoken usage rather than written grammar analysis.
 
 **At-Tawheed** carries 29 dedicated *daleel* (evidence) questions — "which ayah is the proof for
-X" — since the matn of Thalathat al-Usul is built that way. Seerat carries 4 more where relevant.
+X" — since the matn of Thalathat al-Usul is built that way. Seerat carries 6 more, and Fiqh and
+Umdat one each, where the notes actually quote an evidence.
 
 ## Language
 
@@ -39,20 +44,20 @@ the `EN / اردو` button in the navbar or from Settings. Urdu mode uses Noto N
 layout to right-to-left, and reverses the arrow-key navigation to match. The choice is saved and
 survives a reload; resetting your data does not reset it.
 
-**The interface and all 528 questions are fully translated into Urdu.** Every subject is complete —
+**The interface and all 751 questions are fully translated into Urdu.** Every subject is complete —
 question text, all four options, and the explanation. Arabic and Qur'anic quotations always render
 in Naskh regardless of the setting, since those are quoted text rather than prose.
 
 | Subject | Urdu question text |
 |---|---|
-| At-Taabeer | ✅ 45 / 45 |
+| At-Taabeer (incl. Lughat 1–6) | ✅ 121 / 121 |
 | Al-Qira'ah wal-Kitabah | ✅ 52 / 52 |
 | Qawa'id (incl. Pehchan) | ✅ 125 / 125 |
 | At-Tawheed | ✅ 78 / 78 |
 | Fiqh | ✅ 105 / 105 |
 | Seerat | ✅ 137 / 137 |
 | Ahadeeth al-Ahkam (incl. Hifz) | ✅ 133 / 133 |
-| **Total** | **✅ 675 / 675** |
+| **Total** | **✅ 751 / 751** |
 
 
 ## Hifz — the 12 memorisation hadiths
@@ -128,8 +133,8 @@ carries a style label shown above it in the runner:
 | Format | Label | Count |
 |---|---|---|
 | Multiple choice | Multiple choice | 479 |
-| Vocabulary recall | Lughat · vocabulary | 51 |
-| Spoken usage | Bol-chaal · speaking | 42 |
+| Vocabulary recall | Lughat · vocabulary | 99 |
+| Spoken usage | Bol-chaal · speaking | 70 |
 | Evidence | Daleel · evidence | 37 |
 | Translation | Translation | 17 |
 | True / false | True or false | 13 |
@@ -142,6 +147,41 @@ Everything is still answered by tapping an option — a true/false question offe
 the reason, a fill-in-the-blank shows the sentence with the gap and four candidates, and a long-answer
 question offers four complete multi-part answers to choose between. Nothing is typed, so marking
 stays instant.
+
+## Lughat — At-Taabeer, Lessons 1–6
+
+At-Taabeer is an oral paper, so the examiner works off the الكلمات الجديدة list at the end of
+each lesson. All 130 entries from Lessons 1–6 are now covered — **76 new questions** on top of the
+45 that were already there — and every Arabic word is set with full *aeraab*, the way the book
+prints it.
+
+| Lesson | Topic | New questions |
+|---|---|---:|
+| 1 | إِجْرَاءَاتُ السَّفَرِ — travel procedures | 19 |
+| 2 | فِي مَكْتَبِ الحَجْزِ — at the booking office | 11 |
+| 3 | فِي بَهْوِ السَّفَرِ — the departure lounge | 14 |
+| 4 | الخُطُوطُ الجَوِّيَّةُ — check-in and the airport call | 12 |
+| 5 | فِي بَهْوِ الاسْتِقْبَالِ — arrival and customs | 14 |
+| 6 | مَعَ سَائِقِ سَيَّارَةِ الأُجْرَةِ — with the taxi driver | 6 |
+| | **Total** | **76** |
+
+Because the paper is spoken, the questions ask what the examiner asks:
+
+- **meaning both ways** — تَذْكِرَةٌ ↔ ticket, and which of four Urdu meanings fits the Arabic word
+- **the full verb set** — Mazi / Muzare / Amr / Masdar together, e.g. وَضَعَ · يَضَعُ · ضَعْ and
+  أَكْمَلَ · يُكْمِلُ · إِكْمَالٌ, with a note on *why* the و drops in يَزِنُ and يَضَعُ
+- **plurals** — تَذْكِرَةٌ → تَذَاكِرُ, بَلَدٌ → بِلادٌ, فَصْلٌ → فُصُولٌ
+- **the pronoun set** — أَنْتُمَا · أَنْتُمْ · أَنْتُنَّ and هُمَا · هُمْ · هُنَّ, with the verb agreeing
+- **which preposition** — أَعْلَنَ عَنْ · مَرَّ بِـ · حَصَلَ عَلَى, which the oral paper tests often
+- **how you would actually say it** — لَوْ سَمَحْتَ, بِكُلِّ سُرُورٍ, شُكْراً مَعَ السَّلامَةِ,
+  بِمَشِيئَةِ اللهِ
+- **the order of events** — the Lesson 1 paperwork sequence, and the Lesson 5 arrival sequence
+  (هَبَطَتِ الطَّائِرَةُ ← نَزَلَ ← فَحَصَ ← تَسَلَّمَ العَفْشَ ← رَكِبَ الحَافِلَةَ)
+
+Pairs that are easy to mix up are deliberately set against each other: تَسَلَّمَ (to receive) against
+سَلَّمَ (to hand over), هَبَطَ (to land) against أَقْلَعَ (to take off), اسْتِخْرَاج (issuing a passport)
+against اسْتِلام (receiving a ticket), وَجَّهَ (to send someone) against تَوَجَّهَ (to go yourself), and
+بَهْو against its synonym صَالَة.
 
 ## Pehchan — the identification drill
 

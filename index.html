@@ -500,9 +500,9 @@ table.qtab td .ar{font-size:1.15em;line-height:2}
 "use strict";
 
 const SUBJECTS = [
-  { id:"tabeer", n:1, name:"At-Taabeer", ar:"التعبير", book:"At-Taabeer", oral:true,
+  { id:"tabeer", n:1, name:"At-Taabeer", ar:"التعبير", book:"At-Taabeer", written:true,
     scope:"Shuru se chapter \u201cالوصول إلى المكتبة\u201d tak \u00b7 Book p.50 / PDF p.61",
-    blurb:"ORAL paper \u00b7 Safar ke mukalme (Lesson 1\u20136): bol-chaal ke jumle, lughat aur guftagu ki mashq." },
+    blurb:"WRITTEN paper \u00b7 Jawab Arabi mein likhne hain (sirf mufradat ke maane kisi bhi zaban mein) \u00b7 Tahreer, imla aur lughat." },
   { id:"qiraah", n:2, name:"Al-Qira'ah wal-Kitabah", ar:"القراءة والكتابة", book:"Al-Qira'ah wal-Kitabah + Mu'jam (معجم)", oral:true,
     scope:"Dono kitabein MUKAMMAL",
     blurb:"ORAL paper \u00b7 Lughat (Ism, Fi'l, Harf), Wahid\u2013Tasniya\u2013Jama, aur rozmarra ke jumle bolne ki mashq." },
@@ -526,7 +526,8 @@ const SUBJECTS = [
 const STYLE_LABEL = {
   mcq:"Multiple choice", fill:"Fill in the blank", short:"Short answer",
   tf:"True or false", match:"Match the pair", trans:"Translation",
-  daleel:"Daleel \u00b7 evidence", speak:"Bol-chaal \u00b7 speaking", vocab:"Lughat \u00b7 vocabulary"
+  daleel:"Daleel \u00b7 evidence", speak:"Bol-chaal \u00b7 speaking", vocab:"Lughat \u00b7 vocabulary",
+  write:"Kitabat \u00b7 writing"
 };
 
 /* Each question: id, s(subject), d(difficulty), t(style), q, o[4], a(index), e(explanation), r(reference) */
@@ -535,55 +536,55 @@ const BANK = [];
 /* ===================== 1. AT-TAABEER (ORAL) ===================== */
 BANK.push(
 /* --- EASY: bunyadi lughat aur jumle --- */
-{id:"tb1",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>إِجْرَاءَاتُ السَّفَرِ</span> \u2014 bol-chaal mein iska matlab?",o:["Safar ki karwaiyan / travel procedures","Safar ka kharcha","Safar ka saman","Safar ka waqt"],a:0,e:"Lesson 1 ka unwan. Ismein ticket lena, jawaz banwana aur tasheera nikalwana sab shamil hai.",r:"Lesson 1 \u00b7 Unwan"},
+{id:"tb1",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>إِجْرَاءَاتُ السَّفَرِ</span> \u2014 tahreer mein iska matlab?",o:["Safar ki karwaiyan / travel procedures","Safar ka kharcha","Safar ka saman","Safar ka waqt"],a:0,e:"Lesson 1 ka unwan. Ismein ticket lena, jawaz banwana aur tasheera nikalwana sab shamil hai.",r:"Lesson 1 \u00b7 Unwan"},
 {id:"tb2",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>جَوَازُ السَّفَرِ</span> ka matlab?",o:["Passport","Ticket","Visa","Boarding pass"],a:0,e:"Yaad rakhein: <span class='ar'>جَوَاز</span> = passport, <span class='ar'>تَذْكِرَة</span> = ticket, <span class='ar'>تَأْشِيرَة</span> = visa.",r:"Lesson 1 \u00b7 Vocabulary"},
 {id:"tb3",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>تَأْشِيرَةُ الدُّخُولِ</span> aur <span class='ar'>تَأْشِيرَةُ الخُرُوجِ</span> \u2014 tarteeb se matlab?",o:["Entry visa aur Exit visa","Exit visa aur Entry visa","Entry ticket aur Exit ticket","Entry card aur Exit card"],a:0,e:"<span class='ar'>دُخُول</span> = dakhil hona, <span class='ar'>خُرُوج</span> = nikalna.",r:"Lesson 1 \u00b7 Vocabulary"},
-{id:"tb4",s:"tabeer",d:"easy",t:"speak",q:"Aap ko poochna hai \u201cAap kab safar kar rahe hain?\u201d \u2014 Arabi mein kaise kahenge?",o:["<span class='ar'>مَتَى تُسَافِرُ؟</span>","<span class='ar'>أَيْنَ تُسَافِرُ؟</span>","<span class='ar'>كَيْفَ تُسَافِرُ؟</span>","<span class='ar'>لِمَاذَا تُسَافِرُ؟</span>"],a:0,e:"<span class='ar'>مَتَى</span> = kab, <span class='ar'>أَيْنَ</span> = kahan, <span class='ar'>كَيْفَ</span> = kaise, <span class='ar'>لِمَاذَا</span> = kyun.",r:"Lesson 1 \u00b7 Dialogue"},
-{id:"tb5",s:"tabeer",d:"easy",t:"speak",q:"\u201cAane wale hafte, in sha Allah\u201d \u2014 yeh jawab Arabi mein?",o:["<span class='ar'>فِي الأُسْبُوعِ القَادِمِ إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي الأُسْبُوعِ المَاضِي إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي الشَّهْرِ القَادِمِ إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي اليَوْمِ القَادِمِ إِنْ شَاءَ اللهُ</span>"],a:0,e:"<span class='ar'>القَادِم</span> = aane wala, <span class='ar'>المَاضِي</span> = guzra hua, <span class='ar'>أُسْبُوع</span> = hafta.",r:"Lesson 1 \u00b7 Dialogue"},
-{id:"tb6",s:"tabeer",d:"easy",t:"speak",q:"\u201cMain hawai jahaz se safar karunga\u201d \u2014 kaise kahenge?",o:["<span class='ar'>أُسَافِرُ بِالطَّائِرَةِ</span>","<span class='ar'>أُسَافِرُ بِالسَّيَّارَةِ</span>","<span class='ar'>أُسَافِرُ بِالقِطَارِ</span>","<span class='ar'>أُسَافِرُ بِالحَافِلَةِ</span>"],a:0,e:"Sawari ke liye <span class='ar'>بِـ</span> lagta hai: <span class='ar'>الطَّائِرَة</span> plane, <span class='ar'>السَّيَّارَة</span> car, <span class='ar'>القِطَار</span> train, <span class='ar'>الحَافِلَة</span> bus.",r:"Lesson 1 \u00b7 Dialogue"},
-{id:"tb7",s:"tabeer",d:"easy",t:"speak",q:"Booking office par kehna hai \u201cMain Riyadh ke liye booking karna chahta hoon\u201d:",o:["<span class='ar'>أُرِيدُ أَنْ أَحْجِزَ لِلرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَذْهَبَ لِلرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَسْأَلَ عَنِ الرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَرْجِعَ مِنَ الرِّيَاضِ</span>"],a:0,e:"<span class='ar'>حَجَزَ / يَحْجُزُ</span> = booking karna. <span class='ar'>أُرِيدُ أَنْ\u2026</span> = main \u2026 chahta hoon.",r:"Lesson 2 \u00b7 Dialogue"},
-{id:"tb8",s:"tabeer",d:"easy",t:"speak",q:"\u201cJahaz kab take off karega?\u201d poochne ke liye kaunsa jumla?",o:["<span class='ar'>مَتَى تُقْلِعُ الطَّائِرَةُ؟</span>","<span class='ar'>مَتَى تَصِلُ الطَّائِرَةُ؟</span>","<span class='ar'>كَمْ تُكَلِّفُ الطَّائِرَةُ؟</span>","<span class='ar'>أَيْنَ الطَّائِرَةُ؟</span>"],a:0,e:"<span class='ar'>أَقْلَعَ / يُقْلِعُ</span> = take off karna (masdar <span class='ar'>إِقْلاع</span>); <span class='ar'>وَصَلَ / يَصِلُ</span> = pohanchna.",r:"Lesson 2 \u00b7 Dialogue"},
-{id:"tb9",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>الوَزْنُ الزَّائِدُ</span> ka matlab?",o:["Excess weight \u2014 zaroorat se zyada wazan","Kul wazan","Halka wazan","Saman ka number"],a:0,e:"Lesson 3 mein Mahmoud ka excess 10 kilo tha aur usne 50 dollar ada kiye.",r:"Lesson 3 \u00b7 Dialogue"},
+{id:"tb4",s:"tabeer",d:"easy",t:"write",q:"Poochna hai \u201cAap kab safar kar rahe hain?\u201d \u2014 Arabi mein kaise likhenge?",o:["<span class='ar'>مَتَى تُسَافِرُ؟</span>","<span class='ar'>أَيْنَ تُسَافِرُ؟</span>","<span class='ar'>كَيْفَ تُسَافِرُ؟</span>","<span class='ar'>لِمَاذَا تُسَافِرُ؟</span>"],a:0,e:"<span class='ar'>مَتَى</span> = kab, <span class='ar'>أَيْنَ</span> = kahan, <span class='ar'>كَيْفَ</span> = kaise, <span class='ar'>لِمَاذَا</span> = kyun.",r:"Lesson 1 \u00b7 Dialogue"},
+{id:"tb5",s:"tabeer",d:"easy",t:"write",q:"\u201cAane wale hafte, in sha Allah\u201d \u2014 yeh jawab Arabi mein likhiye:",o:["<span class='ar'>فِي الأُسْبُوعِ القَادِمِ إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي الأُسْبُوعِ المَاضِي إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي الشَّهْرِ القَادِمِ إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي اليَوْمِ القَادِمِ إِنْ شَاءَ اللهُ</span>"],a:0,e:"<span class='ar'>القَادِم</span> = aane wala, <span class='ar'>المَاضِي</span> = guzra hua, <span class='ar'>أُسْبُوع</span> = hafta.",r:"Lesson 1 \u00b7 Dialogue"},
+{id:"tb6",s:"tabeer",d:"easy",t:"write",q:"\u201cMain hawai jahaz se safar karunga\u201d \u2014 Arabi mein kaise likhenge?",o:["<span class='ar'>أُسَافِرُ بِالطَّائِرَةِ</span>","<span class='ar'>أُسَافِرُ بِالسَّيَّارَةِ</span>","<span class='ar'>أُسَافِرُ بِالقِطَارِ</span>","<span class='ar'>أُسَافِرُ بِالحَافِلَةِ</span>"],a:0,e:"Sawari ke liye <span class='ar'>بِـ</span> lagta hai: <span class='ar'>الطَّائِرَة</span> plane, <span class='ar'>السَّيَّارَة</span> car, <span class='ar'>القِطَار</span> train, <span class='ar'>الحَافِلَة</span> bus.",r:"Lesson 1 \u00b7 Dialogue"},
+{id:"tb7",s:"tabeer",d:"easy",t:"write",q:"Booking ki darkhwast mein likhna hai \u201cMain Riyadh ke liye booking karna chahta hoon\u201d:",o:["<span class='ar'>أُرِيدُ أَنْ أَحْجِزَ لِلرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَذْهَبَ لِلرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَسْأَلَ عَنِ الرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَرْجِعَ مِنَ الرِّيَاضِ</span>"],a:0,e:"<span class='ar'>حَجَزَ / يَحْجُزُ</span> = booking karna. <span class='ar'>أُرِيدُ أَنْ\u2026</span> = main \u2026 chahta hoon.",r:"Lesson 2 \u00b7 Dialogue"},
+{id:"tb8",s:"tabeer",d:"easy",t:"write",q:"\u201cJahaz kab take off karega?\u201d likhne ke liye kaunsa jumla?",o:["<span class='ar'>مَتَى تُقْلِعُ الطَّائِرَةُ؟</span>","<span class='ar'>مَتَى تَصِلُ الطَّائِرَةُ؟</span>","<span class='ar'>كَمْ تُكَلِّفُ الطَّائِرَةُ؟</span>","<span class='ar'>أَيْنَ الطَّائِرَةُ؟</span>"],a:0,e:"<span class='ar'>أَقْلَعَ / يُقْلِعُ</span> = take off karna (masdar <span class='ar'>إِقْلاع</span>); <span class='ar'>وَصَلَ / يَصِلُ</span> = pohanchna.",r:"Lesson 2 \u00b7 Dialogue"},
+{id:"tb9",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>الوَزْنُ الزَّائِدُ</span> ka matlab?",o:["Excess weight \u2014 zaroorat se zyada wazan","Kul wazan","Halka wazan","Saman ka number"],a:0,e:"Counter par yehi istilah likhi hoti hai jab saman muqarrara wazan se barh jaye.",r:"Lesson 3 \u00b7 Dialogue"},
 {id:"tb10",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>مَوْقِفُ سَيَّارَاتِ الأُجْرَةِ</span> ka matlab?",o:["Taxi stand","Bus stand","Car parking","Petrol pump"],a:0,e:"<span class='ar'>مَوْقِف</span> = stand/parking, <span class='ar'>سَيَّارَةُ الأُجْرَةِ</span> = taxi (kiraye ki gaari).",r:"Lesson 6 \u00b7 Vocabulary"},
-{id:"tb11",s:"tabeer",d:"easy",t:"speak",q:"Taxi mein kiraya poochna ho \u2014 \u201cKitna kiraya hoga?\u201d",o:["<span class='ar'>كَمِ الأُجْرَةُ؟</span>","<span class='ar'>مَتَى تَذْهَبُ؟</span>","<span class='ar'>أَيْنَ تَذْهَبُ؟</span>","<span class='ar'>هَلْ تَعْرِفُهُ؟</span>"],a:0,e:"<span class='ar'>أُجْرَة</span> = kiraya; <span class='ar'>كَلَّفَ / يُكَلِّفُ</span> = cost karna. Lesson 6 ka Exercise 4 isi par hai.",r:"Lesson 6 \u00b7 Exercise 4"},
+{id:"tb11",s:"tabeer",d:"easy",t:"write",q:"\u201cKitna kiraya hoga?\u201d \u2014 yeh sawal Arabi mein likhiye:",o:["<span class='ar'>كَمِ الأُجْرَةُ؟</span>","<span class='ar'>مَتَى تَذْهَبُ؟</span>","<span class='ar'>أَيْنَ تَذْهَبُ؟</span>","<span class='ar'>هَلْ تَعْرِفُهُ؟</span>"],a:0,e:"<span class='ar'>أُجْرَة</span> = kiraya; <span class='ar'>كَلَّفَ / يُكَلِّفُ</span> = cost karna. Lesson 6 ka Exercise 4 isi par hai.",r:"Lesson 6 \u00b7 Exercise 4"},
 {id:"tb12",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>بِطَاقَةُ المُغَادَرَةِ</span> ka matlab?",o:["Departure card","Arrival card","Boarding pass","Identity card"],a:0,e:"<span class='ar'>مُغَادَرَة</span> = rawangi/departure; <span class='ar'>وُصُول</span> = pohanchna/arrival.",r:"Lesson 3\u20134 \u00b7 Vocabulary"},
-{id:"tb13",s:"tabeer",d:"easy",t:"speak",q:"Koi poochta hai <span class='ar'>مِنْ أَيْنَ أَنْتَ قَادِمٌ؟</span> \u2014 iska matlab?",o:["Aap kahan se aa rahe hain?","Aap kahan ja rahe hain?","Aap kab aaye?","Aap kaise aaye?"],a:0,e:"<span class='ar'>قَادِم</span> = aane wala. Jawab: <span class='ar'>أَنَا قَادِمٌ مِنْ\u2026</span>",r:"Lesson 5 \u00b7 Exercise 4"},
-{id:"tb14",s:"tabeer",d:"easy",t:"speak",q:"Rukhsat ke waqt \u201cSafar salamat rahe\u201d kehne ke liye kya bolte hain?",o:["<span class='ar'>رَافَقَتْكَ السَّلامَةُ</span>","<span class='ar'>عَلَى الأَقَلِّ</span>","<span class='ar'>إِنْ شَاءَ اللهُ</span>","<span class='ar'>مَعَ الأَسَفِ</span>"],a:0,e:"\u201cRaafaqatka as-salaamah\u201d = salamati aapke saath rahe.",r:"Lesson 2 \u00b7 Expressions"},
+{id:"tb13",s:"tabeer",d:"easy",t:"write",q:"Parche mein yeh jumla diya gaya <span class='ar'>مِنْ أَيْنَ أَنْتَ قَادِمٌ؟</span> \u2014 iska matlab?",o:["Aap kahan se aa rahe hain?","Aap kahan ja rahe hain?","Aap kab aaye?","Aap kaise aaye?"],a:0,e:"<span class='ar'>قَادِم</span> = aane wala. Jawab: <span class='ar'>أَنَا قَادِمٌ مِنْ\u2026</span>",r:"Lesson 5 \u00b7 Exercise 4"},
+{id:"tb14",s:"tabeer",d:"easy",t:"write",q:"Rukhsat ke waqt \u201cSafar salamat rahe\u201d likhne ke liye kaunsa jumla?",o:["<span class='ar'>رَافَقَتْكَ السَّلامَةُ</span>","<span class='ar'>عَلَى الأَقَلِّ</span>","<span class='ar'>إِنْ شَاءَ اللهُ</span>","<span class='ar'>مَعَ الأَسَفِ</span>"],a:0,e:"\u201cRaafaqatka as-salaamah\u201d = salamati aapke saath rahe.",r:"Lesson 2 \u00b7 Expressions"},
 {id:"tb15",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>عَلَى الأَقَلِّ</span> ka matlab?",o:["Kam az kam / at least","Zyada se zyada","Bilkul theek","Fauran"],a:0,e:"Dialogue: take-off se <span class='ar'>بِسَاعَةٍ عَلَى الأَقَلِّ</span> \u2014 kam az kam ek ghanta pehle pohanchein.",r:"Lesson 2 \u00b7 Expressions"},
-{id:"tb16",s:"tabeer",d:"easy",t:"speak",q:"Customs officer kehta hai <span class='ar'>اِفْتَحِ الحَقِيبَةَ</span> \u2014 aap ko kya karna hai?",o:["Bag kholna hai","Bag band karna hai","Bag uthana hai","Bag chhod dena hai"],a:0,e:"<span class='ar'>اِفْتَحْ</span> = kholo, <span class='ar'>أَقْفِلْ</span> = band karo. Lesson 5 mein dono hukm aate hain.",r:"Lesson 5 \u00b7 Dialogue Part 2"},
+{id:"tb16",s:"tabeer",d:"easy",t:"write",q:"Customs ki parchi par likha hai <span class='ar'>اِفْتَحِ الحَقِيبَةَ</span> \u2014 iska matlab?",o:["Bag kholna hai","Bag band karna hai","Bag uthana hai","Bag chhod dena hai"],a:0,e:"<span class='ar'>اِفْتَحْ</span> = kholo, <span class='ar'>أَقْفِلْ</span> = band karo. Lesson 5 mein dono hukm aate hain.",r:"Lesson 5 \u00b7 Dialogue Part 2"},
 {id:"tb17",s:"tabeer",d:"easy",t:"vocab",q:"<span class='ar'>صَالَةُ المُسَافِرِينَ</span> ka matlab?",o:["Musafiron ka hall / departure lounge","Musafiron ka daftar","Musafiron ki gaari","Musafiron ka saman"],a:0,e:"<span class='ar'>صَالَة</span> = hall, <span class='ar'>بَوَّابَة</span> = gate, <span class='ar'>إِدَارَة</span> = administration.",r:"Lesson 4 \u00b7 Vocabulary"},
-{id:"tb18",s:"tabeer",d:"easy",t:"speak",q:"\u201cMaaf kijiye, mujhe iska pata nahi\u201d \u2014 Arabi mein?",o:["<span class='ar'>آسِفٌ! لا أَعْرِفُهُ</span>","<span class='ar'>نَعَمْ، أَعْرِفُهُ</span>","<span class='ar'>أَيْنَ هُوَ؟</span>","<span class='ar'>شُكْراً جَزِيلاً</span>"],a:0,e:"Lesson 6 mein taxi driver ka yehi jawab tha jab \u201cAs-Sakan al-Jami'i\u201d ka pata poocha gaya.",r:"Lesson 6 \u00b7 Dialogue"},
+{id:"tb18",s:"tabeer",d:"easy",t:"write",q:"\u201cMaaf kijiye, mujhe iska pata nahi\u201d \u2014 Arabi mein likhiye:",o:["<span class='ar'>آسِفٌ! لا أَعْرِفُهُ</span>","<span class='ar'>نَعَمْ، أَعْرِفُهُ</span>","<span class='ar'>أَيْنَ هُوَ؟</span>","<span class='ar'>شُكْراً جَزِيلاً</span>"],a:0,e:"<span class='ar'>آسِف</span> ke baad <span class='ar'>لا</span> + Muzare se nafi banti hai; <span class='ar'>ـهُ</span> us cheez ki taraf lautti hai jo maloom nahi.",r:"Lesson 6 \u00b7 Dialogue"},
 
 /* --- MEDIUM: guftagu ke saanche --- */
-{id:"tb25",s:"tabeer",d:"medium",t:"speak",q:"\u201cMere paas do bags hain\u201d \u2014 kaise kahenge?",o:["<span class='ar'>مَعِي حَقِيبَتَانِ</span>","<span class='ar'>مَعَنَا حَقِيبَتَانِ</span>","<span class='ar'>مَعَكَ حَقِيبَتَانِ</span>","<span class='ar'>مَعَهُ حَقِيبَتَانِ</span>"],a:0,e:"<span class='ar'>مَعِي</span> mere paas, <span class='ar'>مَعَنَا</span> hamare paas, <span class='ar'>مَعَكَ</span> tere paas, <span class='ar'>مَعَهُ</span> uske paas.",r:"Lesson 3 \u00b7 Exercise 1\u20132"},
-{id:"tb26",s:"tabeer",d:"medium",t:"speak",q:"\u201cUn (auraton) ke paas bags hain\u201d \u2014 sahih jumla?",o:["<span class='ar'>مَعَهُنَّ حَقَائِبُ</span>","<span class='ar'>مَعَهُمْ حَقَائِبُ</span>","<span class='ar'>مَعَكُنَّ حَقَائِبُ</span>","<span class='ar'>مَعَهَا حَقَائِبُ</span>"],a:0,e:"Jama muannas ghaib \u2192 <span class='ar'>ـهُنَّ</span>; jama muzakkar ghaib \u2192 <span class='ar'>ـهُمْ</span>.",r:"Lesson 3 \u00b7 Exercise 2"},
-{id:"tb27",s:"tabeer",d:"medium",t:"speak",q:"Muwazzaf kehta hai <span class='ar'>اِدْفَعْ خَمْسِينَ دُولاراً</span> \u2014 aap se kya kaha ja raha hai?",o:["Pachas dollar ada karein","Pachas dollar wapas lein","Pachas kilo saman rakhein","Pachas minute intezar karein"],a:0,e:"<span class='ar'>دَفَعَ / يَدْفَعُ / اِدْفَعْ</span> = ada karna / pay karna.",r:"Lesson 3 \u00b7 Dialogue"},
-{id:"tb28",s:"tabeer",d:"medium",t:"speak",q:"\u201cBooking kab confirm karni hai?\u201d \u2014 muwazzaf ka jawab tha:",o:["<span class='ar'>قَبْلَ السَّفَرِ بِيَوْمٍ</span> \u2014 safar se ek din pehle","<span class='ar'>يَوْمَ السَّفَرِ</span> \u2014 safar wale din","<span class='ar'>قَبْلَ السَّفَرِ بِأُسْبُوعٍ</span> \u2014 hafte pehle","Confirm karne ki zaroorat nahi"],a:0,e:"<span class='ar'>أَكَّدَ / يُؤَكِّدُ الحَجْزَ</span> = booking confirm karna.",r:"Lesson 2 \u00b7 Dialogue"},
-{id:"tb29",s:"tabeer",d:"medium",t:"speak",q:"\u201cMain library ja raha hoon\u201d \u2014 Ism al-Fa'il ke saath?",o:["<span class='ar'>أَنَا ذَاهِبٌ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا ذَهَبْتُ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا مَذْهُوبٌ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا ذِهَابٌ إِلَى المَكْتَبَةِ</span>"],a:0,e:"Bol-chaal mein Ism al-Fa'il (<span class='ar'>ذَاهِب، خَارِج، قَادِم</span>) se \u201cabhi ja raha hoon\u201d wali haalat zahir hoti hai.",r:"Lesson 3 \u00b7 Exercise 6\u20137"},
-{id:"tb30",s:"tabeer",d:"medium",t:"speak",q:"Ek khatoon kahegi \u201cMain Paris se aa rahi hoon\u201d \u2014 sahih shakl?",o:["<span class='ar'>أَنَا قَادِمَةٌ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قَادِمٌ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قَادِمُونَ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قُدُومٌ مِنْ بَارِيسَ</span>"],a:0,e:"Muannas ke liye Ta Marbuta: <span class='ar'>قَادِم \u2192 قَادِمَة</span>.",r:"Lesson 5 \u00b7 Exercise 4"},
-{id:"tb31",s:"tabeer",d:"medium",t:"vocab",q:"Bol-chaal mein <span class='ar'>يُمْكِنُكَ أَنْ تَخْرُجَ</span> ka matlab?",o:["Aap ja sakte hain","Aap ko jana parega","Aap nahi ja sakte","Aap kab jayenge?"],a:0,e:"<span class='ar'>يُمْكِنُكَ</span> = aap ke liye mumkin hai. Doosra andaz: <span class='ar'>يُمْكِنُكَ الخُرُوجُ</span>.",r:"Lesson 5 \u00b7 Dialogue + Exercise 3"},
-{id:"tb32",s:"tabeer",d:"medium",t:"speak",q:"\u201cKaunse restaurant mein?\u201d poochne ki sahih shakl?",o:["<span class='ar'>فِي أَيِّ مَطْعَمٍ؟</span>","<span class='ar'>فِي أَيَّ مَطْعَمٌ؟</span>","<span class='ar'>فِي أَيُّ مَطْعَمٌ؟</span>","<span class='ar'>فِي أَيِّ مَطْعَمُ؟</span>"],a:0,e:"<span class='ar'>أَيّ</span> ke baad ism hamesha majroor (zeer) \u2014 bolte waqt yeh sun kar pata chal jata hai.",r:"Lesson 6 \u00b7 Exercise 1\u20132"},
+{id:"tb25",s:"tabeer",d:"medium",t:"write",q:"\u201cMere paas do bags hain\u201d \u2014 Arabi mein likhiye:",o:["<span class='ar'>مَعِي حَقِيبَتَانِ</span>","<span class='ar'>مَعَنَا حَقِيبَتَانِ</span>","<span class='ar'>مَعَكَ حَقِيبَتَانِ</span>","<span class='ar'>مَعَهُ حَقِيبَتَانِ</span>"],a:0,e:"<span class='ar'>مَعِي</span> mere paas, <span class='ar'>مَعَنَا</span> hamare paas, <span class='ar'>مَعَكَ</span> tere paas, <span class='ar'>مَعَهُ</span> uske paas.",r:"Lesson 3 \u00b7 Exercise 1\u20132"},
+{id:"tb26",s:"tabeer",d:"medium",t:"write",q:"\u201cUn (auraton) ke paas bags hain\u201d \u2014 sahih jumla?",o:["<span class='ar'>مَعَهُنَّ حَقَائِبُ</span>","<span class='ar'>مَعَهُمْ حَقَائِبُ</span>","<span class='ar'>مَعَكُنَّ حَقَائِبُ</span>","<span class='ar'>مَعَهَا حَقَائِبُ</span>"],a:0,e:"Jama muannas ghaib \u2192 <span class='ar'>ـهُنَّ</span>; jama muzakkar ghaib \u2192 <span class='ar'>ـهُمْ</span>.",r:"Lesson 3 \u00b7 Exercise 2"},
+{id:"tb27",s:"tabeer",d:"medium",t:"write",q:"Rasid par likha hai <span class='ar'>اِدْفَعْ خَمْسِينَ دُولاراً</span> \u2014 iska matlab?",o:["Pachas dollar ada karein","Pachas dollar wapas lein","Pachas kilo saman rakhein","Pachas minute intezar karein"],a:0,e:"<span class='ar'>دَفَعَ / يَدْفَعُ / اِدْفَعْ</span> = ada karna / pay karna.",r:"Lesson 3 \u00b7 Dialogue"},
+{id:"tb28",s:"tabeer",d:"medium",t:"write",q:"Khali jagah bhariye: <span class='ar'>يَجِبُ أَنْ ______ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>",o:["<span class='ar'>تُؤَكِّدَ</span>","<span class='ar'>تُؤَكِّدُ</span>","<span class='ar'>أَكَّدْتَ</span>","<span class='ar'>تَأْكِيدَ</span>"],a:0,e:"<span class='ar'>أَنْ</span> harf-e-nasb hai, is liye uske baad Muzare ke aakhir par zabar aati hai. Matlab: safar se ek din pehle booking confirm karna zaroori hai.",r:"Lesson 2 \u00b7 Tahreer"},
+{id:"tb29",s:"tabeer",d:"medium",t:"write",q:"\u201cMain library ja raha hoon\u201d \u2014 Ism al-Fa'il ke saath?",o:["<span class='ar'>أَنَا ذَاهِبٌ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا ذَهَبْتُ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا مَذْهُوبٌ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا ذِهَابٌ إِلَى المَكْتَبَةِ</span>"],a:0,e:"Tahreer mein Ism al-Fa'il (<span class='ar'>ذَاهِب، خَارِج، قَادِم</span>) se \u201cabhi ja raha hoon\u201d wali haalat zahir hoti hai.",r:"Lesson 3 \u00b7 Exercise 6\u20137"},
+{id:"tb30",s:"tabeer",d:"medium",t:"write",q:"Ek khatoon apne bare mein likhegi \u201cMain Paris se aa rahi hoon\u201d \u2014 sahih shakl?",o:["<span class='ar'>أَنَا قَادِمَةٌ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قَادِمٌ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قَادِمُونَ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قُدُومٌ مِنْ بَارِيسَ</span>"],a:0,e:"Muannas ke liye Ta Marbuta: <span class='ar'>قَادِم \u2192 قَادِمَة</span>.",r:"Lesson 5 \u00b7 Exercise 4"},
+{id:"tb31",s:"tabeer",d:"medium",t:"vocab",q:"Tahreer mein <span class='ar'>يُمْكِنُكَ أَنْ تَخْرُجَ</span> ka matlab?",o:["Aap ja sakte hain","Aap ko jana parega","Aap nahi ja sakte","Aap kab jayenge?"],a:0,e:"<span class='ar'>يُمْكِنُكَ</span> = aap ke liye mumkin hai. Doosra andaz: <span class='ar'>يُمْكِنُكَ الخُرُوجُ</span>.",r:"Lesson 5 \u00b7 Dialogue + Exercise 3"},
+{id:"tb32",s:"tabeer",d:"medium",t:"write",q:"\u201cKaunse restaurant mein?\u201d likhne ki sahih shakl?",o:["<span class='ar'>فِي أَيِّ مَطْعَمٍ؟</span>","<span class='ar'>فِي أَيَّ مَطْعَمٌ؟</span>","<span class='ar'>فِي أَيُّ مَطْعَمٌ؟</span>","<span class='ar'>فِي أَيِّ مَطْعَمُ؟</span>"],a:0,e:"<span class='ar'>أَيّ</span> ke baad ism hamesha majroor (zeer) \u2014 likhte waqt yeh i'rab lagana zaroori hai.",r:"Lesson 6 \u00b7 Exercise 1\u20132"},
 {id:"tb33",s:"tabeer",d:"medium",t:"vocab",q:"<span class='ar'>اِسْتَخْرَجَ</span> ka matlab aur uska Amr?",o:["Nikalwana / issue karana \u00b7 Amr: <span class='ar'>اِسْتَخْرِجْ</span>","Kharch karna \u00b7 Amr: <span class='ar'>اُخْرُجْ</span>","Bahar nikalna \u00b7 Amr: <span class='ar'>اِخْرَجْ</span>","Talash karna \u00b7 Amr: <span class='ar'>اِسْتَخْبِرْ</span>"],a:0,e:"Jaise <span class='ar'>اِسْتَخْرَجَ التَّأْشِيرَةَ</span> = visa nikalwaya.",r:"Lesson 1\u20132 \u00b7 Vocabulary"},
-{id:"tb34",s:"tabeer",d:"medium",t:"speak",q:"Announcement mein <span class='ar'>سُرْعَةُ التَّوَجُّهِ إِلَى بَوَّابَةِ الخُرُوجِ</span> sunayi de to kya karna hai?",o:["Jaldi exit gate ki taraf jana hai","Gate par intezar karna hai","Saman wapas lena hai","Ticket dikhana hai"],a:0,e:"<span class='ar'>سُرْعَة</span> jaldi, <span class='ar'>تَوَجُّه</span> rukh karna, <span class='ar'>بَوَّابَةُ الخُرُوجِ</span> exit gate.",r:"Lesson 4 \u00b7 Iqra'"},
-{id:"tb35",s:"tabeer",d:"medium",t:"speak",q:"Kisi ko \u201cJuice le lijiye\u201d kehne ke liye?",o:["<span class='ar'>تَنَاوَلْ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>اِشْتَرِ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>بِعْ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>اُنْظُرْ عَصِيرَ الفَوَاكِهِ</span>"],a:0,e:"<span class='ar'>تَنَاوَلَ / يَتَنَاوَلُ / تَنَاوَلْ</span> = lena / khana-peena.",r:"Lesson 5\u20136 \u00b7 Verbs"},
+{id:"tb34",s:"tabeer",d:"medium",t:"write",q:"<span class='ar'>سُرْعَةُ التَّوَجُّهِ إِلَى بَوَّابَةُ الخُرُوجِ</span> \u2014 is mein ek i'rabi ghalti hai. Durust shakl?",o:["<span class='ar'>إِلَى بَوَّابَةِ الخُرُوجِ</span>","<span class='ar'>إِلَى بَوَّابَةً الخُرُوجِ</span>","<span class='ar'>إِلَى بَوَّابَةَ الخُرُوجُ</span>","<span class='ar'>إِلَى بَوَّابَةُ الخُرُوجَ</span>"],a:0,e:"<span class='ar'>إِلَى</span> harf-e-jar hai to <span class='ar'>بَوَّابَة</span> majroor hogi; aur wohi Mudaf hai is liye <span class='ar'>الخُرُوج</span> bhi majroor \u2014 Mudaf par tanween bhi nahi aati.",r:"Lesson 4 \u00b7 Ghalti durust karein"},
+{id:"tb35",s:"tabeer",d:"medium",t:"write",q:"Kisi ko \u201cJuice le lijiye\u201d likhne ke liye?",o:["<span class='ar'>تَنَاوَلْ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>اِشْتَرِ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>بِعْ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>اُنْظُرْ عَصِيرَ الفَوَاكِهِ</span>"],a:0,e:"<span class='ar'>تَنَاوَلَ / يَتَنَاوَلُ / تَنَاوَلْ</span> = lena / khana-peena.",r:"Lesson 5\u20136 \u00b7 Verbs"},
 {id:"tb36",s:"tabeer",d:"medium",t:"vocab",q:"<span class='ar'>الجَمَارِك</span> ka matlab?",o:["Customs","Immigration","Baggage claim","Duty free"],a:0,e:"Lesson 5 customs ke mukalme par hai \u2014 wahan <span class='ar'>اِفْتَحْ / أَقْفِلْ</span> ke hukm aate hain.",r:"Lesson 5 \u00b7 Vocabulary"},
-{id:"tb37",s:"tabeer",d:"medium",t:"speak",q:"\u201cKya aap ke paas koi mamnoo cheez hai?\u201d poochne ka andaz?",o:["<span class='ar'>هَلْ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>مَتَى مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>أَيْنَ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>كَمْ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>"],a:0,e:"<span class='ar'>هَلْ</span> se haan/nahi wala sawal banta hai; <span class='ar'>مَمْنُوع</span> = mamnoo.",r:"Lesson 5 \u00b7 Dialogue"},
-{id:"tb38",s:"tabeer",d:"medium",t:"speak",q:"\u201cMujhe University Administration le chalein\u201d \u2014 sahih jumla?",o:["<span class='ar'>خُذْنِي إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>اِذْهَبْ مِنْ إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>أَعْرِفُ إِدَارَةَ الجَامِعَةِ</span>","<span class='ar'>أَيْنَ إِدَارَةُ الجَامِعَةِ</span>"],a:0,e:"<span class='ar'>أَخَذَ / يَأْخُذُ / خُذْ</span> = le jana; <span class='ar'>ـنِي</span> = mujhe.",r:"Lesson 6 \u00b7 Dialogue"},
+{id:"tb37",s:"tabeer",d:"medium",t:"write",q:"\u201cKya aap ke paas koi mamnoo cheez hai?\u201d likhne ka sahih andaz?",o:["<span class='ar'>هَلْ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>مَتَى مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>أَيْنَ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>كَمْ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>"],a:0,e:"<span class='ar'>هَلْ</span> se haan/nahi wala sawal banta hai; <span class='ar'>مَمْنُوع</span> = mamnoo.",r:"Lesson 5 \u00b7 Dialogue"},
+{id:"tb38",s:"tabeer",d:"medium",t:"write",q:"\u201cMujhe University Administration le chalein\u201d \u2014 sahih jumla?",o:["<span class='ar'>خُذْنِي إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>اِذْهَبْ مِنْ إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>أَعْرِفُ إِدَارَةَ الجَامِعَةِ</span>","<span class='ar'>أَيْنَ إِدَارَةُ الجَامِعَةِ</span>"],a:0,e:"<span class='ar'>أَخَذَ / يَأْخُذُ / خُذْ</span> = le jana; <span class='ar'>ـنِي</span> = mujhe.",r:"Lesson 6 \u00b7 Dialogue"},
 {id:"tb39",s:"tabeer",d:"medium",t:"vocab",q:"<span class='ar'>السَّكَنُ الجَامِعِيُّ</span> ka matlab?",o:["University hostel / rehaish-gaah","University ka daftar","University ka maidan","University ki library"],a:0,e:"<span class='ar'>سَكَن</span> = rehne ki jagah, <span class='ar'>جَامِعِيّ</span> = university ka.",r:"Lesson 6 \u00b7 Dialogue"},
-{id:"tb40",s:"tabeer",d:"medium",t:"speak",q:"Oral mein \u201csafar ke marahil tarteeb se batayein\u201d \u2014 Lesson 1\u20136 ki sahih tarteeb?",o:["Ticket/visa \u2192 Booking \u2192 Wazan-o-boarding \u2192 Airport nida \u2192 Customs \u2192 Taxi","Customs \u2192 Taxi \u2192 Booking \u2192 Ticket \u2192 Airport nida \u2192 Wazan","Booking \u2192 Taxi \u2192 Ticket \u2192 Customs \u2192 Airport nida \u2192 Wazan","Taxi \u2192 Wazan \u2192 Customs \u2192 Booking \u2192 Ticket \u2192 Airport nida"],a:0,e:"Yeh course ke asbaaq ki tarteeb hai \u2014 oral mein poora safar isi tarteeb se bayan karna aasan rehta hai.",r:"Lessons 1\u20136 \u00b7 Tarteeb"},
+{id:"tb40",s:"tabeer",d:"medium",t:"write",q:"In alfaz ko tarteeb de kar durust jumla likhiye: <span class='ar'>الرِّيَاضِ / بِالطَّائِرَةِ / أَحْمَدُ / سَافَرَ / إِلَى</span>",o:["<span class='ar'>سَافَرَ أَحْمَدُ بِالطَّائِرَةِ إِلَى الرِّيَاضِ</span>","<span class='ar'>سَافَرَ أَحْمَدُ إِلَى الطَّائِرَةِ بِالرِّيَاضِ</span>","<span class='ar'>سَافَرَتْ أَحْمَدُ بِالطَّائِرَةِ إِلَى الرِّيَاضِ</span>","<span class='ar'>سَافَرَ أَحْمَدُ بِالطَّائِرَةَ إِلَى الرِّيَاضُ</span>"],a:0,e:"Jumla fi'liyah ki tarteeb: Fi'l \u2192 Fa'il \u2192 baqi mutalliqat. Sawari ke liye <span class='ar'>بِـ</span> aur manzil ke liye <span class='ar'>إِلَى</span> \u2014 aur harf-e-jar ke baad hamesha zeer.",r:"Lessons 1\u20136 \u00b7 Jumla sazi"},
 
 /* --- HARD: rawani se bolna --- */
-{id:"tb50",s:"tabeer",d:"hard",t:"speak",q:"Poora jumla: \u201cMain agle hafte Riyadh ke liye booking karna chahta hoon\u201d",o:["<span class='ar'>أُرِيدُ أَنْ أَحْجِزَ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ أَحْجِزُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ أَنْ حَجَزْتُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ الحَجْزُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>"],a:0,e:"<span class='ar'>أَنْ</span> ke baad fi'l mansoob: <span class='ar'>أَحْجِزَ</span>. Masdar se bolna ho to <span class='ar'>أُرِيدُ الحَجْزَ</span>.",r:"Lesson 2 \u00b7 Dialogue + Exercise"},
-{id:"tb51",s:"tabeer",d:"hard",t:"speak",q:"\u201cRashid ne abhi tak visa nahi nikalwaya\u201d \u2014 sahih nafi wala jumla?",o:["<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجْ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجُ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ اسْتَخْرَجَ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجَ التَّأْشِيرَةَ</span>"],a:0,e:"<span class='ar'>لَمْ</span> mazi ki nafi karta hai magar fi'l muzare majzoom (sukoon) ho jata hai.",r:"Lesson 1 \u00b7 Exercise 6"},
-{id:"tb52",s:"tabeer",d:"hard",t:"speak",q:"\u201cMere paas nabbe riyal hain\u201d \u2014 bolte waqt sahih adad?",o:["<span class='ar'>مَعِي تِسْعُونَ رِيَالاً</span>","<span class='ar'>مَعِي تِسْعِينَ رِيَالاً</span>","<span class='ar'>مَعِي تِسْعُونَ رِيَالٍ</span>","<span class='ar'>مَعِي تِسْعِينَ رِيَالٌ</span>"],a:0,e:"Yahan adad subject hai to marfoo (-oon). Lekin <span class='ar'>اِدْفَعْ تِسْعِينَ رِيَالاً</span> mein maf'ool hone se mansoob (-een).",r:"Lesson 3 \u00b7 Exercise 3\u20134"},
-{id:"tb53",s:"tabeer",d:"hard",t:"speak",q:"\u201cAap Jeddah se aaye hain?\u201d \u2014 Jeddah ke saath sahih i'rab?",o:["<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةَ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةٍ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةُ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةً؟</span>"],a:0,e:"<span class='ar'>جِدَّة، أَنْقَرَة، عَمَّان</span> mamnu' min as-sarf hain \u2014 harf-e-jar ke baad bhi fatha par bolte hain.",r:"Lesson 5 \u00b7 Exercise 6"},
-{id:"tb54",s:"tabeer",d:"hard",t:"speak",q:"<span class='ar'>مَتَى نَوْمُكَ؟</span> ka matlab kya hai?",o:["Aap kab sote hain? (verb ki jagah masdar)","Aap kahan sote hain?","Aap kitna sote hain?","Aap kis ke saath sote hain?"],a:0,e:"<span class='ar'>مَتَى تَنَامُ؟</span> ko masdar ke saath <span class='ar'>مَتَى نَوْمُكَ؟</span> bhi bola jata hai.",r:"Lesson 2 \u00b7 Exercise 3"},
-{id:"tb55",s:"tabeer",d:"hard",t:"speak",q:"Customs par bag kholne ke baad officer kya kehta hai aur phir kya?",o:["<span class='ar'>أَقْفِلْهَا</span> phir <span class='ar'>يُمْكِنُكَ أَنْ تَخْرُجَ</span>","<span class='ar'>اِفْتَحْهَا</span> phir <span class='ar'>اِدْفَعْ</span>","<span class='ar'>اِحْجِزْ</span> phir <span class='ar'>أَقْفِلْهَا</span>","<span class='ar'>اُدْخُلْ</span> phir <span class='ar'>اِفْتَحْهَا</span>"],a:0,e:"Lesson 5: <span class='ar'>اِفْتَحِ الحَقِيبَةَ \u2026 أَقْفِلْهَا \u2026 يُمْكِنُكَ أَنْ تَخْرُجَ</span>.",r:"Lesson 5 \u00b7 Dialogue Part 2"},
-{id:"tb56",s:"tabeer",d:"hard",t:"speak",q:"<span class='ar'>مُقْفِلُ الحَقِيبَةِ</span> mein doosre lafz par zeer kyun aati hai?",o:["Ism al-Fa'il aur uska maf'ool mil kar Idafa bana rahe hain","Us par harf-e-jar aaya hai","Wo Mubtada hai","Wo mamnu' min as-sarf hai"],a:0,e:"Yeh pattern bol-chaal mein bohat aata hai: <span class='ar'>فَاتِحُ البَابِ، حَامِلُ الحَقِيبَةِ</span>.",r:"Lesson 5 \u00b7 Exercise 1"},
-{id:"tb57",s:"tabeer",d:"hard",t:"speak",q:"\u201cMusafiron ne nida suni\u201d \u2014 subject jama hai, magar fi'l kaisa rahega?",o:["Fi'l wahid hi rahega: <span class='ar'>سَمِعَ المُسَافِرُونَ النِّدَاءَ</span>","Fi'l jama hoga: <span class='ar'>سَمِعُوا المُسَافِرُونَ النِّدَاءَ</span>","Fi'l tasniya hoga","Fi'l hazf ho jayega"],a:0,e:"VSO tarteeb mein jab subject sarahatan zikr ho to fi'l singular rehta hai.",r:"Lesson 4 \u00b7 Exercise 2"},
-{id:"tb58",s:"tabeer",d:"hard",t:"speak",q:"Lesson 4 ke airport announcement mein flight aur gate number?",o:["Flight <span class='ar'>رَقْم ٩٠</span> \u00b7 Gate <span class='ar'>رَقْم ٣</span>","Flight <span class='ar'>رَقْم ٣</span> \u00b7 Gate <span class='ar'>رَقْم ٩٠</span>","Flight <span class='ar'>رَقْم ٩</span> \u00b7 Gate <span class='ar'>رَقْم ١٠</span>","Flight <span class='ar'>رَقْم ١٠</span> \u00b7 Gate <span class='ar'>رَقْم ٩</span>"],a:0,e:"<span class='ar'>الخُطُوط العَرَبِيَّة السُّعُودِيَّة</span> ne flight 90 ka ailan kiya aur gate number 3 bataya.",r:"Lesson 4 \u00b7 Iqra'"},
-{id:"tb59",s:"tabeer",d:"hard",t:"speak",q:"\u201cMain us (Idarah) ko nahi jaanta\u201d \u2014 sahih zameer?",o:["<span class='ar'>لا أَعْرِفُهَا</span>","<span class='ar'>لا أَعْرِفُهُ</span>","<span class='ar'>لا أَعْرِفُهُمْ</span>","<span class='ar'>لا أَعْرِفُهُنَّ</span>"],a:0,e:"Ta Marbuta wali jagahein (<span class='ar'>إِدَارَة، صَالَة، بَوَّابَة</span>) muannas hain \u2192 <span class='ar'>ـهَا</span>.",r:"Lesson 6 \u00b7 Exercise 5"},
-{id:"tb60",s:"tabeer",d:"hard",t:"speak",q:"<span class='ar'>مِنْ أَيْنَ اسْتَخْرَجَ مَحْمُودٌ تَأْشِيرَةَ الخُرُوجِ؟</span> \u2014 sahih jawab?",o:["<span class='ar'>مِنْ وِزَارَةِ الدَّاخِلِيَّةِ</span>","<span class='ar'>مِنَ السَّفَارَةِ</span>","<span class='ar'>مِنَ المَطَارِ</span>","<span class='ar'>مِنْ مَكْتَبِ الحَجْزِ</span>"],a:0,e:"Entry visa embassy ke muwazzaf se mila, exit visa <span class='ar'>وِزَارَة الدَّاخِلِيَّة</span> (Ministry of Interior) se.",r:"Lesson 1 \u00b7 Iqra'"}
+{id:"tb50",s:"tabeer",d:"hard",t:"write",q:"Poora jumla: \u201cMain agle hafte Riyadh ke liye booking karna chahta hoon\u201d",o:["<span class='ar'>أُرِيدُ أَنْ أَحْجِزَ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ أَحْجِزُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ أَنْ حَجَزْتُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ الحَجْزُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>"],a:0,e:"<span class='ar'>أَنْ</span> ke baad fi'l mansoob: <span class='ar'>أَحْجِزَ</span>. Masdar se bolna ho to <span class='ar'>أُرِيدُ الحَجْزَ</span>.",r:"Lesson 2 \u00b7 Dialogue + Exercise"},
+{id:"tb51",s:"tabeer",d:"hard",t:"write",q:"\u201cRashid ne abhi tak visa nahi nikalwaya\u201d \u2014 sahih nafi wala jumla?",o:["<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجْ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجُ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ اسْتَخْرَجَ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجَ التَّأْشِيرَةَ</span>"],a:0,e:"<span class='ar'>لَمْ</span> mazi ki nafi karta hai magar fi'l muzare majzoom (sukoon) ho jata hai.",r:"Lesson 1 \u00b7 Exercise 6"},
+{id:"tb52",s:"tabeer",d:"hard",t:"write",q:"\u201cMere paas nabbe riyal hain\u201d \u2014 likhte waqt sahih adad?",o:["<span class='ar'>مَعِي تِسْعُونَ رِيَالاً</span>","<span class='ar'>مَعِي تِسْعِينَ رِيَالاً</span>","<span class='ar'>مَعِي تِسْعُونَ رِيَالٍ</span>","<span class='ar'>مَعِي تِسْعِينَ رِيَالٌ</span>"],a:0,e:"Yahan adad subject hai to marfoo (-oon). Lekin <span class='ar'>اِدْفَعْ تِسْعِينَ رِيَالاً</span> mein maf'ool hone se mansoob (-een).",r:"Lesson 3 \u00b7 Exercise 3\u20134"},
+{id:"tb53",s:"tabeer",d:"hard",t:"write",q:"\u201cAap Jeddah se aaye hain?\u201d \u2014 Jeddah ke saath sahih i'rab?",o:["<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةَ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةٍ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةُ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةً؟</span>"],a:0,e:"<span class='ar'>جِدَّة، أَنْقَرَة، عَمَّان</span> mamnu' min as-sarf hain \u2014 harf-e-jar ke baad bhi fatha par likhte hain.",r:"Lesson 5 \u00b7 Exercise 6"},
+{id:"tb54",s:"tabeer",d:"hard",t:"write",q:"<span class='ar'>مَتَى نَوْمُكَ؟</span> ka matlab kya hai?",o:["Aap kab sote hain? (verb ki jagah masdar)","Aap kahan sote hain?","Aap kitna sote hain?","Aap kis ke saath sote hain?"],a:0,e:"<span class='ar'>مَتَى تَنَامُ؟</span> ko masdar ke saath <span class='ar'>مَتَى نَوْمُكَ؟</span> bhi bola jata hai.",r:"Lesson 2 \u00b7 Exercise 3"},
+{id:"tb55",s:"tabeer",d:"hard",t:"write",q:"Report mein likhna hai \u201cOfficer ne bag khola, phir usay band kar diya\u201d \u2014 sahih Arabi?",o:["<span class='ar'>فَتَحَ الضَّابِطُ الحَقِيبَةَ ثُمَّ أَقْفَلَهَا</span>","<span class='ar'>فَتَحَ الضَّابِطُ الحَقِيبَةَ ثُمَّ أَقْفَلَهُ</span>","<span class='ar'>فَتَحَ الضَّابِطَ الحَقِيبَةُ ثُمَّ أَقْفَلَهَا</span>","<span class='ar'>يَفْتَحُ الضَّابِطُ الحَقِيبَةَ ثُمَّ أَقْفَلَهَا</span>"],a:0,e:"<span class='ar'>حَقِيبَة</span> muannas hai is liye zameer bhi muannas: <span class='ar'>ـهَا</span>. Fa'il marfoo', Maf'ool mansoob, aur guzre hue do kaam dono Mazi mein.",r:"Lesson 5 \u00b7 Jumla sazi"},
+{id:"tb56",s:"tabeer",d:"hard",t:"write",q:"<span class='ar'>مُقْفِلُ الحَقِيبَةِ</span> mein doosre lafz par zeer kyun aati hai?",o:["Ism al-Fa'il aur uska maf'ool mil kar Idafa bana rahe hain","Us par harf-e-jar aaya hai","Wo Mubtada hai","Wo mamnu' min as-sarf hai"],a:0,e:"Yeh pattern likhne mein bohat aata hai: <span class='ar'>فَاتِحُ البَابِ، حَامِلُ الحَقِيبَةِ</span>.",r:"Lesson 5 \u00b7 Exercise 1"},
+{id:"tb57",s:"tabeer",d:"hard",t:"write",q:"\u201cMusafiron ne nida suni\u201d \u2014 subject jama hai, magar fi'l kaisa rahega?",o:["Fi'l wahid hi rahega: <span class='ar'>سَمِعَ المُسَافِرُونَ النِّدَاءَ</span>","Fi'l jama hoga: <span class='ar'>سَمِعُوا المُسَافِرُونَ النِّدَاءَ</span>","Fi'l tasniya hoga","Fi'l hazf ho jayega"],a:0,e:"VSO tarteeb mein jab subject sarahatan zikr ho to fi'l singular rehta hai.",r:"Lesson 4 \u00b7 Exercise 2"},
+{id:"tb58",s:"tabeer",d:"hard",t:"write",q:"\u201cFlight number\u201d ko Idafa ke saath likhne ki sahih shakl?",o:["<span class='ar'>رَقْمُ الرِّحْلَةِ</span>","<span class='ar'>الرَّقْمُ الرِّحْلَةِ</span>","<span class='ar'>رَقْمٌ الرِّحْلَةِ</span>","<span class='ar'>رَقْمُ الرِّحْلَةُ</span>"],a:0,e:"Idafa ka qaida: Mudaf par na <span class='ar'>ال</span> aati hai na tanween, aur Mudaf Ilaih hamesha majroor. Isi tarah <span class='ar'>رَقْمُ البَوَّابَةِ</span> = gate number.",r:"Lesson 4 \u00b7 Idafa"},
+{id:"tb59",s:"tabeer",d:"hard",t:"write",q:"\u201cMain us (Idarah) ko nahi jaanta\u201d \u2014 sahih zameer?",o:["<span class='ar'>لا أَعْرِفُهَا</span>","<span class='ar'>لا أَعْرِفُهُ</span>","<span class='ar'>لا أَعْرِفُهُمْ</span>","<span class='ar'>لا أَعْرِفُهُنَّ</span>"],a:0,e:"Ta Marbuta wali jagahein (<span class='ar'>إِدَارَة، صَالَة، بَوَّابَة</span>) muannas hain \u2192 <span class='ar'>ـهَا</span>.",r:"Lesson 6 \u00b7 Exercise 5"},
+{id:"tb60",s:"tabeer",d:"hard",t:"write",q:"Darkhwast mein likhna hai \u201cMain ne Wizarat-e-Dakhiliya se exit visa haasil kiya\u201d \u2014 sahih jumla?",o:["<span class='ar'>حَصَلْتُ عَلَى تَأْشِيرَةِ الخُرُوجِ مِنْ وِزَارَةِ الدَّاخِلِيَّةِ</span>","<span class='ar'>حَصَلْتُ تَأْشِيرَةَ الخُرُوجِ مِنْ وِزَارَةِ الدَّاخِلِيَّةِ</span>","<span class='ar'>حَصَلْتُ عَلَى تَأْشِيرَةُ الخُرُوجِ مِنْ وِزَارَةُ الدَّاخِلِيَّةِ</span>","<span class='ar'>أَحْصُلُ عَلَى تَأْشِيرَةِ الخُرُوجِ مِنْ وِزَارَةِ الدَّاخِلِيَّةِ</span>"],a:0,e:"<span class='ar'>حَصَلَ</span> ke saath <span class='ar'>عَلَى</span> lazmi hai. Dono Idafatein majroor, aur guzra hua kaam Mazi mein.",r:"Lesson 1 \u00b7 Jumla sazi"}
 );
 
 /* ===================== 2. AL-QIRA'AH WAL-KITABAH + MU'JAM (ORAL) ===================== */
@@ -2249,53 +2250,53 @@ um99:{q:"قبلہ رخ ہونے کے بارے میں سفر/جنگل کے مسئ
 Object.assign(UR_Q_DATA, {
 
 /* ---------- AT-TAABEER ---------- */
-tb1:{q:"<span class='ar'>إِجْرَاءَاتُ السَّفَرِ</span> — بول چال میں اس کا مطلب؟",o:["سفر کی کارروائیاں / travel procedures","سفر کا خرچہ","سفر کا سامان","سفر کا وقت"],e:"سبق ۱ کا عنوان۔ اس میں ٹکٹ لینا، جواز بنوانا اور تاشیرہ نکلوانا سب شامل ہے۔"},
+tb1:{q:"<span class='ar'>إِجْرَاءَاتُ السَّفَرِ</span> — تحریر میں اس کا مطلب؟",o:["سفر کی کارروائیاں / travel procedures","سفر کا خرچہ","سفر کا سامان","سفر کا وقت"],e:"سبق ۱ کا عنوان۔ اس میں ٹکٹ لینا، جواز بنوانا اور تاشیرہ نکلوانا سب شامل ہے۔"},
 tb2:{q:"<span class='ar'>جَوَازُ السَّفَرِ</span> کا مطلب؟",o:["پاسپورٹ","ٹکٹ","ویزا","بورڈنگ پاس"],e:"یاد رکھیں: <span class='ar'>جَوَاز</span> = پاسپورٹ، <span class='ar'>تَذْكِرَة</span> = ٹکٹ، <span class='ar'>تَأْشِيرَة</span> = ویزا۔"},
 tb3:{q:"<span class='ar'>تَأْشِيرَةُ الدُّخُولِ</span> اور <span class='ar'>تَأْشِيرَةُ الخُرُوجِ</span> — ترتیب سے مطلب؟",o:["انٹری ویزا اور ایگزٹ ویزا","ایگزٹ ویزا اور انٹری ویزا","انٹری ٹکٹ اور ایگزٹ ٹکٹ","انٹری کارڈ اور ایگزٹ کارڈ"],e:"<span class='ar'>دُخُول</span> = داخل ہونا، <span class='ar'>خُرُوج</span> = نکلنا۔"},
-tb4:{q:"”آپ کب سفر کر رہے ہیں؟“ — عربی میں کیسے پوچھیں گے؟",o:["<span class='ar'>مَتَى تُسَافِرُ؟</span>","<span class='ar'>أَيْنَ تُسَافِرُ؟</span>","<span class='ar'>كَيْفَ تُسَافِرُ؟</span>","<span class='ar'>لِمَاذَا تُسَافِرُ؟</span>"],e:"<span class='ar'>مَتَى</span> = کب، <span class='ar'>أَيْنَ</span> = کہاں، <span class='ar'>كَيْفَ</span> = کیسے، <span class='ar'>لِمَاذَا</span> = کیوں۔"},
-tb5:{q:"”آنے والے ہفتے، ان شاء اللہ“ — یہ جواب عربی میں؟",o:["<span class='ar'>فِي الأُسْبُوعِ القَادِمِ إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي الأُسْبُوعِ المَاضِي إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي الشَّهْرِ القَادِمِ إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي اليَوْمِ القَادِمِ إِنْ شَاءَ اللهُ</span>"],e:"<span class='ar'>القَادِم</span> = آنے والا، <span class='ar'>المَاضِي</span> = گزرا ہوا، <span class='ar'>أُسْبُوع</span> = ہفتہ۔"},
-tb6:{q:"”میں ہوائی جہاز سے سفر کروں گا“ — کیسے کہیں گے؟",o:["<span class='ar'>أُسَافِرُ بِالطَّائِرَةِ</span>","<span class='ar'>أُسَافِرُ بِالسَّيَّارَةِ</span>","<span class='ar'>أُسَافِرُ بِالقِطَارِ</span>","<span class='ar'>أُسَافِرُ بِالحَافِلَةِ</span>"],e:"سواری کے لیے <span class='ar'>بِـ</span> لگتا ہے: <span class='ar'>الطَّائِرَة</span> جہاز، <span class='ar'>السَّيَّارَة</span> گاڑی، <span class='ar'>القِطَار</span> ٹرین، <span class='ar'>الحَافِلَة</span> بس۔"},
-tb7:{q:"بکنگ آفس پر کہنا ہے ”میں ریاض کے لیے بکنگ کرنا چاہتا ہوں“:",o:["<span class='ar'>أُرِيدُ أَنْ أَحْجِزَ لِلرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَذْهَبَ لِلرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَسْأَلَ عَنِ الرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَرْجِعَ مِنَ الرِّيَاضِ</span>"],e:"<span class='ar'>حَجَزَ / يَحْجُزُ</span> = بکنگ کرنا۔ <span class='ar'>أُرِيدُ أَنْ…</span> = میں … چاہتا ہوں۔"},
-tb8:{q:"”جہاز کب ٹیک آف کرے گا؟“ پوچھنے کے لیے کون سا جملہ؟",o:["<span class='ar'>مَتَى تُقْلِعُ الطَّائِرَةُ؟</span>","<span class='ar'>مَتَى تَصِلُ الطَّائِرَةُ؟</span>","<span class='ar'>كَمْ تُكَلِّفُ الطَّائِرَةُ؟</span>","<span class='ar'>أَيْنَ الطَّائِرَةُ؟</span>"],e:"<span class='ar'>أَقْلَعَ / يُقْلِعُ</span> = ٹیک آف کرنا (مصدر <span class='ar'>إِقْلاع</span>)؛ <span class='ar'>وَصَلَ / يَصِلُ</span> = پہنچنا۔"},
+tb4:{q:"”آپ کب سفر کر رہے ہیں؟“ — عربی میں کیسے لکھیں گے؟",o:["<span class='ar'>مَتَى تُسَافِرُ؟</span>","<span class='ar'>أَيْنَ تُسَافِرُ؟</span>","<span class='ar'>كَيْفَ تُسَافِرُ؟</span>","<span class='ar'>لِمَاذَا تُسَافِرُ؟</span>"],e:"<span class='ar'>مَتَى</span> = کب، <span class='ar'>أَيْنَ</span> = کہاں، <span class='ar'>كَيْفَ</span> = کیسے، <span class='ar'>لِمَاذَا</span> = کیوں۔"},
+tb5:{q:"”آنے والے ہفتے، ان شاء اللہ“ — یہ جواب عربی میں لکھیے؟",o:["<span class='ar'>فِي الأُسْبُوعِ القَادِمِ إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي الأُسْبُوعِ المَاضِي إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي الشَّهْرِ القَادِمِ إِنْ شَاءَ اللهُ</span>","<span class='ar'>فِي اليَوْمِ القَادِمِ إِنْ شَاءَ اللهُ</span>"],e:"<span class='ar'>القَادِم</span> = آنے والا، <span class='ar'>المَاضِي</span> = گزرا ہوا، <span class='ar'>أُسْبُوع</span> = ہفتہ۔"},
+tb6:{q:"”میں ہوائی جہاز سے سفر کروں گا“ — عربی میں کیسے لکھیں گے؟",o:["<span class='ar'>أُسَافِرُ بِالطَّائِرَةِ</span>","<span class='ar'>أُسَافِرُ بِالسَّيَّارَةِ</span>","<span class='ar'>أُسَافِرُ بِالقِطَارِ</span>","<span class='ar'>أُسَافِرُ بِالحَافِلَةِ</span>"],e:"سواری کے لیے <span class='ar'>بِـ</span> لگتا ہے: <span class='ar'>الطَّائِرَة</span> جہاز، <span class='ar'>السَّيَّارَة</span> گاڑی، <span class='ar'>القِطَار</span> ٹرین، <span class='ar'>الحَافِلَة</span> بس۔"},
+tb7:{q:"بکنگ کی درخواست میں لکھنا ہے ”میں ریاض کے لیے بکنگ کرنا چاہتا ہوں“:",o:["<span class='ar'>أُرِيدُ أَنْ أَحْجِزَ لِلرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَذْهَبَ لِلرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَسْأَلَ عَنِ الرِّيَاضِ</span>","<span class='ar'>أُرِيدُ أَنْ أَرْجِعَ مِنَ الرِّيَاضِ</span>"],e:"<span class='ar'>حَجَزَ / يَحْجُزُ</span> = بکنگ کرنا۔ <span class='ar'>أُرِيدُ أَنْ…</span> = میں … چاہتا ہوں۔"},
+tb8:{q:"”جہاز کب ٹیک آف کرے گا؟“ لکھنے کے لیے کون سا جملہ؟",o:["<span class='ar'>مَتَى تُقْلِعُ الطَّائِرَةُ؟</span>","<span class='ar'>مَتَى تَصِلُ الطَّائِرَةُ؟</span>","<span class='ar'>كَمْ تُكَلِّفُ الطَّائِرَةُ؟</span>","<span class='ar'>أَيْنَ الطَّائِرَةُ؟</span>"],e:"<span class='ar'>أَقْلَعَ / يُقْلِعُ</span> = ٹیک آف کرنا (مصدر <span class='ar'>إِقْلاع</span>)؛ <span class='ar'>وَصَلَ / يَصِلُ</span> = پہنچنا۔"},
 tb9:{q:"<span class='ar'>الوَزْنُ الزَّائِدُ</span> کا مطلب؟",o:["اضافی وزن — ضرورت سے زیادہ وزن","کل وزن","ہلکا وزن","سامان کا نمبر"],e:"سبق ۳ میں محمود کا اضافی وزن ۱۰ کلو تھا اور اس نے ۵۰ ڈالر ادا کیے۔"},
 tb10:{q:"<span class='ar'>مَوْقِفُ سَيَّارَاتِ الأُجْرَةِ</span> کا مطلب؟",o:["ٹیکسی اسٹینڈ","بس اسٹینڈ","کار پارکنگ","پیٹرول پمپ"],e:"<span class='ar'>مَوْقِف</span> = اسٹینڈ/پارکنگ، <span class='ar'>سَيَّارَةُ الأُجْرَةِ</span> = ٹیکسی (کرائے کی گاڑی)۔"},
-tb11:{q:"ٹیکسی میں کرایہ پوچھنا ہو — ”کتنا کرایہ ہوگا؟“",o:["<span class='ar'>كَمِ الأُجْرَةُ؟</span>","<span class='ar'>مَتَى تَذْهَبُ؟</span>","<span class='ar'>أَيْنَ تَذْهَبُ؟</span>","<span class='ar'>هَلْ تَعْرِفُهُ؟</span>"],e:"<span class='ar'>أُجْرَة</span> = کرایہ؛ <span class='ar'>كَلَّفَ / يُكَلِّفُ</span> = خرچ آنا۔ سبق ۶ کی مشق ۴ اسی پر ہے۔"},
+tb11:{q:"”کتنا کرایہ ہوگا؟“ — یہ سوال عربی میں لکھیے؟",o:["<span class='ar'>كَمِ الأُجْرَةُ؟</span>","<span class='ar'>مَتَى تَذْهَبُ؟</span>","<span class='ar'>أَيْنَ تَذْهَبُ؟</span>","<span class='ar'>هَلْ تَعْرِفُهُ؟</span>"],e:"<span class='ar'>أُجْرَة</span> = کرایہ؛ <span class='ar'>كَلَّفَ / يُكَلِّفُ</span> = خرچ آنا۔ سبق ۶ کی مشق ۴ اسی پر ہے۔"},
 tb12:{q:"<span class='ar'>بِطَاقَةُ المُغَادَرَةِ</span> کا مطلب؟",o:["ڈیپارچر کارڈ","اریول کارڈ","بورڈنگ پاس","شناختی کارڈ"],e:"<span class='ar'>مُغَادَرَة</span> = روانگی؛ <span class='ar'>وُصُول</span> = پہنچنا۔"},
-tb13:{q:"کوئی پوچھتا ہے <span class='ar'>مِنْ أَيْنَ أَنْتَ قَادِمٌ؟</span> — اس کا مطلب؟",o:["آپ کہاں سے آ رہے ہیں؟","آپ کہاں جا رہے ہیں؟","آپ کب آئے؟","آپ کیسے آئے؟"],e:"<span class='ar'>قَادِم</span> = آنے والا۔ جواب: <span class='ar'>أَنَا قَادِمٌ مِنْ…</span>"},
-tb14:{q:"رخصت کے وقت ”سفر سلامت رہے“ کہنے کے لیے کیا بولتے ہیں؟",o:["<span class='ar'>رَافَقَتْكَ السَّلامَةُ</span>","<span class='ar'>عَلَى الأَقَلِّ</span>","<span class='ar'>إِنْ شَاءَ اللهُ</span>","<span class='ar'>مَعَ الأَسَفِ</span>"],e:"”رافقتک السلامۃ“ = سلامتی آپ کے ساتھ رہے۔"},
+tb13:{q:"پرچے میں یہ جملہ دیا گیا <span class='ar'>مِنْ أَيْنَ أَنْتَ قَادِمٌ؟</span> — اس کا مطلب؟",o:["آپ کہاں سے آ رہے ہیں؟","آپ کہاں جا رہے ہیں؟","آپ کب آئے؟","آپ کیسے آئے؟"],e:"<span class='ar'>قَادِم</span> = آنے والا۔ جواب: <span class='ar'>أَنَا قَادِمٌ مِنْ…</span>"},
+tb14:{q:"رخصت کے وقت ”سفر سلامت رہے“ لکھنے کے لیے کون سا جملہ؟",o:["<span class='ar'>رَافَقَتْكَ السَّلامَةُ</span>","<span class='ar'>عَلَى الأَقَلِّ</span>","<span class='ar'>إِنْ شَاءَ اللهُ</span>","<span class='ar'>مَعَ الأَسَفِ</span>"],e:"”رافقتک السلامۃ“ = سلامتی آپ کے ساتھ رہے۔"},
 tb15:{q:"<span class='ar'>عَلَى الأَقَلِّ</span> کا مطلب؟",o:["کم از کم","زیادہ سے زیادہ","بالکل ٹھیک","فوراً"],e:"مکالمہ: ٹیک آف سے <span class='ar'>بِسَاعَةٍ عَلَى الأَقَلِّ</span> — کم از کم ایک گھنٹہ پہلے پہنچیں۔"},
-tb16:{q:"کسٹم افسر کہتا ہے <span class='ar'>اِفْتَحِ الحَقِيبَةَ</span> — آپ کو کیا کرنا ہے؟",o:["بیگ کھولنا ہے","بیگ بند کرنا ہے","بیگ اٹھانا ہے","بیگ چھوڑ دینا ہے"],e:"<span class='ar'>اِفْتَحْ</span> = کھولو، <span class='ar'>أَقْفِلْ</span> = بند کرو۔ سبق ۵ میں دونوں حکم آتے ہیں۔"},
+tb16:{q:"کسٹم کی پرچی پر لکھا ہے <span class='ar'>اِفْتَحِ الحَقِيبَةَ</span> — اس کا مطلب؟",o:["بیگ کھولنا ہے","بیگ بند کرنا ہے","بیگ اٹھانا ہے","بیگ چھوڑ دینا ہے"],e:"<span class='ar'>اِفْتَحْ</span> = کھولو، <span class='ar'>أَقْفِلْ</span> = بند کرو۔ سبق ۵ میں دونوں حکم آتے ہیں۔"},
 tb17:{q:"<span class='ar'>صَالَةُ المُسَافِرِينَ</span> کا مطلب؟",o:["مسافروں کا ہال / ڈیپارچر لاؤنج","مسافروں کا دفتر","مسافروں کی گاڑی","مسافروں کا سامان"],e:"<span class='ar'>صَالَة</span> = ہال، <span class='ar'>بَوَّابَة</span> = گیٹ، <span class='ar'>إِدَارَة</span> = انتظامیہ۔"},
-tb18:{q:"”معاف کیجیے، مجھے اس کا پتا نہیں“ — عربی میں؟",o:["<span class='ar'>آسِفٌ! لا أَعْرِفُهُ</span>","<span class='ar'>نَعَمْ، أَعْرِفُهُ</span>","<span class='ar'>أَيْنَ هُوَ؟</span>","<span class='ar'>شُكْراً جَزِيلاً</span>"],e:"سبق ۶ میں ٹیکسی ڈرائیور کا یہی جواب تھا جب ”السکن الجامعی“ کا پتا پوچھا گیا۔"},
+tb18:{q:"”معاف کیجیے، مجھے اس کا پتا نہیں“ — عربی میں لکھیے؟",o:["<span class='ar'>آسِفٌ! لا أَعْرِفُهُ</span>","<span class='ar'>نَعَمْ، أَعْرِفُهُ</span>","<span class='ar'>أَيْنَ هُوَ؟</span>","<span class='ar'>شُكْراً جَزِيلاً</span>"],e:"سبق ۶ میں ٹیکسی ڈرائیور کا یہی جواب تھا جب ”السکن الجامعی“ کا پتا پوچھا گیا۔"},
 
-tb25:{q:"”میرے پاس دو بیگ ہیں“ — کیسے کہیں گے؟",o:["<span class='ar'>مَعِي حَقِيبَتَانِ</span>","<span class='ar'>مَعَنَا حَقِيبَتَانِ</span>","<span class='ar'>مَعَكَ حَقِيبَتَانِ</span>","<span class='ar'>مَعَهُ حَقِيبَتَانِ</span>"],e:"<span class='ar'>مَعِي</span> میرے پاس، <span class='ar'>مَعَنَا</span> ہمارے پاس، <span class='ar'>مَعَكَ</span> تیرے پاس، <span class='ar'>مَعَهُ</span> اس کے پاس۔"},
+tb25:{q:"”میرے پاس دو بیگ ہیں“ — عربی میں لکھیےے؟",o:["<span class='ar'>مَعِي حَقِيبَتَانِ</span>","<span class='ar'>مَعَنَا حَقِيبَتَانِ</span>","<span class='ar'>مَعَكَ حَقِيبَتَانِ</span>","<span class='ar'>مَعَهُ حَقِيبَتَانِ</span>"],e:"<span class='ar'>مَعِي</span> میرے پاس، <span class='ar'>مَعَنَا</span> ہمارے پاس، <span class='ar'>مَعَكَ</span> تیرے پاس، <span class='ar'>مَعَهُ</span> اس کے پاس۔"},
 tb26:{q:"”ان (عورتوں) کے پاس بیگ ہیں“ — صحیح جملہ؟",o:["<span class='ar'>مَعَهُنَّ حَقَائِبُ</span>","<span class='ar'>مَعَهُمْ حَقَائِبُ</span>","<span class='ar'>مَعَكُنَّ حَقَائِبُ</span>","<span class='ar'>مَعَهَا حَقَائِبُ</span>"],e:"جمع مؤنث غائب ← <span class='ar'>ـهُنَّ</span>؛ جمع مذکر غائب ← <span class='ar'>ـهُمْ</span>۔"},
-tb27:{q:"موظف کہتا ہے <span class='ar'>اِدْفَعْ خَمْسِينَ دُولاراً</span> — آپ سے کیا کہا جا رہا ہے؟",o:["پچاس ڈالر ادا کریں","پچاس ڈالر واپس لیں","پچاس کلو سامان رکھیں","پچاس منٹ انتظار کریں"],e:"<span class='ar'>دَفَعَ / يَدْفَعُ / اِدْفَعْ</span> = ادا کرنا۔"},
-tb28:{q:"”بکنگ کب کنفرم کرنی ہے؟“ — موظف کا جواب تھا:",o:["<span class='ar'>قَبْلَ السَّفَرِ بِيَوْمٍ</span> — سفر سے ایک دن پہلے","<span class='ar'>يَوْمَ السَّفَرِ</span> — سفر والے دن","<span class='ar'>قَبْلَ السَّفَرِ بِأُسْبُوعٍ</span> — ہفتہ پہلے","کنفرم کرنے کی ضرورت نہیں"],e:"<span class='ar'>أَكَّدَ / يُؤَكِّدُ الحَجْزَ</span> = بکنگ کنفرم کرنا۔"},
-tb29:{q:"”میں لائبریری جا رہا ہوں“ — اسم الفاعل کے ساتھ؟",o:["<span class='ar'>أَنَا ذَاهِبٌ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا ذَهَبْتُ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا مَذْهُوبٌ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا ذِهَابٌ إِلَى المَكْتَبَةِ</span>"],e:"بول چال میں اسم الفاعل (<span class='ar'>ذَاهِب، خَارِج، قَادِم</span>) سے ”ابھی جا رہا ہوں“ والی حالت ظاہر ہوتی ہے۔"},
-tb30:{q:"ایک خاتون کہے گی ”میں پیرس سے آ رہی ہوں“ — صحیح شکل؟",o:["<span class='ar'>أَنَا قَادِمَةٌ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قَادِمٌ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قَادِمُونَ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قُدُومٌ مِنْ بَارِيسَ</span>"],e:"مؤنث کے لیے تاء مربوطہ: <span class='ar'>قَادِم ← قَادِمَة</span>۔"},
-tb31:{q:"بول چال میں <span class='ar'>يُمْكِنُكَ أَنْ تَخْرُجَ</span> کا مطلب؟",o:["آپ جا سکتے ہیں","آپ کو جانا پڑے گا","آپ نہیں جا سکتے","آپ کب جائیں گے؟"],e:"<span class='ar'>يُمْكِنُكَ</span> = آپ کے لیے ممکن ہے۔ دوسرا انداز: <span class='ar'>يُمْكِنُكَ الخُرُوجُ</span>۔"},
-tb32:{q:"”کون سے ریستوران میں؟“ پوچھنے کی صحیح شکل؟",o:["<span class='ar'>فِي أَيِّ مَطْعَمٍ؟</span>","<span class='ar'>فِي أَيَّ مَطْعَمٌ؟</span>","<span class='ar'>فِي أَيُّ مَطْعَمٌ؟</span>","<span class='ar'>فِي أَيِّ مَطْعَمُ؟</span>"],e:"<span class='ar'>أَيّ</span> کے بعد اسم ہمیشہ مجرور (زیر) — بولتے وقت یہ سن کر پتا چل جاتا ہے۔"},
+tb27:{q:"رسید پر لکھا ہے <span class='ar'>اِدْفَعْ خَمْسِينَ دُولاراً</span> — اس کا مطلب؟",o:["پچاس ڈالر ادا کریں","پچاس ڈالر واپس لیں","پچاس کلو سامان رکھیں","پچاس منٹ انتظار کریں"],e:"<span class='ar'>دَفَعَ / يَدْفَعُ / اِدْفَعْ</span> = ادا کرنا۔"},
+tb28:{q:"خالی جگہ بھریے: <span class='ar'>يَجِبُ أَنْ ______ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>",o:["<span class='ar'>تُؤَكِّدَ</span>","<span class='ar'>تُؤَكِّدُ</span>","<span class='ar'>أَكَّدْتَ</span>","<span class='ar'>تَأْكِيدَ</span>"],e:"<span class='ar'>أَنْ</span> حرفِ نصب ہے، اس لیے اس کے بعد مضارع کے آخر پر زبر آتی ہے۔ مطلب: سفر سے ایک دن پہلے بکنگ کنفرم کرنا ضروری ہے۔"},
+tb29:{q:"”میں لائبریری جا رہا ہوں“ — اسم الفاعل کے ساتھ؟",o:["<span class='ar'>أَنَا ذَاهِبٌ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا ذَهَبْتُ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا مَذْهُوبٌ إِلَى المَكْتَبَةِ</span>","<span class='ar'>أَنَا ذِهَابٌ إِلَى المَكْتَبَةِ</span>"],e:"تحریر میں اسم الفاعل (<span class='ar'>ذَاهِب، خَارِج، قَادِم</span>) سے ”ابھی جا رہا ہوں“ والی حالت ظاہر ہوتی ہے۔"},
+tb30:{q:"ایک خاتون اپنے بارے میں لکھے گی ”میں پیرس سے آ رہی ہوں“ — صحیح شکل؟",o:["<span class='ar'>أَنَا قَادِمَةٌ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قَادِمٌ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قَادِمُونَ مِنْ بَارِيسَ</span>","<span class='ar'>أَنَا قُدُومٌ مِنْ بَارِيسَ</span>"],e:"مؤنث کے لیے تاء مربوطہ: <span class='ar'>قَادِم ← قَادِمَة</span>۔"},
+tb31:{q:"تحریر میں <span class='ar'>يُمْكِنُكَ أَنْ تَخْرُجَ</span> کا مطلب؟",o:["آپ جا سکتے ہیں","آپ کو جانا پڑے گا","آپ نہیں جا سکتے","آپ کب جائیں گے؟"],e:"<span class='ar'>يُمْكِنُكَ</span> = آپ کے لیے ممکن ہے۔ دوسرا انداز: <span class='ar'>يُمْكِنُكَ الخُرُوجُ</span>۔"},
+tb32:{q:"”کون سے ریستوران میں؟“ لکھنے کی صحیح شکل؟",o:["<span class='ar'>فِي أَيِّ مَطْعَمٍ؟</span>","<span class='ar'>فِي أَيَّ مَطْعَمٌ؟</span>","<span class='ar'>فِي أَيُّ مَطْعَمٌ؟</span>","<span class='ar'>فِي أَيِّ مَطْعَمُ؟</span>"],e:"<span class='ar'>أَيّ</span> کے بعد اسم ہمیشہ مجرور (زیر) — لکھتے وقت یہ سن کر پتا چل جاتا ہے۔"},
 tb33:{q:"<span class='ar'>اِسْتَخْرَجَ</span> کا مطلب اور اس کا امر؟",o:["نکلوانا / جاری کروانا · امر: <span class='ar'>اِسْتَخْرِجْ</span>","خرچ کرنا · امر: <span class='ar'>اُخْرُجْ</span>","باہر نکلنا · امر: <span class='ar'>اِخْرَجْ</span>","تلاش کرنا · امر: <span class='ar'>اِسْتَخْبِرْ</span>"],e:"جیسے <span class='ar'>اِسْتَخْرَجَ التَّأْشِيرَةَ</span> = ویزا نکلوایا۔"},
-tb34:{q:"اعلان میں <span class='ar'>سُرْعَةُ التَّوَجُّهِ إِلَى بَوَّابَةِ الخُرُوجِ</span> سنائی دے تو کیا کرنا ہے؟",o:["جلدی ایگزٹ گیٹ کی طرف جانا ہے","گیٹ پر انتظار کرنا ہے","سامان واپس لینا ہے","ٹکٹ دکھانا ہے"],e:"<span class='ar'>سُرْعَة</span> جلدی، <span class='ar'>تَوَجُّه</span> رخ کرنا، <span class='ar'>بَوَّابَةُ الخُرُوجِ</span> ایگزٹ گیٹ۔"},
-tb35:{q:"کسی کو ”جوس لے لیجیے“ کہنے کے لیے؟",o:["<span class='ar'>تَنَاوَلْ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>اِشْتَرِ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>بِعْ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>اُنْظُرْ عَصِيرَ الفَوَاكِهِ</span>"],e:"<span class='ar'>تَنَاوَلَ / يَتَنَاوَلُ / تَنَاوَلْ</span> = لینا / کھانا پینا۔"},
+tb34:{q:"<span class='ar'>سُرْعَةُ التَّوَجُّهِ إِلَى بَوَّابَةُ الخُرُوجِ</span> — اس میں ایک اعرابی غلطی ہے۔ درست شکل؟",o:["<span class='ar'>إِلَى بَوَّابَةِ الخُرُوجِ</span>","<span class='ar'>إِلَى بَوَّابَةً الخُرُوجِ</span>","<span class='ar'>إِلَى بَوَّابَةَ الخُرُوجُ</span>","<span class='ar'>إِلَى بَوَّابَةُ الخُرُوجَ</span>"],e:"<span class='ar'>إِلَى</span> حرفِ جار ہے تو <span class='ar'>بَوَّابَة</span> مجرور ہوگی؛ اور وہی مضاف ہے اس لیے <span class='ar'>الخُرُوج</span> بھی مجرور — مضاف پر تنوین بھی نہیں آتی۔"},
+tb35:{q:"کسی کو ”جوس لے لیجیے“ لکھنے کے لیے؟",o:["<span class='ar'>تَنَاوَلْ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>اِشْتَرِ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>بِعْ عَصِيرَ الفَوَاكِهِ</span>","<span class='ar'>اُنْظُرْ عَصِيرَ الفَوَاكِهِ</span>"],e:"<span class='ar'>تَنَاوَلَ / يَتَنَاوَلُ / تَنَاوَلْ</span> = لینا / کھانا پینا۔"},
 tb36:{q:"<span class='ar'>الجَمَارِك</span> کا مطلب؟",o:["کسٹم","امیگریشن","بیگیج کلیم","ڈیوٹی فری"],e:"سبق ۵ کسٹم کے مکالمے پر ہے — وہاں <span class='ar'>اِفْتَحْ / أَقْفِلْ</span> کے حکم آتے ہیں۔"},
-tb37:{q:"”کیا آپ کے پاس کوئی ممنوع چیز ہے؟“ پوچھنے کا انداز؟",o:["<span class='ar'>هَلْ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>مَتَى مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>أَيْنَ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>كَمْ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>"],e:"<span class='ar'>هَلْ</span> سے ہاں/نہیں والا سوال بنتا ہے؛ <span class='ar'>مَمْنُوع</span> = ممنوع۔"},
+tb37:{q:"”کیا آپ کے پاس کوئی ممنوع چیز ہے؟“ لکھنے کا صحیح انداز؟",o:["<span class='ar'>هَلْ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>مَتَى مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>أَيْنَ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>","<span class='ar'>كَمْ مَعَكَ شَيْءٌ مَمْنُوعٌ؟</span>"],e:"<span class='ar'>هَلْ</span> سے ہاں/نہیں والا سوال بنتا ہے؛ <span class='ar'>مَمْنُوع</span> = ممنوع۔"},
 tb38:{q:"”مجھے یونیورسٹی ایڈمنسٹریشن لے چلیں“ — صحیح جملہ؟",o:["<span class='ar'>خُذْنِي إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>اِذْهَبْ مِنْ إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>أَعْرِفُ إِدَارَةَ الجَامِعَةِ</span>","<span class='ar'>أَيْنَ إِدَارَةُ الجَامِعَةِ</span>"],e:"<span class='ar'>أَخَذَ / يَأْخُذُ / خُذْ</span> = لے جانا؛ <span class='ar'>ـنِي</span> = مجھے۔"},
 tb39:{q:"<span class='ar'>السَّكَنُ الجَامِعِيُّ</span> کا مطلب؟",o:["یونیورسٹی ہاسٹل / رہائش گاہ","یونیورسٹی کا دفتر","یونیورسٹی کا میدان","یونیورسٹی کی لائبریری"],e:"<span class='ar'>سَكَن</span> = رہنے کی جگہ، <span class='ar'>جَامِعِيّ</span> = یونیورسٹی کا۔"},
-tb40:{q:"زبانی امتحان میں ”سفر کے مراحل ترتیب سے بتائیں“ — سبق ۱ تا ۶ کی صحیح ترتیب؟",o:["ٹکٹ/ویزا ← بکنگ ← وزن و بورڈنگ ← ایئرپورٹ ندا ← کسٹم ← ٹیکسی","کسٹم ← ٹیکسی ← بکنگ ← ٹکٹ ← ایئرپورٹ ندا ← وزن","بکنگ ← ٹیکسی ← ٹکٹ ← کسٹم ← ایئرپورٹ ندا ← وزن","ٹیکسی ← وزن ← کسٹم ← بکنگ ← ٹکٹ ← ایئرپورٹ ندا"],e:"یہ کورس کے اسباق کی ترتیب ہے — زبانی میں پورا سفر اسی ترتیب سے بیان کرنا آسان رہتا ہے۔"},
+tb40:{q:"ان الفاظ کو ترتیب دے کر درست جملہ لکھیے: <span class='ar'>الرِّيَاضِ / بِالطَّائِرَةِ / أَحْمَدُ / سَافَرَ / إِلَى</span>",o:["<span class='ar'>سَافَرَ أَحْمَدُ بِالطَّائِرَةِ إِلَى الرِّيَاضِ</span>","<span class='ar'>سَافَرَ أَحْمَدُ إِلَى الطَّائِرَةِ بِالرِّيَاضِ</span>","<span class='ar'>سَافَرَتْ أَحْمَدُ بِالطَّائِرَةِ إِلَى الرِّيَاضِ</span>","<span class='ar'>سَافَرَ أَحْمَدُ بِالطَّائِرَةَ إِلَى الرِّيَاضُ</span>"],e:"جملہ فعلیہ کی ترتیب: فعل ← فاعل ← باقی متعلقات۔ سواری کے لیے <span class='ar'>بِـ</span> اور منزل کے لیے <span class='ar'>إِلَى</span> — اور حرفِ جار کے بعد ہمیشہ زیر۔"},
 
 tb50:{q:"پورا جملہ: ”میں اگلے ہفتے ریاض کے لیے بکنگ کرنا چاہتا ہوں“",o:["<span class='ar'>أُرِيدُ أَنْ أَحْجِزَ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ أَحْجِزُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ أَنْ حَجَزْتُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>","<span class='ar'>أُرِيدُ الحَجْزُ لِلرِّيَاضِ فِي الأُسْبُوعِ القَادِمِ</span>"],e:"<span class='ar'>أَنْ</span> کے بعد فعل منصوب: <span class='ar'>أَحْجِزَ</span>۔ مصدر سے بولنا ہو تو <span class='ar'>أُرِيدُ الحَجْزَ</span>۔"},
 tb51:{q:"”رشید نے ابھی تک ویزا نہیں نکلوایا“ — صحیح نفی والا جملہ؟",o:["<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجْ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجُ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ اسْتَخْرَجَ التَّأْشِيرَةَ</span>","<span class='ar'>رَشِيدٌ لَمْ يَسْتَخْرِجَ التَّأْشِيرَةَ</span>"],e:"<span class='ar'>لَمْ</span> ماضی کی نفی کرتا ہے مگر فعل مضارع مجزوم (سکون) ہو جاتا ہے۔"},
-tb52:{q:"”میرے پاس نوے ریال ہیں“ — بولتے وقت صحیح عدد؟",o:["<span class='ar'>مَعِي تِسْعُونَ رِيَالاً</span>","<span class='ar'>مَعِي تِسْعِينَ رِيَالاً</span>","<span class='ar'>مَعِي تِسْعُونَ رِيَالٍ</span>","<span class='ar'>مَعِي تِسْعِينَ رِيَالٌ</span>"],e:"یہاں عدد مبتدا ہے تو مرفوع (ـون)۔ لیکن <span class='ar'>اِدْفَعْ تِسْعِينَ رِيَالاً</span> میں مفعول ہونے سے منصوب (ـین)۔"},
+tb52:{q:"”میرے پاس نوے ریال ہیں“ — لکھتے وقت صحیح عدد؟",o:["<span class='ar'>مَعِي تِسْعُونَ رِيَالاً</span>","<span class='ar'>مَعِي تِسْعِينَ رِيَالاً</span>","<span class='ar'>مَعِي تِسْعُونَ رِيَالٍ</span>","<span class='ar'>مَعِي تِسْعِينَ رِيَالٌ</span>"],e:"یہاں عدد مبتدا ہے تو مرفوع (ـون)۔ لیکن <span class='ar'>اِدْفَعْ تِسْعِينَ رِيَالاً</span> میں مفعول ہونے سے منصوب (ـین)۔"},
 tb53:{q:"”آپ جدہ سے آئے ہیں؟“ — جدہ کے ساتھ صحیح اعراب؟",o:["<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةَ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةٍ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةُ؟</span>","<span class='ar'>هَلْ أَنْتَ قَادِمٌ مِنْ جِدَّةً؟</span>"],e:"<span class='ar'>جِدَّة، أَنْقَرَة، عَمَّان</span> ممنوع من الصرف ہیں — حرفِ جر کے بعد بھی فتحہ پر بولتے ہیں۔"},
 tb54:{q:"<span class='ar'>مَتَى نَوْمُكَ؟</span> کا مطلب کیا ہے؟",o:["آپ کب سوتے ہیں؟ (فعل کی جگہ مصدر)","آپ کہاں سوتے ہیں؟","آپ کتنا سوتے ہیں؟","آپ کس کے ساتھ سوتے ہیں؟"],e:"<span class='ar'>مَتَى تَنَامُ؟</span> کو مصدر کے ساتھ <span class='ar'>مَتَى نَوْمُكَ؟</span> بھی بولا جاتا ہے۔"},
-tb55:{q:"کسٹم پر بیگ کھولنے کے بعد افسر کیا کہتا ہے اور پھر کیا؟",o:["<span class='ar'>أَقْفِلْهَا</span> پھر <span class='ar'>يُمْكِنُكَ أَنْ تَخْرُجَ</span>","<span class='ar'>اِفْتَحْهَا</span> پھر <span class='ar'>اِدْفَعْ</span>","<span class='ar'>اِحْجِزْ</span> پھر <span class='ar'>أَقْفِلْهَا</span>","<span class='ar'>اُدْخُلْ</span> پھر <span class='ar'>اِفْتَحْهَا</span>"],e:"سبق ۵: <span class='ar'>اِفْتَحِ الحَقِيبَةَ … أَقْفِلْهَا … يُمْكِنُكَ أَنْ تَخْرُجَ</span>۔"},
-tb56:{q:"<span class='ar'>مُقْفِلُ الحَقِيبَةِ</span> میں دوسرے لفظ پر زیر کیوں آتی ہے؟",o:["اسم الفاعل اور اس کا مفعول مل کر اضافت بنا رہے ہیں","اس پر حرفِ جر آیا ہے","وہ مبتدا ہے","وہ ممنوع من الصرف ہے"],e:"یہ پیٹرن بول چال میں بہت آتا ہے: <span class='ar'>فَاتِحُ البَابِ، حَامِلُ الحَقِيبَةِ</span>۔"},
+tb55:{q:"رپورٹ میں لکھنا ہے ”آفیسر نے بیگ کھولا، پھر اسے بند کر دیا“ — صحیح عربی؟",o:["<span class='ar'>فَتَحَ الضَّابِطُ الحَقِيبَةَ ثُمَّ أَقْفَلَهَا</span>","<span class='ar'>فَتَحَ الضَّابِطُ الحَقِيبَةَ ثُمَّ أَقْفَلَهُ</span>","<span class='ar'>فَتَحَ الضَّابِطَ الحَقِيبَةُ ثُمَّ أَقْفَلَهَا</span>","<span class='ar'>يَفْتَحُ الضَّابِطُ الحَقِيبَةَ ثُمَّ أَقْفَلَهَا</span>"],e:"<span class='ar'>حَقِيبَة</span> مونث ہے اس لیے ضمیر بھی مونث: <span class='ar'>ـهَا</span>۔ فاعل مرفوع، مفعول منصوب، اور گزرے ہوئے دو کام دونوں ماضی میں۔"},
+tb56:{q:"<span class='ar'>مُقْفِلُ الحَقِيبَةِ</span> میں دوسرے لفظ پر زیر کیوں آتی ہے؟",o:["اسم الفاعل اور اس کا مفعول مل کر اضافت بنا رہے ہیں","اس پر حرفِ جر آیا ہے","وہ مبتدا ہے","وہ ممنوع من الصرف ہے"],e:"یہ پیٹرن تحریر میں بہت آتا ہے: <span class='ar'>فَاتِحُ البَابِ، حَامِلُ الحَقِيبَةِ</span>۔"},
 tb57:{q:"”مسافروں نے ندا سنی“ — فاعل جمع ہے، مگر فعل کیسا رہے گا؟",o:["فعل واحد ہی رہے گا: <span class='ar'>سَمِعَ المُسَافِرُونَ النِّدَاءَ</span>","فعل جمع ہوگا: <span class='ar'>سَمِعُوا المُسَافِرُونَ النِّدَاءَ</span>","فعل تثنیہ ہوگا","فعل حذف ہو جائے گا"],e:"فعل-فاعل ترتیب میں جب فاعل صراحتاً ذکر ہو تو فعل واحد رہتا ہے۔"},
-tb58:{q:"سبق ۴ کے ایئرپورٹ اعلان میں فلائٹ اور گیٹ نمبر؟",o:["فلائٹ <span class='ar'>رَقْم ٩٠</span> · گیٹ <span class='ar'>رَقْم ٣</span>","فلائٹ <span class='ar'>رَقْم ٣</span> · گیٹ <span class='ar'>رَقْم ٩٠</span>","فلائٹ <span class='ar'>رَقْم ٩</span> · گیٹ <span class='ar'>رَقْم ١٠</span>","فلائٹ <span class='ar'>رَقْم ١٠</span> · گیٹ <span class='ar'>رَقْم ٩</span>"],e:"<span class='ar'>الخُطُوط العَرَبِيَّة السُّعُودِيَّة</span> نے فلائٹ ۹۰ کا اعلان کیا اور گیٹ نمبر ۳ بتایا۔"},
+tb58:{q:"“Flight number” کو اضافت کے ساتھ لکھنے کی صحیح شکل؟",o:["<span class='ar'>رَقْمُ الرِّحْلَةِ</span>","<span class='ar'>الرَّقْمُ الرِّحْلَةِ</span>","<span class='ar'>رَقْمٌ الرِّحْلَةِ</span>","<span class='ar'>رَقْمُ الرِّحْلَةُ</span>"],e:"اضافت کا قاعدہ: مضاف پر نہ <span class='ar'>ال</span> آتی ہے نہ تنوین، اور مضاف الیہ ہمیشہ مجرور۔ اسی طرح <span class='ar'>رَقْمُ البَوَّابَةِ</span> = گیٹ نمبر۔"},
 tb59:{q:"”میں اس (ادارہ) کو نہیں جانتا“ — صحیح ضمیر؟",o:["<span class='ar'>لا أَعْرِفُهَا</span>","<span class='ar'>لا أَعْرِفُهُ</span>","<span class='ar'>لا أَعْرِفُهُمْ</span>","<span class='ar'>لا أَعْرِفُهُنَّ</span>"],e:"تاء مربوطہ والی جگہیں (<span class='ar'>إِدَارَة، صَالَة، بَوَّابَة</span>) مؤنث ہیں ← <span class='ar'>ـهَا</span>۔"},
-tb60:{q:"<span class='ar'>مِنْ أَيْنَ اسْتَخْرَجَ مَحْمُودٌ تَأْشِيرَةَ الخُرُوجِ؟</span> — صحیح جواب؟",o:["<span class='ar'>مِنْ وِزَارَةِ الدَّاخِلِيَّةِ</span>","<span class='ar'>مِنَ السَّفَارَةِ</span>","<span class='ar'>مِنَ المَطَارِ</span>","<span class='ar'>مِنْ مَكْتَبِ الحَجْزِ</span>"],e:"انٹری ویزا سفارت خانے کے موظف سے ملا، ایگزٹ ویزا <span class='ar'>وِزَارَة الدَّاخِلِيَّة</span> (وزارتِ داخلہ) سے۔"},
+tb60:{q:"درخواست میں لکھنا ہے ”میں نے وزارتِ داخلیہ سے ایگزٹ ویزا حاصل کیا“ — صحیح جملہ؟",o:["<span class='ar'>حَصَلْتُ عَلَى تَأْشِيرَةِ الخُرُوجِ مِنْ وِزَارَةِ الدَّاخِلِيَّةِ</span>","<span class='ar'>حَصَلْتُ تَأْشِيرَةَ الخُرُوجِ مِنْ وِزَارَةِ الدَّاخِلِيَّةِ</span>","<span class='ar'>حَصَلْتُ عَلَى تَأْشِيرَةُ الخُرُوجِ مِنْ وِزَارَةُ الدَّاخِلِيَّةِ</span>","<span class='ar'>أَحْصُلُ عَلَى تَأْشِيرَةِ الخُرُوجِ مِنْ وِزَارَةِ الدَّاخِلِيَّةِ</span>"],e:"<span class='ar'>حَصَلَ</span> کے ساتھ <span class='ar'>عَلَى</span> لازمی ہے۔ دونوں اضافتیں مجرور، اور گزرا ہوا کام ماضی میں۔"},
 
 /* ---------- AL-QIRA'AH WAL-KITABAH ---------- */
 qr1:{q:"<span class='ar'>طَبِيب</span> کی جمع؟",o:["<span class='ar'>أَطِبَّاء</span>","<span class='ar'>طَبِيبُون</span>","<span class='ar'>طُبُب</span>","<span class='ar'>طِبَاب</span>"],e:"<span class='ar'>طَبِيب – طَبِيبَان – أَطِبَّاء</span> = ڈاکٹر۔"},
@@ -3213,10 +3214,10 @@ add({id:"tbv9",d:"easy",t:"vocab",r:"Lesson 1 · Lughat",a:0,
 add({id:"tbv10",d:"easy",t:"vocab",r:"Lesson 1 · Lughat",a:0,
  q:"<span class='ar'>الآنَ</span> ka matlab?",
  o:["Ab / is waqt","Kal","Phir","Pehle"],
- e:"Yeh Zarf-e-Zaman hai aur hamesha mansoob (<span class='ar'>الآنَ</span>) bolte hain. Misal: <span class='ar'>الآنَ أَذْهَبُ إِلَى السِّفَارَةِ</span>.",
+ e:"Yeh Zarf-e-Zaman hai aur hamesha mansoob (<span class='ar'>الآنَ</span>) likhte hain. Misal: <span class='ar'>الآنَ أَذْهَبُ إِلَى السِّفَارَةِ</span>.",
  uq:"<span class='ar'>الآنَ</span> کا مطلب؟",
  uo:["اب / اس وقت","کل","پھر","پہلے"],
- ue:"یہ ظرفِ زمان ہے اور ہمیشہ منصوب (<span class='ar'>الآنَ</span>) بولتے ہیں۔ مثال: <span class='ar'>الآنَ أَذْهَبُ إِلَى السِّفَارَةِ</span>۔"});
+ ue:"یہ ظرفِ زمان ہے اور ہمیشہ منصوب (<span class='ar'>الآنَ</span>) لکھتے ہیں۔ مثال: <span class='ar'>الآنَ أَذْهَبُ إِلَى السِّفَارَةِ</span>۔"});
 
 /* ---------- LESSON 2 · في مكتب الحجز ---------- */
 add({id:"tbv11",d:"easy",t:"vocab",r:"Lesson 2 · Lughat",a:0,
@@ -3254,10 +3255,10 @@ add({id:"tbv14",d:"easy",t:"vocab",r:"Lesson 2 · Lughat",a:0,
 add({id:"tbv15",d:"easy",t:"vocab",r:"Lesson 2 · Lughat",a:0,
  q:"<span class='ar'>تَأْكِيدُ الحَجْزِ</span> ka matlab?",
  o:["Booking confirm karna","Booking cancel karna","Booking badalna","Booking ki qeemat"],
- e:"Fi'l: <span class='ar'>أَكَّدَ / يُؤَكِّدُ</span>. Muwazzaf kehta hai: safar se ek din pehle confirm karein.",
+ e:"Fi'l: <span class='ar'>أَكَّدَ / يُؤَكِّدُ</span>. Form par likha hai: safar se ek din pehle confirm karein.",
  uq:"<span class='ar'>تَأْكِيدُ الحَجْزِ</span> کا مطلب؟",
  uo:["بکنگ کنفرم کرنا","بکنگ کینسل کرنا","بکنگ بدلنا","بکنگ کی قیمت"],
- ue:"فعل: <span class='ar'>أَكَّدَ / يُؤَكِّدُ</span>۔ موظف کہتا ہے: سفر سے ایک دن پہلے کنفرم کریں۔"});
+ ue:"فعل: <span class='ar'>أَكَّدَ / يُؤَكِّدُ</span>۔ فارم پر لکھا ہے: سفر سے ایک دن پہلے کنفرم کریں۔"});
 
 add({id:"tbv16",d:"easy",t:"vocab",r:"Lesson 2 · Lughat",a:0,
  q:"<span class='ar'>مَوْعِدٌ</span> ka matlab?",
@@ -3295,10 +3296,10 @@ add({id:"tbv19",d:"easy",t:"vocab",r:"Lesson 3 · Lughat",a:0,
 add({id:"tbv20",d:"easy",t:"vocab",r:"Lesson 3 · Lughat",a:0,
  q:"<span class='ar'>مَلأَ / يَمْلأُ / اِمْلأْ</span> ka matlab?",
  o:["Bharna — bhara / bharta hai / bharo","Khali karna","Phaarna","Band karna"],
- e:"Bol-chaal: <span class='ar'>اِمْلأْ هَذِهِ البِطَاقَةَ</span> — yeh card bhariye.",
+ e:"Tahreer: <span class='ar'>اِمْلأْ هَذِهِ البِطَاقَةَ</span> — yeh card bhariye.",
  uq:"<span class='ar'>مَلأَ / يَمْلأُ / اِمْلأْ</span> کا مطلب؟",
  uo:["بھرنا — بھرا / بھرتا ہے / بھرو","خالی کرنا","پھاڑنا","بند کرنا"],
- ue:"بول چال: <span class='ar'>اِمْلأْ هَذِهِ البِطَاقَةَ</span> — یہ کارڈ بھریے۔"});
+ ue:"تحریر: <span class='ar'>اِمْلأْ هَذِهِ البِطَاقَةَ</span> — یہ کارڈ بھریے۔"});
 
 add({id:"tbv21",d:"easy",t:"vocab",r:"Lesson 3 · Lughat",a:0,
  q:"<span class='ar'>بَهْوٌ</span> ka hum-maana lafz kaunsa hai?",
@@ -3308,19 +3309,19 @@ add({id:"tbv21",d:"easy",t:"vocab",r:"Lesson 3 · Lughat",a:0,
  uo:["<span class='ar'>صَالَةٌ</span> — ہال / لاؤنج","<span class='ar'>بَوَّابَةٌ</span> — گیٹ","<span class='ar'>مِيزَانٌ</span> — ترازو","<span class='ar'>مَوْقِفٌ</span> — اسٹینڈ"],
  ue:"سبق ۳ کا عنوان <span class='ar'>فِي بَهْوِ (صَالَةِ) السَّفَرِ</span> ہے — کتاب خود دونوں لفظ برابر دیتی ہے۔"});
 
-add({id:"tbv22",d:"easy",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
- q:"Kisi se shareefana andaz mein kuch kehna ho — “Zara meharbani” ke liye kaunsa jumla?",
+add({id:"tbv22",d:"easy",t:"write",r:"Lesson 3 · Tahreer",a:0,
+ q:"Kisi se shareefana andaz mein kuch likhna ho — “Zara meharbani” ke liye kaunsa jumla?",
  o:["<span class='ar'>لَوْ سَمَحْتَ</span>","<span class='ar'>مَعَ الأَسَفِ</span>","<span class='ar'>عَلَى الأَقَلِّ</span>","<span class='ar'>بِمَشِيئَةِ اللهِ</span>"],
- e:"Khatoon se kahenge: <span class='ar'>لَوْ سَمَحْتِ</span>. Lafzi matlab: “agar aap ijazat dein”.",
- uq:"کسی سے شریفانہ انداز میں کچھ کہنا ہو — ”ذرا مہربانی“ کے لیے کون سا جملہ؟",
+ e:"Khatoon ke liye: <span class='ar'>لَوْ سَمَحْتِ</span>. Lafzi matlab: “agar aap ijazat dein”.",
+ uq:"کسی سے شریفانہ انداز میں کچھ لکھنا ہو — ”ذرا مہربانی“ کے لیے کون سا جملہ؟",
  uo:["<span class='ar'>لَوْ سَمَحْتَ</span>","<span class='ar'>مَعَ الأَسَفِ</span>","<span class='ar'>عَلَى الأَقَلِّ</span>","<span class='ar'>بِمَشِيئَةِ اللهِ</span>"],
- ue:"خاتون سے کہیں گے: <span class='ar'>لَوْ سَمَحْتِ</span>۔ لفظی مطلب: ”اگر آپ اجازت دیں“۔"});
+ ue:"خاتون کے لیے: <span class='ar'>لَوْ سَمَحْتِ</span>۔ لفظی مطلب: ”اگر آپ اجازت دیں“۔"});
 
-add({id:"tbv23",d:"easy",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
- q:"Koi kaam karne ko kahe to “bakhushi / with pleasure” kaise kahenge?",
+add({id:"tbv23",d:"easy",t:"write",r:"Lesson 3 · Tahreer",a:0,
+ q:"Koi kaam karne ko kahe to “bakhushi / with pleasure” kaise likhenge?",
  o:["<span class='ar'>بِكُلِّ سُرُورٍ</span>","<span class='ar'>مَعَ السَّلامَةِ</span>","<span class='ar'>لا أَعْرِفُهُ</span>","<span class='ar'>عَلَى الأَقَلِّ</span>"],
  e:"<span class='ar'>سُرُور</span> = khushi. Poora andaz: <span class='ar'>بِكُلِّ سُرُورٍ</span> — har tarah ki khushi ke saath.",
- uq:"کوئی کام کرنے کو کہے تو ”بخوشی / with pleasure“ کیسے کہیں گے؟",
+ uq:"کوئی کام کرنے کو کہے تو ”بخوشی / with pleasure“ کیسے لکھیں گے؟",
  uo:["<span class='ar'>بِكُلِّ سُرُورٍ</span>","<span class='ar'>مَعَ السَّلامَةِ</span>","<span class='ar'>لا أَعْرِفُهُ</span>","<span class='ar'>عَلَى الأَقَلِّ</span>"],
  ue:"<span class='ar'>سُرُور</span> = خوشی۔ پورا انداز: <span class='ar'>بِكُلِّ سُرُورٍ</span> — ہر طرح کی خوشی کے ساتھ۔"});
 
@@ -3332,11 +3333,11 @@ add({id:"tbv24",d:"easy",t:"vocab",r:"Lesson 3 · Lughat",a:0,
  uo:["پاسپورٹ آفیسر / جوازات کا ملازم","کسٹمز آفیسر","پائلٹ","ٹیکسی ڈرائیور"],
  ue:"<span class='ar'>مُوَظَّف</span> = ملازم/آفیسر؛ <span class='ar'>جَوَازَات</span> = <span class='ar'>جَوَاز</span> کی جمع۔"});
 
-add({id:"tbv25",d:"easy",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
- q:"Counter se rukhsat hote waqt kaunsa jumla bolte hain?",
+add({id:"tbv25",d:"easy",t:"write",r:"Lesson 3 · Tahreer",a:0,
+ q:"Counter se rukhsat hote waqt kaunsa jumla likhte hain?",
  o:["<span class='ar'>شُكْراً، مَعَ السَّلامَةِ</span>","<span class='ar'>لَوْ سَمَحْتَ</span>","<span class='ar'>مَتَى تُسَافِرُ؟</span>","<span class='ar'>اِدْفَعْ خَمْسِينَ دُولاراً</span>"],
  e:"<span class='ar'>مَعَ السَّلامَةِ</span> = Allah hafiz. Isi tarah <span class='ar'>رَافَقَتْكَ السَّلامَةُ</span> bhi rukhsat ka jumla hai.",
- uq:"کاؤنٹر سے رخصت ہوتے وقت کون سا جملہ بولتے ہیں؟",
+ uq:"کاؤنٹر سے رخصت ہوتے وقت کون سا جملہ لکھتے ہیں؟",
  uo:["<span class='ar'>شُكْراً، مَعَ السَّلامَةِ</span>","<span class='ar'>لَوْ سَمَحْتَ</span>","<span class='ar'>مَتَى تُسَافِرُ؟</span>","<span class='ar'>اِدْفَعْ خَمْسِينَ دُولاراً</span>"],
  ue:"<span class='ar'>مَعَ السَّلامَةِ</span> = اللہ حافظ۔ اسی طرح <span class='ar'>رَافَقَتْكَ السَّلامَةُ</span> بھی رخصت کا جملہ ہے۔"});
 
@@ -3373,7 +3374,7 @@ add({id:"tbv29",d:"easy",t:"vocab",r:"Lesson 4 · Lughat",a:0,
  uo:["سامان / لگیج","خرچہ","پرچہ","کاغذات"],
  ue:"ہم معنی: <span class='ar'>أَمْتِعَة</span> اور <span class='ar'>حَقَائِب</span>۔ مثال: <span class='ar'>سَلَّمَ العَفْشَ</span> — سامان جمع کرایا۔"});
 
-add({id:"tbv30",d:"easy",t:"speak",r:"Lesson 4 · Bol-chaal",a:0,
+add({id:"tbv30",d:"easy",t:"write",r:"Lesson 4 · Tahreer",a:0,
  q:"<span class='ar'>بِمَشِيئَةِ اللهِ</span> ka matlab aur iska hum-maana jumla?",
  o:["In sha Allah — Allah ki marzi se · <span class='ar'>إِنْ شَاءَ اللهُ</span>","Al-hamdu lillah · <span class='ar'>الحَمْدُ لِلهِ</span>","Ma sha Allah · <span class='ar'>مَا شَاءَ اللهُ</span>","Jazak Allah · <span class='ar'>جَزَاكَ اللهُ</span>"],
  e:"<span class='ar'>مَشِيئَة</span> = marzi/iradah. Mustaqbil ki baat karte waqt yeh lagana sunnat ka andaz hai.",
@@ -3393,10 +3394,10 @@ add({id:"tbv31",d:"easy",t:"vocab",r:"Lesson 5 · Lughat",a:0,
 add({id:"tbv32",d:"easy",t:"vocab",r:"Lesson 5 · Lughat",a:0,
  q:"<span class='ar'>رَكِبَ / يَرْكَبُ</span> aur <span class='ar'>نَزَلَ / يَنْزِلُ</span> — tarteeb se matlab?",
  o:["Sawar hona aur utarna","Utarna aur sawar hona","Chalana aur rokna","Dekhna aur jana"],
- e:"Bol-chaal: <span class='ar'>رَكِبَ الحَافِلَةَ</span> = bus mein baitha; <span class='ar'>نَزَلَ مِنَ الحَافِلَةِ</span> = bus se utra.",
+ e:"Tahreer: <span class='ar'>رَكِبَ الحَافِلَةَ</span> = bus mein baitha; <span class='ar'>نَزَلَ مِنَ الحَافِلَةِ</span> = bus se utra.",
  uq:"<span class='ar'>رَكِبَ / يَرْكَبُ</span> اور <span class='ar'>نَزَلَ / يَنْزِلُ</span> — ترتیب سے مطلب؟",
  uo:["سوار ہونا اور اترنا","اترنا اور سوار ہونا","چلانا اور روکنا","دیکھنا اور جانا"],
- ue:"بول چال: <span class='ar'>رَكِبَ الحَافِلَةَ</span> = بس میں بیٹھا؛ <span class='ar'>نَزَلَ مِنَ الحَافِلَةِ</span> = بس سے اترا۔"});
+ ue:"تحریر: <span class='ar'>رَكِبَ الحَافِلَةَ</span> = بس میں بیٹھا؛ <span class='ar'>نَزَلَ مِنَ الحَافِلَةِ</span> = بس سے اترا۔"});
 
 add({id:"tbv33",d:"easy",t:"vocab",r:"Lesson 5 · Lughat",a:0,
  q:"<span class='ar'>فَحَصَ / يَفْحَصُ</span> ka matlab?",
@@ -3422,7 +3423,7 @@ add({id:"tbv35",d:"easy",t:"vocab",r:"Lesson 5 · Lughat",a:0,
  uo:["بند کرنا (تالا لگانا) · <span class='ar'>أَقْفِلْ</span>","کھولنا · <span class='ar'>اِفْتَحْ</span>","رکھنا · <span class='ar'>ضَعْ</span>","اٹھانا · <span class='ar'>اِرْفَعْ</span>"],
  ue:"کسٹمز پر ترتیب یہی ہوتی ہے: <span class='ar'>اِفْتَحِ الحَقِيبَةَ</span> ← پھر <span class='ar'>أَقْفِلْهَا</span>۔"});
 
-add({id:"tbv36",d:"easy",t:"speak",r:"Lesson 5 · Bol-chaal",a:0,
+add({id:"tbv36",d:"easy",t:"write",r:"Lesson 5 · Tahreer",a:0,
  q:"<span class='ar'>إِلَى أَيْنَ هُوَ مُسَافِرٌ؟</span> ka matlab?",
  o:["Woh kahan ja raha hai?","Woh kahan se aa raha hai?","Woh kab safar karega?","Woh kis ke saath hai?"],
  e:"Jorh kar yaad karein: <span class='ar'>مِنْ أَيْنَ أَنْتَ قَادِمٌ؟</span> = kahan se aa rahe hain, aur <span class='ar'>إِلَى أَيْنَ أَنْتَ مُسَافِرٌ؟</span> = kahan ja rahe hain.",
@@ -3456,7 +3457,7 @@ add({id:"tbv39",d:"easy",t:"vocab",r:"Lesson 6 · Lughat",a:0,
  ue:"<span class='ar'>شَاكِر</span> اسم الفاعل ہے اور <span class='ar'>مَشْكُور</span> اسم المفعول — مصدر صرف <span class='ar'>شُكْر</span> ہے۔"});
 
 /* ============================ MEDIUM ============================ */
-add({id:"tbv40",d:"medium",t:"speak",r:"Lesson 1 · Zamair",a:0,
+add({id:"tbv40",d:"medium",t:"write",r:"Lesson 1 · Zamair",a:0,
  q:"Do mardon se, kai mardon se, aur kai auraton se “aap” — tarteeb se sahih zamair?",
  o:["<span class='ar'>أَنْتُمَا</span> · <span class='ar'>أَنْتُمْ</span> · <span class='ar'>أَنْتُنَّ</span>","<span class='ar'>أَنْتُمْ</span> · <span class='ar'>أَنْتُمَا</span> · <span class='ar'>أَنْتُنَّ</span>","<span class='ar'>أَنْتُنَّ</span> · <span class='ar'>أَنْتُمْ</span> · <span class='ar'>أَنْتُمَا</span>","<span class='ar'>أَنْتُمَا</span> · <span class='ar'>أَنْتُنَّ</span> · <span class='ar'>أَنْتُمْ</span>"],
  e:"<span class='ar'>أَنْتُمَا</span> mard aur aurat dono ke tasniya ke liye chalta hai — isi liye uski alag muannas shakl nahi hai.",
@@ -3464,7 +3465,7 @@ add({id:"tbv40",d:"medium",t:"speak",r:"Lesson 1 · Zamair",a:0,
  uo:["<span class='ar'>أَنْتُمَا</span> · <span class='ar'>أَنْتُمْ</span> · <span class='ar'>أَنْتُنَّ</span>","<span class='ar'>أَنْتُمْ</span> · <span class='ar'>أَنْتُمَا</span> · <span class='ar'>أَنْتُنَّ</span>","<span class='ar'>أَنْتُنَّ</span> · <span class='ar'>أَنْتُمْ</span> · <span class='ar'>أَنْتُمَا</span>","<span class='ar'>أَنْتُمَا</span> · <span class='ar'>أَنْتُنَّ</span> · <span class='ar'>أَنْتُمْ</span>"],
  ue:"<span class='ar'>أَنْتُمَا</span> مرد اور عورت دونوں کے تثنیہ کے لیے چلتا ہے — اسی لیے اس کی الگ مونث شکل نہیں ہے۔"});
 
-add({id:"tbv41",d:"medium",t:"speak",r:"Lesson 1 · Zamair",a:0,
+add({id:"tbv41",d:"medium",t:"write",r:"Lesson 1 · Zamair",a:0,
  q:"“Woh dono (mard) safar kar rahe hain” — sahih jumla?",
  o:["<span class='ar'>هُمَا يُسَافِرَانِ</span>","<span class='ar'>هُمْ يُسَافِرَانِ</span>","<span class='ar'>هُمَا يُسَافِرُونَ</span>","<span class='ar'>هُنَّ يُسَافِرَانِ</span>"],
  e:"Tasniya ka fi'l <span class='ar'>انِ</span> par khatam hota hai: <span class='ar'>هُمَا يُسَافِرَانِ</span>; jama ke liye <span class='ar'>هُمْ يُسَافِرُونَ</span> aur <span class='ar'>هُنَّ يُسَافِرْنَ</span>.",
@@ -3472,7 +3473,7 @@ add({id:"tbv41",d:"medium",t:"speak",r:"Lesson 1 · Zamair",a:0,
  uo:["<span class='ar'>هُمَا يُسَافِرَانِ</span>","<span class='ar'>هُمْ يُسَافِرَانِ</span>","<span class='ar'>هُمَا يُسَافِرُونَ</span>","<span class='ar'>هُنَّ يُسَافِرَانِ</span>"],
  ue:"تثنیہ کا فعل <span class='ar'>انِ</span> پر ختم ہوتا ہے: <span class='ar'>هُمَا يُسَافِرَانِ</span>؛ جمع کے لیے <span class='ar'>هُمْ يُسَافِرُونَ</span> اور <span class='ar'>هُنَّ يُسَافِرْنَ</span>۔"});
 
-add({id:"tbv42",d:"medium",t:"speak",r:"Lesson 1 · Bol-chaal",a:0,
+add({id:"tbv42",d:"medium",t:"write",r:"Lesson 1 · Tahreer",a:0,
  q:"“Main ne safarat se ticket wasool kar liya” — sahih jumla?",
  o:["<span class='ar'>تَسَلَّمْتُ التَّذْكِرَةَ مِنَ السِّفَارَةِ</span>","<span class='ar'>سَلَّمْتُ التَّذْكِرَةَ مِنَ السِّفَارَةِ</span>","<span class='ar'>أَكْمَلْتُ التَّذْكِرَةَ مِنَ السِّفَارَةِ</span>","<span class='ar'>قَابَلْتُ التَّذْكِرَةَ مِنَ السِّفَارَةِ</span>"],
  e:"Farq yaad rakhein: <span class='ar'>تَسَلَّمَ</span> = wasool karna (lena), magar <span class='ar'>سَلَّمَ</span> = hawale karna (dena).",
@@ -3480,7 +3481,7 @@ add({id:"tbv42",d:"medium",t:"speak",r:"Lesson 1 · Bol-chaal",a:0,
  uo:["<span class='ar'>تَسَلَّمْتُ التَّذْكِرَةَ مِنَ السِّفَارَةِ</span>","<span class='ar'>سَلَّمْتُ التَّذْكِرَةَ مِنَ السِّفَارَةِ</span>","<span class='ar'>أَكْمَلْتُ التَّذْكِرَةَ مِنَ السِّفَارَةِ</span>","<span class='ar'>قَابَلْتُ التَّذْكِرَةَ مِنَ السِّفَارَةِ</span>"],
  ue:"فرق یاد رکھیں: <span class='ar'>تَسَلَّمَ</span> = وصول کرنا (لینا)، مگر <span class='ar'>سَلَّمَ</span> = حوالے کرنا (دینا)۔"});
 
-add({id:"tbv43",d:"medium",t:"speak",r:"Lesson 1 · Bol-chaal",a:0,
+add({id:"tbv43",d:"medium",t:"write",r:"Lesson 1 · Tahreer",a:0,
  q:"“Usne faisla kiya ke exit visa nikalwaye” — sahih jumla?",
  o:["<span class='ar'>قَرَّرَ أَنْ يَسْتَخْرِجَ تَأْشِيرَةَ الخُرُوجِ</span>","<span class='ar'>قَرَّرَ أَنْ يَسْتَخْرِجُ تَأْشِيرَةَ الخُرُوجِ</span>","<span class='ar'>قَرَّرَ يَسْتَخْرِجْ تَأْشِيرَةَ الخُرُوجِ</span>","<span class='ar'>قَرَّرَ أَنِ اسْتَخْرَجَ تَأْشِيرَةَ الخُرُوجِ</span>"],
  e:"<span class='ar'>أَنْ</span> ke baad Muzare mansoob hota hai, isi liye <span class='ar'>يَسْتَخْرِجَ</span> par zabar aayi.",
@@ -3488,21 +3489,21 @@ add({id:"tbv43",d:"medium",t:"speak",r:"Lesson 1 · Bol-chaal",a:0,
  uo:["<span class='ar'>قَرَّرَ أَنْ يَسْتَخْرِجَ تَأْشِيرَةَ الخُرُوجِ</span>","<span class='ar'>قَرَّرَ أَنْ يَسْتَخْرِجُ تَأْشِيرَةَ الخُرُوجِ</span>","<span class='ar'>قَرَّرَ يَسْتَخْرِجْ تَأْشِيرَةَ الخُرُوجِ</span>","<span class='ar'>قَرَّرَ أَنِ اسْتَخْرَجَ تَأْشِيرَةَ الخُرُوجِ</span>"],
  ue:"<span class='ar'>أَنْ</span> کے بعد مضارع منصوب ہوتا ہے، اسی لیے <span class='ar'>يَسْتَخْرِجَ</span> پر زبر آئی۔"});
 
-add({id:"tbv44",d:"medium",t:"vocab",r:"Lesson 1 · Lughat",a:0,
- q:"Jawaz, tasheera aur taleemi mamla — kaunsa daftar kis kaam ka hai?",
- o:["<span class='ar'>وِزَارَةُ الدَّاخِلِيَّةِ</span> → exit visa · <span class='ar'>السِّفَارَةُ</span> → entry visa · <span class='ar'>المُلْحَقُ التَّعْلِيمِيُّ</span> → taleemi mamla","<span class='ar'>السِّفَارَةُ</span> → exit visa · <span class='ar'>وِزَارَةُ الدَّاخِلِيَّةِ</span> → entry visa · <span class='ar'>المُلْحَقُ التَّعْلِيمِيُّ</span> → ticket","<span class='ar'>المُلْحَقُ التَّعْلِيمِيُّ</span> → exit visa · <span class='ar'>السِّفَارَةُ</span> → ticket · <span class='ar'>وِزَارَةُ الدَّاخِلِيَّةِ</span> → taleem","<span class='ar'>وِزَارَةُ الدَّاخِلِيَّةِ</span> → ticket · <span class='ar'>السِّفَارَةُ</span> → taleem · <span class='ar'>المُلْحَقُ التَّعْلِيمِيُّ</span> → visa"],
- e:"Lesson 1 ka khulasa: apne mulk ki Wizarat-e-Dakhiliya se nikalne ka visa, aur jis mulk jana hai uski Sifarat se dakhil hone ka visa.",
- uq:"جواز، تاشیرہ اور تعلیمی معاملہ — کون سا دفتر کس کام کا ہے؟",
- uo:["<span class='ar'>وِزَارَةُ الدَّاخِلِيَّةِ</span> ← ایگزٹ ویزا · <span class='ar'>السِّفَارَةُ</span> ← انٹری ویزا · <span class='ar'>المُلْحَقُ التَّعْلِيمِيُّ</span> ← تعلیمی معاملہ","<span class='ar'>السِّفَارَةُ</span> ← ایگزٹ ویزا · <span class='ar'>وِزَارَةُ الدَّاخِلِيَّةِ</span> ← انٹری ویزا · <span class='ar'>المُلْحَقُ التَّعْلِيمِيُّ</span> ← ٹکٹ","<span class='ar'>المُلْحَقُ التَّعْلِيمِيُّ</span> ← ایگزٹ ویزا · <span class='ar'>السِّفَارَةُ</span> ← ٹکٹ · <span class='ar'>وِزَارَةُ الدَّاخِلِيَّةِ</span> ← تعلیم","<span class='ar'>وِزَارَةُ الدَّاخِلِيَّةِ</span> ← ٹکٹ · <span class='ar'>السِّفَارَةُ</span> ← تعلیم · <span class='ar'>المُلْحَقُ التَّعْلِيمِيُّ</span> ← ویزا"],
- ue:"سبق ۱ کا خلاصہ: اپنے ملک کی وزارتِ داخلیہ سے نکلنے کا ویزا، اور جس ملک جانا ہے اس کی سفارت سے داخل ہونے کا ویزا۔"});
+add({id:"tbv44",d:"medium",t:"write",r:"Lesson 1 · Tahreer",a:0,
+ q:"Khali jagah bhariye: <span class='ar'>ذَهَبَ الطَّالِبُ ______ السِّفَارَةِ لِيُقَابِلَ المُلْحَقَ التَّعْلِيمِيَّ</span>",
+ o:["<span class='ar'>إِلَى</span>","<span class='ar'>مِنْ</span>","<span class='ar'>عَلَى</span>","<span class='ar'>عَنْ</span>"],
+ e:"<span class='ar'>ذَهَبَ</span> manzil ke liye <span class='ar'>إِلَى</span> leta hai, aur aane ke liye <span class='ar'>جَاءَ مِنْ</span>. Dhyan dein: <span class='ar'>لِـ</span> ke baad Muzare mansoob hua — <span class='ar'>لِيُقَابِلَ</span>.",
+ uq:"خالی جگہ بھریے: <span class='ar'>ذَهَبَ الطَّالِبُ ______ السِّفَارَةِ لِيُقَابِلَ المُلْحَقَ التَّعْلِيمِيَّ</span>",
+ uo:["<span class='ar'>إِلَى</span>","<span class='ar'>مِنْ</span>","<span class='ar'>عَلَى</span>","<span class='ar'>عَنْ</span>"],
+ ue:"<span class='ar'>ذَهَبَ</span> منزل کے لیے <span class='ar'>إِلَى</span> لیتا ہے، اور آنے کے لیے <span class='ar'>جَاءَ مِنْ</span>۔ دھیان دیں: <span class='ar'>لِـ</span> کے بعد مضارع منصوب ہوا — <span class='ar'>لِيُقَابِلَ</span>۔"});
 
-add({id:"tbv45",d:"medium",t:"speak",r:"Lesson 2 · Bol-chaal",a:0,
+add({id:"tbv45",d:"medium",t:"write",r:"Lesson 2 · Tahreer",a:0,
  q:"“Aap ko booking safar se ek din pehle confirm karni hogi” — sahih jumla?",
  o:["<span class='ar'>عَلَيْكَ أَنْ تُؤَكِّدَ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>","<span class='ar'>عَلَيْكَ أَنْ تُؤَكِّدُ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>","<span class='ar'>عَلَيْكَ تُؤَكِّدْ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>","<span class='ar'>عَلَيْكَ أَنْ أَكَّدَ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>"],
- e:"<span class='ar'>عَلَيْكَ أَنْ…</span> ka matlab “aap par lazim hai ke…”. Isi maana mein <span class='ar'>يَلْزَمُكَ أَنْ…</span> bhi bolte hain.",
+ e:"<span class='ar'>عَلَيْكَ أَنْ…</span> ka matlab “aap par lazim hai ke…”. Isi maana mein <span class='ar'>يَلْزَمُكَ أَنْ…</span> bhi likhte hain.",
  uq:"”آپ کو بکنگ سفر سے ایک دن پہلے کنفرم کرنی ہوگی“ — صحیح جملہ؟",
  uo:["<span class='ar'>عَلَيْكَ أَنْ تُؤَكِّدَ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>","<span class='ar'>عَلَيْكَ أَنْ تُؤَكِّدُ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>","<span class='ar'>عَلَيْكَ تُؤَكِّدْ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>","<span class='ar'>عَلَيْكَ أَنْ أَكَّدَ الحَجْزَ قَبْلَ السَّفَرِ بِيَوْمٍ</span>"],
- ue:"<span class='ar'>عَلَيْكَ أَنْ…</span> کا مطلب ”آپ پر لازم ہے کہ…“۔ اسی معنی میں <span class='ar'>يَلْزَمُكَ أَنْ…</span> بھی بولتے ہیں۔"});
+ ue:"<span class='ar'>عَلَيْكَ أَنْ…</span> کا مطلب ”آپ پر لازم ہے کہ…“۔ اسی معنی میں <span class='ar'>يَلْزَمُكَ أَنْ…</span> بھی لکھتے ہیں۔"});
 
 add({id:"tbv46",d:"medium",t:"vocab",r:"Lesson 2 · Lughat",a:0,
  q:"<span class='ar'>حَضَرَ / يَحْضُرُ</span> ka matlab?",
@@ -3520,7 +3521,7 @@ add({id:"tbv47",d:"medium",t:"vocab",r:"Lesson 2 · Lughat",a:0,
  uo:["جواب دینا · <span class='ar'>إِجَابَة</span>","سوال کرنا · <span class='ar'>سُؤَال</span>","لانا · <span class='ar'>إِتْيَان</span>","منع کرنا · <span class='ar'>مَنْع</span>"],
  ue:"باب افعال سے ہے (<span class='ar'>جوب</span> سے)، اور حرفِ جار کے ساتھ <span class='ar'>أَجَابَ عَنْ</span> بھی آتا ہے۔"});
 
-add({id:"tbv48",d:"medium",t:"speak",r:"Lesson 2 · Bol-chaal",a:0,
+add({id:"tbv48",d:"medium",t:"write",r:"Lesson 2 · Tahreer",a:0,
  q:"“Kya Saturday wali flight mein koi jagah hai?” — sahih jumla?",
  o:["<span class='ar'>هَلْ هُنَاكَ مَكَانٌ فِي رِحْلَةِ السَّبْتِ؟</span>","<span class='ar'>هَلْ هُنَا مَكَانٌ فِي رِحْلَةِ السَّبْتِ؟</span>","<span class='ar'>أَيْنَ مَكَانٌ فِي رِحْلَةِ السَّبْتِ؟</span>","<span class='ar'>مَتَى مَكَانٌ فِي رِحْلَةِ السَّبْتِ؟</span>"],
  e:"<span class='ar'>هُنَاكَ</span> ka yahan matlab “wahan” nahi, balke “maujood hai / there is” hai. <span class='ar'>هُنَا</span> = yahan.",
@@ -3528,15 +3529,15 @@ add({id:"tbv48",d:"medium",t:"speak",r:"Lesson 2 · Bol-chaal",a:0,
  uo:["<span class='ar'>هَلْ هُنَاكَ مَكَانٌ فِي رِحْلَةِ السَّبْتِ؟</span>","<span class='ar'>هَلْ هُنَا مَكَانٌ فِي رِحْلَةِ السَّبْتِ؟</span>","<span class='ar'>أَيْنَ مَكَانٌ فِي رِحْلَةِ السَّبْتِ؟</span>","<span class='ar'>مَتَى مَكَانٌ فِي رِحْلَةِ السَّبْتِ؟</span>"],
  ue:"<span class='ar'>هُنَاكَ</span> کا یہاں مطلب ”وہاں“ نہیں، بلکہ ”موجود ہے / there is“ ہے۔ <span class='ar'>هُنَا</span> = یہاں۔"});
 
-add({id:"tbv49",d:"medium",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
- q:"Muwazzaf kehta hai “bag tarazu par rakhiye” — Arabi mein?",
+add({id:"tbv49",d:"medium",t:"write",r:"Lesson 3 · Tahreer",a:0,
+ q:"Form par likha hai “bag tarazu par rakhiye” — Arabi mein?",
  o:["<span class='ar'>ضَعِ الحَقِيبَةَ عَلَى المِيزَانِ</span>","<span class='ar'>اِمْلأِ الحَقِيبَةَ عَلَى المِيزَانِ</span>","<span class='ar'>اِدْفَعِ الحَقِيبَةَ عَلَى المِيزَانِ</span>","<span class='ar'>أَقْفِلِ الحَقِيبَةَ عَلَى المِيزَانِ</span>"],
  e:"<span class='ar'>ضَعْ</span> ke aage <span class='ar'>ال</span> aaya to sakin ko zeer di gayi: <span class='ar'>ضَعِ الحَقِيبَةَ</span>.",
- uq:"موظف کہتا ہے ”بیگ ترازو پر رکھیے“ — عربی میں؟",
+ uq:"فارم پر لکھا ہے ”بیگ ترازو پر رکھیے“ — عربی میں؟",
  uo:["<span class='ar'>ضَعِ الحَقِيبَةَ عَلَى المِيزَانِ</span>","<span class='ar'>اِمْلأِ الحَقِيبَةَ عَلَى المِيزَانِ</span>","<span class='ar'>اِدْفَعِ الحَقِيبَةَ عَلَى المِيزَانِ</span>","<span class='ar'>أَقْفِلِ الحَقِيبَةَ عَلَى المِيزَانِ</span>"],
  ue:"<span class='ar'>ضَعْ</span> کے آگے <span class='ar'>ال</span> آیا تو ساکن کو زیر دی گئی: <span class='ar'>ضَعِ الحَقِيبَةَ</span>۔"});
 
-add({id:"tbv50",d:"medium",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
+add({id:"tbv50",d:"medium",t:"write",r:"Lesson 3 · Tahreer",a:0,
  q:"“Yeh entry card bhar dein” — sahih hukm?",
  o:["<span class='ar'>اِمْلأْ هَذِهِ بِطَاقَةَ الدُّخُولِ</span>","<span class='ar'>ضَعْ هَذِهِ بِطَاقَةَ الدُّخُولِ</span>","<span class='ar'>اِدْفَعْ هَذِهِ بِطَاقَةَ الدُّخُولِ</span>","<span class='ar'>اِحْجِزْ هَذِهِ بِطَاقَةَ الدُّخُولِ</span>"],
  e:"<span class='ar'>بِطَاقَةُ الدُّخُولِ</span> = entry card, aur <span class='ar'>بِطَاقَةُ المُغَادَرَةِ</span> = departure card — dono Lesson 3–4 mein aate hain.",
@@ -3592,21 +3593,21 @@ add({id:"tbv56",d:"medium",t:"vocab",r:"Lesson 4 · Lughat",a:0,
  uo:["کیونکہ یہ مثال واوی ہے — مضارع میں پہلی <span class='ar'>و</span> گر جاتی ہے","کیونکہ یہ اجوف ہے","کیونکہ یہ ناقص ہے","کیونکہ یہ مضاعف ہے"],
  ue:"اسی قسم سے <span class='ar'>وَضَعَ ← يَضَعُ</span> اور <span class='ar'>وَصَلَ ← يَصِلُ</span> بھی ہیں۔"});
 
-add({id:"tbv57",d:"medium",t:"speak",r:"Lesson 4 · Bol-chaal",a:0,
- q:"Nida sun kar: “Musafir gate number 3 ki taraf rukh karein” — sahih jumla?",
+add({id:"tbv57",d:"medium",t:"write",r:"Lesson 4 · Tahreer",a:0,
+ q:"Ailaan mein likhna hai: “Musafir gate number 3 ki taraf rukh karein” — sahih jumla?",
  o:["<span class='ar'>يَتَوَجَّهُ المُسَافِرُونَ إِلَى البَوَّابَةِ رَقْمِ ٣</span>","<span class='ar'>يَسْمَعُ المُسَافِرُونَ إِلَى البَوَّابَةِ رَقْمِ ٣</span>","<span class='ar'>يَزِنُ المُسَافِرُونَ إِلَى البَوَّابَةِ رَقْمِ ٣</span>","<span class='ar'>يُعْلِنُ المُسَافِرُونَ إِلَى البَوَّابَةِ رَقْمِ ٣</span>"],
  e:"<span class='ar'>تَوَجَّهَ / يَتَوَجَّهُ</span> = rukh karna, Masdar <span class='ar'>تَوَجُّه</span>. Announcement mein <span class='ar'>سُرْعَةُ التَّوَجُّهِ</span> aata hai = fauran rukh karein.",
- uq:"ندا سن کر: ”مسافر گیٹ نمبر ۳ کی طرف رخ کریں“ — صحیح جملہ؟",
+ uq:"اعلان میں لکھنا ہے: ”مسافر گیٹ نمبر ۳ کی طرف رخ کریں“ — صحیح جملہ؟",
  uo:["<span class='ar'>يَتَوَجَّهُ المُسَافِرُونَ إِلَى البَوَّابَةِ رَقْمِ ٣</span>","<span class='ar'>يَسْمَعُ المُسَافِرُونَ إِلَى البَوَّابَةِ رَقْمِ ٣</span>","<span class='ar'>يَزِنُ المُسَافِرُونَ إِلَى البَوَّابَةِ رَقْمِ ٣</span>","<span class='ar'>يُعْلِنُ المُسَافِرُونَ إِلَى البَوَّابَةِ رَقْمِ ٣</span>"],
  ue:"<span class='ar'>تَوَجَّهَ / يَتَوَجَّهُ</span> = رخ کرنا، مصدر <span class='ar'>تَوَجُّه</span>۔ اعلان میں <span class='ar'>سُرْعَةُ التَّوَجُّهِ</span> آتا ہے = فوراً رخ کریں۔"});
 
 add({id:"tbv58",d:"medium",t:"vocab",r:"Lesson 5 · Lughat",a:0,
  q:"<span class='ar'>الحُصُولُ عَلَى</span> ka matlab aur yeh kis fi'l ka Masdar hai?",
  o:["Haasil karna · <span class='ar'>حَصَلَ / يَحْصُلُ</span>","Pohanchna · <span class='ar'>وَصَلَ</span>","Ginna · <span class='ar'>أَحْصَى</span>","Bachana · <span class='ar'>حَصَّنَ</span>"],
- e:"Bol-chaal: <span class='ar'>هَلْ يُمْكِنُنِي الحُصُولُ عَلَى بِطَاقَةِ الدُّخُولِ؟</span> — kya mujhe entry card mil sakta hai?",
+ e:"Tahreer: <span class='ar'>هَلْ يُمْكِنُنِي الحُصُولُ عَلَى بِطَاقَةِ الدُّخُولِ؟</span> — kya mujhe entry card mil sakta hai?",
  uq:"<span class='ar'>الحُصُولُ عَلَى</span> کا مطلب اور یہ کس فعل کا مصدر ہے؟",
  uo:["حاصل کرنا · <span class='ar'>حَصَلَ / يَحْصُلُ</span>","پہنچنا · <span class='ar'>وَصَلَ</span>","گننا · <span class='ar'>أَحْصَى</span>","بچانا · <span class='ar'>حَصَّنَ</span>"],
- ue:"بول چال: <span class='ar'>هَلْ يُمْكِنُنِي الحُصُولُ عَلَى بِطَاقَةِ الدُّخُولِ؟</span> — کیا مجھے انٹری کارڈ مل سکتا ہے؟"});
+ ue:"تحریر: <span class='ar'>هَلْ يُمْكِنُنِي الحُصُولُ عَلَى بِطَاقَةِ الدُّخُولِ؟</span> — کیا مجھے انٹری کارڈ مل سکتا ہے؟"});
 
 add({id:"tbv59",d:"medium",t:"vocab",r:"Lesson 5 · Lughat",a:0,
  q:"<span class='ar'>فُصُولٌ</span> kis lafz ki jama hai aur iske maani?",
@@ -3640,7 +3641,7 @@ add({id:"tbv62",d:"medium",t:"vocab",r:"Lesson 6 · Lughat",a:0,
  uo:["<span class='ar'>اِسْتِقْبَال</span> · <span class='ar'>صَالَةُ الاسْتِقْبَالِ</span>","<span class='ar'>قِبْلَة</span> · <span class='ar'>صَالَةُ القِبْلَةِ</span>","<span class='ar'>مُقَابَلَة</span> · <span class='ar'>صَالَةُ المُقَابَلَةِ</span>","<span class='ar'>قُدُوم</span> · <span class='ar'>صَالَةُ القُدُومِ</span>"],
  ue:"سبق ۵ کا عنوان <span class='ar'>فِي بَهْوِ (صَالَةِ) الاسْتِقْبَالِ</span> ہے — وہاں کوئی مسافر کا استقبال کرتا ہے۔"});
 
-add({id:"tbv63",d:"medium",t:"speak",r:"Lesson 6 · Bol-chaal",a:0,
+add({id:"tbv63",d:"medium",t:"write",r:"Lesson 6 · Tahreer",a:0,
  q:"“Kisi ne mera istiqbal nahi kiya” — sahih jumla?",
  o:["<span class='ar'>لَمْ يَسْتَقْبِلْنِي أَحَدٌ</span>","<span class='ar'>لَمْ يَسْتَقْبِلُنِي أَحَدٌ</span>","<span class='ar'>لَمْ يَسْتَقْبِلْنِي أَحَداً</span>","<span class='ar'>لا يَسْتَقْبِلْنِي أَحَدٌ</span>"],
  e:"<span class='ar'>أَحَدٌ</span> nafi ke saath “koi bhi nahi” banta hai, aur <span class='ar'>لَمْ</span> ke baad Muzare majzoom hota hai.",
@@ -3648,7 +3649,7 @@ add({id:"tbv63",d:"medium",t:"speak",r:"Lesson 6 · Bol-chaal",a:0,
  uo:["<span class='ar'>لَمْ يَسْتَقْبِلْنِي أَحَدٌ</span>","<span class='ar'>لَمْ يَسْتَقْبِلُنِي أَحَدٌ</span>","<span class='ar'>لَمْ يَسْتَقْبِلْنِي أَحَداً</span>","<span class='ar'>لا يَسْتَقْبِلْنِي أَحَدٌ</span>"],
  ue:"<span class='ar'>أَحَدٌ</span> نفی کے ساتھ ”کوئی بھی نہیں“ بنتا ہے، اور <span class='ar'>لَمْ</span> کے بعد مضارع مجزوم ہوتا ہے۔"});
 
-add({id:"tbv64",d:"medium",t:"speak",r:"Lesson 5 · Bol-chaal",a:0,
+add({id:"tbv64",d:"medium",t:"write",r:"Lesson 5 · Tahreer",a:0,
  q:"“Kya mujhe entry card mil sakta hai?” — sahih jumla?",
  o:["<span class='ar'>هَلْ يُمْكِنُنِي الحُصُولُ عَلَى بِطَاقَةِ الدُّخُولِ؟</span>","<span class='ar'>هَلْ أَمْكَنَنِي الحُصُولُ عَلَى بِطَاقَةِ الدُّخُولِ؟</span>","<span class='ar'>هَلْ يُمْكِنُنِي الوُصُولُ عَلَى بِطَاقَةِ الدُّخُولِ؟</span>","<span class='ar'>هَلْ يُمْكِنُكَ الحُصُولُ عَلَى بِطَاقَةِ الدُّخُولِ؟</span>"],
  e:"<span class='ar'>أَمْكَنَ / يُمْكِنُ</span> = mumkin hona. Apne liye poochte waqt zameer <span class='ar'>ـنِي</span> lagegi, <span class='ar'>ـكَ</span> nahi.",
@@ -3657,7 +3658,7 @@ add({id:"tbv64",d:"medium",t:"speak",r:"Lesson 5 · Bol-chaal",a:0,
  ue:"<span class='ar'>أَمْكَنَ / يُمْكِنُ</span> = ممکن ہونا۔ اپنے لیے پوچھتے وقت ضمیر <span class='ar'>ـنِي</span> لگے گی، <span class='ar'>ـكَ</span> نہیں۔"});
 
 /* ============================ HARD ============================ */
-add({id:"tbv65",d:"hard",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
+add({id:"tbv65",d:"hard",t:"write",r:"Lesson 3 · Tahreer",a:0,
  q:"“Saare bags tarazu par rakh dein” — <span class='ar'>جَمِيع</span> ke saath sahih shakl?",
  o:["<span class='ar'>ضَعْ جَمِيعَ الحَقَائِبِ عَلَى المِيزَانِ</span>","<span class='ar'>ضَعْ جَمِيعُ الحَقَائِبِ عَلَى المِيزَانِ</span>","<span class='ar'>ضَعْ جَمِيعَ الحَقَائِبَ عَلَى المِيزَانِ</span>","<span class='ar'>ضَعْ جَمِيعِ الحَقَائِبِ عَلَى المِيزَانِ</span>"],
  e:"<span class='ar'>جَمِيع</span> yahan Mudaf aur Maf'ool-bihi hai (zabar), aur <span class='ar'>الحَقَائِب</span> Mudaf Ilaih hai (zeer). <span class='ar'>كُلّ</span> bhi isi tarah chalta hai: <span class='ar'>كُلَّ الحَقَائِبِ</span>.",
@@ -3665,7 +3666,7 @@ add({id:"tbv65",d:"hard",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
  uo:["<span class='ar'>ضَعْ جَمِيعَ الحَقَائِبِ عَلَى المِيزَانِ</span>","<span class='ar'>ضَعْ جَمِيعُ الحَقَائِبِ عَلَى المِيزَانِ</span>","<span class='ar'>ضَعْ جَمِيعَ الحَقَائِبَ عَلَى المِيزَانِ</span>","<span class='ar'>ضَعْ جَمِيعِ الحَقَائِبِ عَلَى المِيزَانِ</span>"],
  ue:"<span class='ar'>جَمِيع</span> یہاں مضاف اور مفعول بہ ہے (زبر)، اور <span class='ar'>الحَقَائِب</span> مضاف الیہ ہے (زیر)۔ <span class='ar'>كُلّ</span> بھی اسی طرح چلتا ہے: <span class='ar'>كُلَّ الحَقَائِبِ</span>۔"});
 
-add({id:"tbv66",d:"hard",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
+add({id:"tbv66",d:"hard",t:"write",r:"Lesson 3 · Tahreer",a:0,
  q:"<span class='ar'>بِكُلِّ سُرُورٍ</span> mein dono lafzon par zeer kyun hai?",
  o:["<span class='ar'>بِـ</span> harf-e-jar ne <span class='ar'>كُلّ</span> ko majroor kiya, aur <span class='ar'>كُلّ</span> Mudaf hone ki wajah se <span class='ar'>سُرُور</span> Mudaf Ilaih majroor hua","Dono Mubtada aur Khabar hain","Dono Maf'ool hain","<span class='ar'>سُرُور</span> Faa'il hai"],
  e:"Yeh Idafa ki aam misal hai: harf-e-jar + Mudaf (majroor) + Mudaf Ilaih (majroor).",
@@ -3673,7 +3674,7 @@ add({id:"tbv66",d:"hard",t:"speak",r:"Lesson 3 · Bol-chaal",a:0,
  uo:["<span class='ar'>بِـ</span> حرفِ جار نے <span class='ar'>كُلّ</span> کو مجرور کیا، اور <span class='ar'>كُلّ</span> مضاف ہونے کی وجہ سے <span class='ar'>سُرُور</span> مضاف الیہ مجرور ہوا","دونوں مبتدا اور خبر ہیں","دونوں مفعول ہیں","<span class='ar'>سُرُور</span> فاعل ہے"],
  ue:"یہ اضافت کی عام مثال ہے: حرفِ جار + مضاف (مجرور) + مضاف الیہ (مجرور)۔"});
 
-add({id:"tbv67",d:"hard",t:"speak",r:"Lesson 1 · I'rab",a:0,
+add({id:"tbv67",d:"hard",t:"write",r:"Lesson 1 · I'rab",a:0,
  q:"<span class='ar'>تَذَاكِرُ</span> aur <span class='ar'>حَقَائِبُ</span> par tanween kyun nahi aati?",
  o:["Dono Sigha Muntaha-al-Jumoo' hain, is liye Mamnu' min as-Sarf hain","Dono Jama Muannas Salim hain","Dono Mabni hain","Dono Mudaf hain"],
  e:"Mamnu' min as-Sarf ki pehchan: tanween nahi aati aur majroor ki halat mein zabar aati hai — <span class='ar'>بِتَذَاكِرَ</span>. Magar <span class='ar'>ال</span> lag jaye to zeer wapas aa jati hai: <span class='ar'>بِالتَّذَاكِرِ</span>.",
@@ -3681,39 +3682,39 @@ add({id:"tbv67",d:"hard",t:"speak",r:"Lesson 1 · I'rab",a:0,
  uo:["دونوں صیغہ منتہی الجموع ہیں، اس لیے ممنوع من الصرف ہیں","دونوں جمع مونث سالم ہیں","دونوں مبنی ہیں","دونوں مضاف ہیں"],
  ue:"ممنوع من الصرف کی پہچان: تنوین نہیں آتی اور مجرور کی حالت میں زبر آتی ہے — <span class='ar'>بِتَذَاكِرَ</span>۔ مگر <span class='ar'>ال</span> لگ جائے تو زیر واپس آ جاتی ہے: <span class='ar'>بِالتَّذَاكِرِ</span>۔"});
 
-add({id:"tbv68",d:"hard",t:"speak",r:"Lesson 5 · Tarteeb",a:0,
- q:"Jahaz utarne ke baad Lesson 5 ki sahih tarteeb kya hai?",
- o:["<span class='ar'>هَبَطَتِ الطَّائِرَةُ ← نَزَلَ المُسَافِرُونَ ← فَحَصَ الضَّابِطُ الجَوَازَاتِ ← تَسَلَّمُوا العَفْشَ ← رَكِبُوا الحَافِلَةَ</span>","<span class='ar'>رَكِبُوا الحَافِلَةَ ← هَبَطَتِ الطَّائِرَةُ ← فَحَصَ الضَّابِطُ الجَوَازَاتِ ← نَزَلَ المُسَافِرُونَ</span>","<span class='ar'>فَحَصَ الضَّابِطُ الجَوَازَاتِ ← هَبَطَتِ الطَّائِرَةُ ← رَكِبُوا الحَافِلَةَ ← نَزَلَ المُسَافِرُونَ</span>","<span class='ar'>تَسَلَّمُوا العَفْشَ ← رَكِبُوا الحَافِلَةَ ← هَبَطَتِ الطَّائِرَةُ ← فَحَصَ الضَّابِطُ الجَوَازَاتِ</span>"],
- e:"Oral mein yahi silsila poocha jata hai: landing → utarna → passport check → saman lena → bus/taxi.",
- uq:"جہاز اترنے کے بعد سبق ۵ کی صحیح ترتیب کیا ہے؟",
- uo:["<span class='ar'>هَبَطَتِ الطَّائِرَةُ ← نَزَلَ المُسَافِرُونَ ← فَحَصَ الضَّابِطُ الجَوَازَاتِ ← تَسَلَّمُوا العَفْشَ ← رَكِبُوا الحَافِلَةَ</span>","<span class='ar'>رَكِبُوا الحَافِلَةَ ← هَبَطَتِ الطَّائِرَةُ ← فَحَصَ الضَّابِطُ الجَوَازَاتِ ← نَزَلَ المُسَافِرُونَ</span>","<span class='ar'>فَحَصَ الضَّابِطُ الجَوَازَاتِ ← هَبَطَتِ الطَّائِرَةُ ← رَكِبُوا الحَافِلَةَ ← نَزَلَ المُسَافِرُونَ</span>","<span class='ar'>تَسَلَّمُوا العَفْشَ ← رَكِبُوا الحَافِلَةَ ← هَبَطَتِ الطَّائِرَةُ ← فَحَصَ الضَّابِطُ الجَوَازَاتِ</span>"],
- ue:"زبانی امتحان میں یہی سلسلہ پوچھا جاتا ہے: لینڈنگ ← اترنا ← پاسپورٹ چیک ← سامان لینا ← بس/ٹیکسی۔"});
+add({id:"tbv68",d:"hard",t:"write",r:"Lesson 5 · Jumla sazi",a:0,
+ q:"“Jahaz utra, phir musafir utre” — dono baatein ek jumle mein likhne ki sahih shakl?",
+ o:["<span class='ar'>هَبَطَتِ الطَّائِرَةُ ثُمَّ نَزَلَ المُسَافِرُونَ</span>","<span class='ar'>هَبَطَ الطَّائِرَةُ ثُمَّ نَزَلُوا المُسَافِرُونَ</span>","<span class='ar'>هَبَطَتِ الطَّائِرَةَ ثُمَّ نَزَلَ المُسَافِرِينَ</span>","<span class='ar'>هَبَطَتِ الطَّائِرَةُ ثُمَّ تَنْزِلُ المُسَافِرُونَ</span>"],
+ e:"<span class='ar'>طَائِرَة</span> muannas hai is liye <span class='ar'>هَبَطَتْ</span>, aur saakin Ta ke baad <span class='ar'>ال</span> aane se usay zeer di jati hai. Fi’l subject se pehle ho to wahid rehta hai, aur dono Fa’il marfoo’ — teesre option mein i’rab ulte hain aur chauthe mein zamana.",
+ uq:"”جہاز اترا، پھر مسافر اترے“ — دونوں باتیں ایک جملے میں لکھنے کی صحیح شکل؟",
+ uo:["<span class='ar'>هَبَطَتِ الطَّائِرَةُ ثُمَّ نَزَلَ المُسَافِرُونَ</span>","<span class='ar'>هَبَطَ الطَّائِرَةُ ثُمَّ نَزَلُوا المُسَافِرُونَ</span>","<span class='ar'>هَبَطَتِ الطَّائِرَةَ ثُمَّ نَزَلَ المُسَافِرِينَ</span>","<span class='ar'>هَبَطَتِ الطَّائِرَةُ ثُمَّ تَنْزِلُ المُسَافِرُونَ</span>"],
+ ue:"<span class='ar'>طَائِرَة</span> مونث ہے اس لیے <span class='ar'>هَبَطَتْ</span>، اور ساکن تا کے بعد <span class='ar'>ال</span> آنے سے اسے زیر دی جاتی ہے۔ فعل فاعل سے پہلے ہو تو واحد رہتا ہے، اور دونوں فاعل مرفوع۔"});
 
-add({id:"tbv69",d:"hard",t:"speak",r:"Lesson 1 · Tarteeb",a:0,
- q:"Lesson 1 ke mutabiq safar ki karwaiyon ki sahih tarteeb?",
- o:["Jawaz banwana → Wizarat-e-Dakhiliya se exit visa → Sifarat se entry visa → ticket wasool karna","Ticket wasool karna → Jawaz banwana → exit visa → entry visa","Entry visa → Jawaz banwana → ticket → exit visa","Exit visa → ticket → Jawaz banwana → entry visa"],
- e:"Arabi mein: <span class='ar'>اِسْتِخْرَاجُ الجَوَازِ ← تَأْشِيرَةُ الخُرُوجِ ← تَأْشِيرَةُ الدُّخُولِ ← اِسْتِلامُ التَّذْكِرَةِ</span>, aur in sab ke baad <span class='ar'>إِكْمَالُ الإِجْرَاءَاتِ</span>.",
- uq:"سبق ۱ کے مطابق سفر کی کارروائیوں کی صحیح ترتیب؟",
- uo:["جواز بنوانا ← وزارتِ داخلیہ سے ایگزٹ ویزا ← سفارت سے انٹری ویزا ← ٹکٹ وصول کرنا","ٹکٹ وصول کرنا ← جواز بنوانا ← ایگزٹ ویزا ← انٹری ویزا","انٹری ویزا ← جواز بنوانا ← ٹکٹ ← ایگزٹ ویزا","ایگزٹ ویزا ← ٹکٹ ← جواز بنوانا ← انٹری ویزا"],
- ue:"عربی میں: <span class='ar'>اِسْتِخْرَاجُ الجَوَازِ ← تَأْشِيرَةُ الخُرُوجِ ← تَأْشِيرَةُ الدُّخُولِ ← اِسْتِلامُ التَّذْكِرَةِ</span>، اور ان سب کے بعد <span class='ar'>إِكْمَالُ الإِجْرَاءَاتِ</span>۔"});
+add({id:"tbv69",d:"hard",t:"write",r:"Lesson 3 · Imla",a:0,
+ q:"<span class='ar'>حَقِيبَة</span> ke saath “meri” wali zameer lagayein — imla ke lihaz se sahih kaunsa hai?",
+ o:["<span class='ar'>حَقِيبَتِي</span>","<span class='ar'>حَقِيبَةِي</span>","<span class='ar'>حَقِيبَهِي</span>","<span class='ar'>حَقِيبَاتِي</span>"],
+ e:"Gol Ta (<span class='ar'>ة</span>) jab lafz ke aakhir se hat kar darmiyan mein aa jati hai to khuli Ta (<span class='ar'>ت</span>) ban kar likhi jati hai: <span class='ar'>تَذْكِرَة ← تَذْكِرَتُكَ</span>. Chautha option <span class='ar'>حَقِيبَاتِي</span> = “mere bags”, yani jama.",
+ uq:"<span class='ar'>حَقِيبَة</span> کے ساتھ ”میری“ والی ضمیر لگائیں — املا کے لحاظ سے صحیح کون سا ہے؟",
+ uo:["<span class='ar'>حَقِيبَتِي</span>","<span class='ar'>حَقِيبَةِي</span>","<span class='ar'>حَقِيبَهِي</span>","<span class='ar'>حَقِيبَاتِي</span>"],
+ ue:"گول تا (<span class='ar'>ة</span>) جب لفظ کے آخر سے ہٹ کر درمیان میں آ جاتی ہے تو کھلی تا (<span class='ar'>ت</span>) بن کر لکھی جاتی ہے: <span class='ar'>تَذْكِرَة ← تَذْكِرَتُكَ</span>۔ چوتھا آپشن <span class='ar'>حَقِيبَاتِي</span> = ”میرے بیگز“ یعنی جمع۔"});
 
-add({id:"tbv70",d:"hard",t:"speak",r:"Lesson 6 · Bol-chaal",a:0,
- q:"Taxi mein poora mukalma: kiraya poochna, phir chalne ko kehna — sahih jorha?",
+add({id:"tbv70",d:"hard",t:"write",r:"Lesson 6 · Tahreer",a:0,
+ q:"Taxi mein do jumle: kiraya poochna, phir chalne ka hukm — sahih jorha?",
  o:["<span class='ar'>كَمْ تُكَلِّفُ الأُجْرَةُ؟</span> · <span class='ar'>سِرْ إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>كَمْ تُكَلِّفُ الأُجْرَةُ؟</span> · <span class='ar'>سَارَ إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>كَمْ يُكَلِّفُ الأُجْرَةُ؟</span> · <span class='ar'>سِيرْ إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>مَتَى تُكَلِّفُ الأُجْرَةُ؟</span> · <span class='ar'>سِرْ إِلَى إِدَارَةِ الجَامِعَةِ</span>"],
  e:"<span class='ar'>أُجْرَة</span> muannas hai is liye <span class='ar'>تُكَلِّفُ</span>; aur <span class='ar'>سَارَ</span> ka Amr <span class='ar'>سِرْ</span> hai — <span class='ar'>سِيرْ</span> ghalat hai.",
- uq:"ٹیکسی میں پورا مکالمہ: کرایہ پوچھنا، پھر چلنے کو کہنا — صحیح جوڑا؟",
+ uq:"ٹیکسی میں دو جملے: کرایہ پوچھنا، پھر چلنے کا حکم — صحیح جوڑا؟",
  uo:["<span class='ar'>كَمْ تُكَلِّفُ الأُجْرَةُ؟</span> · <span class='ar'>سِرْ إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>كَمْ تُكَلِّفُ الأُجْرَةُ؟</span> · <span class='ar'>سَارَ إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>كَمْ يُكَلِّفُ الأُجْرَةُ؟</span> · <span class='ar'>سِيرْ إِلَى إِدَارَةِ الجَامِعَةِ</span>","<span class='ar'>مَتَى تُكَلِّفُ الأُجْرَةُ؟</span> · <span class='ar'>سِرْ إِلَى إِدَارَةِ الجَامِعَةِ</span>"],
  ue:"<span class='ar'>أُجْرَة</span> مونث ہے اس لیے <span class='ar'>تُكَلِّفُ</span>؛ اور <span class='ar'>سَارَ</span> کا امر <span class='ar'>سِرْ</span> ہے — <span class='ar'>سِيرْ</span> غلط ہے۔"});
 
-add({id:"tbv71",d:"hard",t:"speak",r:"Lesson 4 · Huroof",a:0,
+add({id:"tbv71",d:"hard",t:"write",r:"Lesson 4 · Huroof",a:0,
  q:"Sahih harf-e-jar kis fi'l ke saath? <span class='ar'>أَعْلَنَ</span> · <span class='ar'>مَرَّ</span> · <span class='ar'>حَصَلَ</span>",
  o:["<span class='ar'>أَعْلَنَ عَنْ</span> · <span class='ar'>مَرَّ بِـ</span> · <span class='ar'>حَصَلَ عَلَى</span>","<span class='ar'>أَعْلَنَ عَلَى</span> · <span class='ar'>مَرَّ عَنْ</span> · <span class='ar'>حَصَلَ بِـ</span>","<span class='ar'>أَعْلَنَ بِـ</span> · <span class='ar'>مَرَّ عَلَى</span> · <span class='ar'>حَصَلَ عَنْ</span>","<span class='ar'>أَعْلَنَ إِلَى</span> · <span class='ar'>مَرَّ إِلَى</span> · <span class='ar'>حَصَلَ إِلَى</span>"],
- e:"Oral mein yeh jorhay aksar poochhe jate hain. <span class='ar'>مَرَّ عَلَى</span> bhi durust hai, magar kitab ke mukalme mein <span class='ar'>مَرَّ بِـ</span> aaya hai.",
+ e:"Tahreeri parche mein yeh jorhay aksar poochhe jate hain. <span class='ar'>مَرَّ عَلَى</span> bhi durust hai, magar kitab ke mukalme mein <span class='ar'>مَرَّ بِـ</span> aaya hai.",
  uq:"صحیح حرفِ جار کس فعل کے ساتھ؟ <span class='ar'>أَعْلَنَ</span> · <span class='ar'>مَرَّ</span> · <span class='ar'>حَصَلَ</span>",
  uo:["<span class='ar'>أَعْلَنَ عَنْ</span> · <span class='ar'>مَرَّ بِـ</span> · <span class='ar'>حَصَلَ عَلَى</span>","<span class='ar'>أَعْلَنَ عَلَى</span> · <span class='ar'>مَرَّ عَنْ</span> · <span class='ar'>حَصَلَ بِـ</span>","<span class='ar'>أَعْلَنَ بِـ</span> · <span class='ar'>مَرَّ عَلَى</span> · <span class='ar'>حَصَلَ عَنْ</span>","<span class='ar'>أَعْلَنَ إِلَى</span> · <span class='ar'>مَرَّ إِلَى</span> · <span class='ar'>حَصَلَ إِلَى</span>"],
  ue:"زبانی امتحان میں یہ جوڑے اکثر پوچھے جاتے ہیں۔ <span class='ar'>مَرَّ عَلَى</span> بھی درست ہے، مگر کتاب کے مکالمے میں <span class='ar'>مَرَّ بِـ</span> آیا ہے۔"});
 
-add({id:"tbv72",d:"hard",t:"speak",r:"Lesson 4 · I'rab",a:0,
+add({id:"tbv72",d:"hard",t:"write",r:"Lesson 4 · I'rab",a:0,
  q:"<span class='ar'>سَمِعَ المُسَافِرُ النِّدَاءَ</span> — <span class='ar'>النِّدَاءَ</span> par zabar kyun hai?",
  o:["Kyunki woh Maf'ool-bihi hai","Kyunki woh Faa'il hai","Kyunki woh Mubtada hai","Kyunki us par harf-e-jar hai"],
  e:"Muzare mein jumla yun hoga: <span class='ar'>يَسْمَعُ المُسَافِرُ النِّدَاءَ</span> — Faa'il marfoo' (<span class='ar'>المُسَافِرُ</span>), Maf'ool mansoob (<span class='ar'>النِّدَاءَ</span>).",
@@ -3721,7 +3722,7 @@ add({id:"tbv72",d:"hard",t:"speak",r:"Lesson 4 · I'rab",a:0,
  uo:["کیونکہ وہ مفعول بہ ہے","کیونکہ وہ فاعل ہے","کیونکہ وہ مبتدا ہے","کیونکہ اس پر حرفِ جار ہے"],
  ue:"مضارع میں جملہ یوں ہوگا: <span class='ar'>يَسْمَعُ المُسَافِرُ النِّدَاءَ</span> — فاعل مرفوع (<span class='ar'>المُسَافِرُ</span>)، مفعول منصوب (<span class='ar'>النِّدَاءَ</span>)۔"});
 
-add({id:"tbv73",d:"hard",t:"speak",r:"Lesson 5 · I'rab",a:0,
+add({id:"tbv73",d:"hard",t:"write",r:"Lesson 5 · I'rab",a:0,
  q:"“Jahaz Riyadh ki taraf ja raha hai” — sahih shakl?",
  o:["<span class='ar'>الطَّائِرَةُ مُتَّجِهَةٌ إِلَى الرِّيَاضِ</span>","<span class='ar'>الطَّائِرَةُ مُتَّجِهٌ إِلَى الرِّيَاضِ</span>","<span class='ar'>الطَّائِرَةُ مُتَّجِهَاتٌ إِلَى الرِّيَاضِ</span>","<span class='ar'>الطَّائِرَةُ مُتَّجِهِينَ إِلَى الرِّيَاضِ</span>"],
  e:"<span class='ar'>طَائِرَة</span> muannas hai, is liye Khabar bhi muannas: <span class='ar'>مُتَّجِهَةٌ</span>. Mardon ke jama ke liye <span class='ar'>مُتَّجِهُونَ</span> hota.",
@@ -3729,7 +3730,7 @@ add({id:"tbv73",d:"hard",t:"speak",r:"Lesson 5 · I'rab",a:0,
  uo:["<span class='ar'>الطَّائِرَةُ مُتَّجِهَةٌ إِلَى الرِّيَاضِ</span>","<span class='ar'>الطَّائِرَةُ مُتَّجِهٌ إِلَى الرِّيَاضِ</span>","<span class='ar'>الطَّائِرَةُ مُتَّجِهَاتٌ إِلَى الرِّيَاضِ</span>","<span class='ar'>الطَّائِرَةُ مُتَّجِهِينَ إِلَى الرِّيَاضِ</span>"],
  ue:"<span class='ar'>طَائِرَة</span> مونث ہے، اس لیے خبر بھی مونث: <span class='ar'>مُتَّجِهَةٌ</span>۔ مردوں کی جمع کے لیے <span class='ar'>مُتَّجِهُونَ</span> ہوتا۔"});
 
-add({id:"tbv74",d:"hard",t:"speak",r:"Lesson 5 · I'rab",a:0,
+add({id:"tbv74",d:"hard",t:"write",r:"Lesson 5 · I'rab",a:0,
  q:"<span class='ar'>فَحَصَ الضَّابِطُ الجَوَازَاتِ</span> — <span class='ar'>الجَوَازَاتِ</span> Maf'ool hai, phir zeer kyun?",
  o:["Kyunki Jama Muannas Salim mein nasb ki halat mein zabar ki jagah zeer aati hai","Kyunki us par harf-e-jar chhupa hua hai","Kyunki woh Mudaf Ilaih hai","Kyunki woh Mamnu' min as-Sarf hai"],
  e:"Yeh Jama Muannas Salim ka khaas qaida hai: marfoo' mein pesh, aur nasb aur jar dono mein zeer.",
@@ -3737,7 +3738,7 @@ add({id:"tbv74",d:"hard",t:"speak",r:"Lesson 5 · I'rab",a:0,
  uo:["کیونکہ جمع مونث سالم میں نصب کی حالت میں زبر کی جگہ زیر آتی ہے","کیونکہ اس پر حرفِ جار چھپا ہوا ہے","کیونکہ وہ مضاف الیہ ہے","کیونکہ وہ ممنوع من الصرف ہے"],
  ue:"یہ جمع مونث سالم کا خاص قاعدہ ہے: مرفوع میں پیش، اور نصب و جر دونوں میں زیر۔"});
 
-add({id:"tbv75",d:"hard",t:"speak",r:"Lesson 1 · Masadir",a:0,
+add({id:"tbv75",d:"hard",t:"write",r:"Lesson 1 · Masadir",a:0,
  q:"Khali jagah: <span class='ar'>بَعْدَ ______ الجَوَازِ ذَهَبَ إِلَى السِّفَارَةِ</span> — kaunsa Masdar?",
  o:["<span class='ar'>اِسْتِخْرَاجِ</span>","<span class='ar'>اِسْتِلامِ</span>","<span class='ar'>إِكْمَالِ</span>","<span class='ar'>تَسَلُّمِ</span>"],
  e:"<span class='ar'>بَعْدَ</span> Mudaf hai is liye aage wala lafz majroor. Jawaz “nikalwaya” jata hai (<span class='ar'>اِسْتِخْرَاج</span>), jabke ticket “wasool” kiya jata hai (<span class='ar'>اِسْتِلام</span>).",
@@ -3745,7 +3746,7 @@ add({id:"tbv75",d:"hard",t:"speak",r:"Lesson 1 · Masadir",a:0,
  uo:["<span class='ar'>اِسْتِخْرَاجِ</span>","<span class='ar'>اِسْتِلامِ</span>","<span class='ar'>إِكْمَالِ</span>","<span class='ar'>تَسَلُّمِ</span>"],
  ue:"<span class='ar'>بَعْدَ</span> مضاف ہے اس لیے آگے والا لفظ مجرور۔ جواز ”نکلوایا“ جاتا ہے (<span class='ar'>اِسْتِخْرَاج</span>)، جبکہ ٹکٹ ”وصول“ کیا جاتا ہے (<span class='ar'>اِسْتِلام</span>)۔"});
 
-add({id:"tbv76",d:"hard",t:"speak",r:"Lesson 1 · I'rab",a:0,
+add({id:"tbv76",d:"hard",t:"write",r:"Lesson 1 · I'rab",a:0,
  q:"<span class='ar'>الآنَ</span> par hamesha zabar kyun hoti hai?",
  o:["Kyunki yeh Zarf-e-Zaman hai aur Mabni 'alal-fath hai","Kyunki yeh Faa'il hai","Kyunki yeh Mudaf Ilaih hai","Kyunki is par harf-e-nasb aaya hai"],
  e:"Isi liye <span class='ar'>الآنُ</span> ya <span class='ar'>الآنِ</span> kabhi nahi bola jata — har halat mein <span class='ar'>الآنَ</span> hi rahega.",
@@ -3755,6 +3756,252 @@ add({id:"tbv76",d:"hard",t:"speak",r:"Lesson 1 · I'rab",a:0,
 
 /* ---- register every entry into BANK and the Urdu table ---- */
 V.forEach(function(x){
+  BANK.push({ id:x.id, s:"tabeer", d:x.d, t:x.t, q:x.q, o:x.o, a:x.a, e:x.e, r:x.r });
+  UR_Q_DATA[x.id] = { q:x.uq, o:x.uo, e:x.ue };
+});
+})();
+
+/* ============================================================
+   At-Taabeer — Tahreer (WRITTEN paper)
+   The paper is no longer oral: every answer is written in Arabic,
+   and only the meaning of a vocabulary word may be given in any
+   language. What is marked is the student's own Arabic writing,
+   so these drill imla (spelling), sentence building, i'rab and
+   correcting mistakes rather than recall of the chapters.
+   ============================================================ */
+(function(){
+var W=[]; function add(x){ W.push(x); }
+var AR=function(s){ return "<span class='ar'>"+s+"</span>"; };
+
+/* ---------------- EASY · imla and basic writing ---------------- */
+add({id:"tbw1",d:"easy",t:"write",r:"Imla · Ta Marbuta",a:0,
+ q:"“Ticket” imla ke lihaz se kaise likha jayega?",
+ o:[AR("تَذْكِرَة"),AR("تَذْكِرَه"),AR("تَذْكِرَت"),AR("تَذْكِرا")],
+ e:"Aakhir mein gol Ta ("+AR("ة")+") aati hai, "+AR("ه")+" nahi. Gol Ta par do nuqte hote hain — likhte waqt yeh chhootna aam ghalti hai.",
+ uq:"“Ticket” املا کے لحاظ سے کیسے لکھا جائے گا؟",
+ uo:[AR("تَذْكِرَة"),AR("تَذْكِرَه"),AR("تَذْكِرَت"),AR("تَذْكِرا")],
+ ue:"آخر میں گول تا ("+AR("ة")+") آتی ہے، "+AR("ه")+" نہیں۔ گول تا پر دو نقطے ہوتے ہیں — لکھتے وقت یہ چھوٹنا عام غلطی ہے۔"});
+
+add({id:"tbw2",d:"easy",t:"write",r:"Imla · Hamzat al-Wasl",a:0,
+ q:AR("استخراج")+" (nikalwana) ka durust imla?",
+ o:[AR("اِسْتِخْرَاج"),AR("إِسْتِخْرَاج"),AR("أِسْتِخْرَاج"),AR("آسْتِخْرَاج")],
+ e:"Baab Istif'al ka Masdar Hamzat-ul-Wasl se shuru hota hai — nangi Alif, uske upar ya neeche hamza nahi likhi jati. Isi tarah "+AR("اِسْتِلام")+" aur "+AR("اِسْتِقْبَال")+".",
+ uq:AR("استخراج")+" (نکلوانا) کا درست املا؟",
+ uo:[AR("اِسْتِخْرَاج"),AR("إِسْتِخْرَاج"),AR("أِسْتِخْرَاج"),AR("آسْتِخْرَاج")],
+ ue:"باب استفعال کا مصدر ہمزۃ الوصل سے شروع ہوتا ہے — ننگی الف، اس کے اوپر یا نیچے ہمزہ نہیں لکھی جاتی۔ اسی طرح "+AR("اِسْتِلام")+" اور "+AR("اِسْتِقْبَال")+"۔"});
+
+add({id:"tbw3",d:"easy",t:"write",r:"Imla · Hamza darmiyan mein",a:0,
+ q:"“Visa” ka durust imla kaunsa hai?",
+ o:[AR("تَأْشِيرَة"),AR("تَاشِيرَة"),AR("تَؤْشِيرَة"),AR("تَئْشِيرَة")],
+ e:"Saakin hamza se pehle zabar ho to hamza Alif ki kursi par likhi jati hai: "+AR("تَأْ")+". Isi usool par "+AR("رَأْس")+" aur "+AR("مَأْمُور")+".",
+ uq:"“Visa” کا درست املا کون سا ہے؟",
+ uo:[AR("تَأْشِيرَة"),AR("تَاشِيرَة"),AR("تَؤْشِيرَة"),AR("تَئْشِيرَة")],
+ ue:"ساکن ہمزہ سے پہلے زبر ہو تو ہمزہ الف کی کرسی پر لکھا جاتا ہے: "+AR("تَأْ")+"۔ اسی اصول پر "+AR("رَأْس")+" اور "+AR("مَأْمُور")+"۔"});
+
+add({id:"tbw4",d:"easy",t:"write",r:"Imla · Alif Maqsura",a:0,
+ q:"“Tak / towards” wala harf-e-jar kaise likha jata hai?",
+ o:[AR("إِلَى"),AR("إِلَي"),AR("اِلَى"),AR("أَلَى")],
+ e:"Aakhir mein Alif Maqsura ("+AR("ى")+") aati hai — baghair nuqton ki Ya. Hamza bhi neeche wali hai: "+AR("إِ")+". Isi tarah "+AR("عَلَى")+" aur "+AR("حَتَّى")+".",
+ uq:"“تک / towards” والا حرفِ جار کیسے لکھا جاتا ہے؟",
+ uo:[AR("إِلَى"),AR("إِلَي"),AR("اِلَى"),AR("أَلَى")],
+ ue:"آخر میں الف مقصورہ ("+AR("ى")+") آتی ہے — بغیر نقطوں کی یا۔ ہمزہ بھی نیچے والا ہے: "+AR("إِ")+"۔ اسی طرح "+AR("عَلَى")+" اور "+AR("حَتَّى")+"۔"});
+
+add({id:"tbw5",d:"easy",t:"write",r:"Imla · Tanween",a:0,
+ q:"“Shukriya” (tanween ke saath) likhne ka durust tareeqa?",
+ o:[AR("شُكْرًا"),AR("شُكْرً"),AR("شُكْرٌا"),AR("شُكْرٍا")],
+ e:"Tanween-e-nasb ke saath aakhir mein Alif barhai jati hai. Magar agar lafz Gol Ta par khatam ho to Alif nahi aati: "+AR("تَذْكِرَةً")+".",
+ uq:"“شکریہ” (تنوین کے ساتھ) لکھنے کا درست طریقہ؟",
+ uo:[AR("شُكْرًا"),AR("شُكْرً"),AR("شُكْرٌا"),AR("شُكْرٍا")],
+ ue:"تنوینِ نصب کے ساتھ آخر میں الف بڑھائی جاتی ہے۔ مگر اگر لفظ گول تا پر ختم ہو تو الف نہیں آتی: "+AR("تَذْكِرَةً")+"۔"});
+
+add({id:"tbw6",d:"easy",t:"write",r:"Imla · Laam Shamsi",a:0,
+ q:AR("ال ")+" + "+AR("سَفَر")+" — likhne mein kaunsi shakl durust hai?",
+ o:[AR("السَّفَر"),AR("اسَّفَر"),AR("الْسَّفَر"),AR("السْفَر")],
+ e:"Laam Shamsi padha nahi jata, magar likha zaroor jata hai — aur agle harf par shaddah aati hai. Yehi farq imla mein sabse zyada ghalti karata hai.",
+ uq:AR("ال ")+" + "+AR("سَفَر")+" — لکھنے میں کون سی شکل درست ہے؟",
+ uo:[AR("السَّفَر"),AR("اسَّفَر"),AR("الْسَّفَر"),AR("السْفَر")],
+ ue:"لام شمسی پڑھا نہیں جاتا، مگر لکھا ضرور جاتا ہے — اور اگلے حرف پر شد آتی ہے۔ یہی فرق املا میں سب سے زیادہ غلطی کراتا ہے۔"});
+
+add({id:"tbw7",d:"easy",t:"write",r:"Tahreer · Zameer",a:0,
+ q:"“Mera passport” likhne ki sahih shakl?",
+ o:[AR("جَوَازِي"),AR("جَوَازُنَا"),AR("جَوَازُكَ"),AR("جَوَازُهُ")],
+ e:AR("ـي")+" = mera, "+AR("ـنَا")+" = hamara, "+AR("ـكَ")+" = tera, "+AR("ـهُ")+" = uska. Mutakallim ki Ya lagne par lafz ka aakhiri harf hamesha zeer par aata hai.",
+ uq:"“میرا پاسپورٹ” لکھنے کی صحیح شکل؟",
+ uo:[AR("جَوَازِي"),AR("جَوَازُنَا"),AR("جَوَازُكَ"),AR("جَوَازُهُ")],
+ ue:AR("ـي")+" = میرا، "+AR("ـنَا")+" = ہمارا، "+AR("ـكَ")+" = تیرا، "+AR("ـهُ")+" = اس کا۔ متکلم کی یا لگنے پر لفظ کا آخری حرف ہمیشہ زیر پر آتا ہے۔"});
+
+add({id:"tbw8",d:"easy",t:"write",r:"Tahreer · Fi'l Mazi",a:0,
+ q:"“Main ne safar kiya” likhne ki sahih shakl?",
+ o:[AR("سَافَرْتُ"),AR("سَافَرْتَ"),AR("سَافَرْتِ"),AR("سَافَرَ")],
+ e:"Mutakallim ki Ta par pesh: "+AR("ـتُ")+". "+AR("ـتَ")+" = tu ne (mard), "+AR("ـتِ")+" = tu ne (aurat), aur baghair Ta ke "+AR("سَافَرَ")+" = usne.",
+ uq:"“میں نے سفر کیا” لکھنے کی صحیح شکل؟",
+ uo:[AR("سَافَرْتُ"),AR("سَافَرْتَ"),AR("سَافَرْتِ"),AR("سَافَرَ")],
+ ue:"متکلم کی تا پر پیش: "+AR("ـتُ")+"۔ "+AR("ـتَ")+" = تو نے (مرد)، "+AR("ـتِ")+" = تو نے (عورت)، اور بغیر تا کے "+AR("سَافَرَ")+" = اس نے۔"});
+
+add({id:"tbw9",d:"easy",t:"write",r:"Tahreer · Nafi",a:0,
+ q:"“Mere paas ticket nahi hai” likhne ki sahih shakl?",
+ o:[AR("لَيْسَ مَعِي تَذْكِرَةٌ"),AR("لَيْسَ مَعِي تَذْكِرَةً"),AR("لَمْ مَعِي تَذْكِرَةٌ"),AR("لَنْ مَعِي تَذْكِرَةٌ")],
+ e:AR("لَيْسَ")+" ismiya jumle ki nafi karta hai; yahan "+AR("مَعِي")+" khabar muqaddam hai aur "+AR("تَذْكِرَةٌ")+" ism-e-laisa marfoo'. "+AR("لَمْ")+" aur "+AR("لَنْ")+" sirf fi'l par aate hain.",
+ uq:"“میرے پاس ٹکٹ نہیں ہے” لکھنے کی صحیح شکل؟",
+ uo:[AR("لَيْسَ مَعِي تَذْكِرَةٌ"),AR("لَيْسَ مَعِي تَذْكِرَةً"),AR("لَمْ مَعِي تَذْكِرَةٌ"),AR("لَنْ مَعِي تَذْكِرَةٌ")],
+ ue:AR("لَيْسَ")+" اسمیہ جملے کی نفی کرتا ہے؛ یہاں "+AR("مَعِي")+" خبر مقدم ہے اور "+AR("تَذْكِرَةٌ")+" اسمِ لیس مرفوع۔ "+AR("لَمْ")+" اور "+AR("لَنْ")+" صرف فعل پر آتے ہیں۔"});
+
+add({id:"tbw10",d:"easy",t:"write",r:"Tahreer · Sawal",a:0,
+ q:"“Kya aap ne ticket book kar li?” likhne ki sahih shakl?",
+ o:[AR("هَلْ حَجَزْتَ التَّذْكِرَةَ؟"),AR("هَلْ حَجَزْتَ التَّذْكِرَةُ؟"),AR("مَا حَجَزْتَ التَّذْكِرَةَ؟"),AR("أَيْنَ حَجَزْتَ التَّذْكِرَةَ؟")],
+ e:AR("هَلْ")+" haan/nahi wala sawal banata hai, aur "+AR("التَّذْكِرَة")+" Maf'ool hone ki wajah se mansoob. Arabi sawalia nishan "+AR("؟")+" ulta likha jata hai.",
+ uq:"“کیا آپ نے ٹکٹ بک کر لی؟” لکھنے کی صحیح شکل؟",
+ uo:[AR("هَلْ حَجَزْتَ التَّذْكِرَةَ؟"),AR("هَلْ حَجَزْتَ التَّذْكِرَةُ؟"),AR("مَا حَجَزْتَ التَّذْكِرَةَ؟"),AR("أَيْنَ حَجَزْتَ التَّذْكِرَةَ؟")],
+ ue:AR("هَلْ")+" ہاں/نہیں والا سوال بناتا ہے، اور "+AR("التَّذْكِرَة")+" مفعول ہونے کی وجہ سے منصوب۔ عربی سوالیہ نشان "+AR("؟")+" الٹا لکھا جاتا ہے۔"});
+
+/* ---------------- MEDIUM · jumla sazi and ghalti durust karna ---------------- */
+add({id:"tbw11",d:"medium",t:"write",r:"Ghalti durust karein",a:0,
+ q:"Is jumle mein ek ghalti hai: "+AR("أَنَا ذَاهِبٌ إِلَى المَطَارُ")+" — durust shakl?",
+ o:[AR("أَنَا ذَاهِبٌ إِلَى المَطَارِ"),AR("أَنَا ذَاهِبً إِلَى المَطَارُ"),AR("أَنَا ذَاهِبٌ إِلَى المَطَارَ"),AR("أَنَا ذَاهِبِ إِلَى المَطَارِ")],
+ e:"Harf-e-jar "+AR("إِلَى")+" ke baad ism hamesha majroor hota hai, is liye "+AR("المَطَارِ")+". Mubtada "+AR("أَنَا")+" aur Khabar "+AR("ذَاهِبٌ")+" dono marfoo' rehte hain.",
+ uq:"اس جملے میں ایک غلطی ہے: "+AR("أَنَا ذَاهِبٌ إِلَى المَطَارُ")+" — درست شکل؟",
+ uo:[AR("أَنَا ذَاهِبٌ إِلَى المَطَارِ"),AR("أَنَا ذَاهِبً إِلَى المَطَارُ"),AR("أَنَا ذَاهِبٌ إِلَى المَطَارَ"),AR("أَنَا ذَاهِبِ إِلَى المَطَارِ")],
+ ue:"حرفِ جار "+AR("إِلَى")+" کے بعد اسم ہمیشہ مجرور ہوتا ہے، اس لیے "+AR("المَطَارِ")+"۔ مبتدا "+AR("أَنَا")+" اور خبر "+AR("ذَاهِبٌ")+" دونوں مرفوع رہتے ہیں۔"});
+
+add({id:"tbw12",d:"medium",t:"write",r:"Tarjuma · Urdu se Arabi",a:0,
+ q:"“Musafir ne card par apna naam likha” — Arabi tarjuma likhiye:",
+ o:[AR("كَتَبَ المُسَافِرُ اسْمَهُ عَلَى البِطَاقَةِ"),AR("كَتَبَ المُسَافِرَ اسْمُهُ عَلَى البِطَاقَةِ"),AR("كَتَبَ المُسَافِرُ اسْمَهُ عَلَى البِطَاقَةُ"),AR("يَكْتُبُ المُسَافِرُ اسْمَهُ عَلَى البِطَاقَةِ")],
+ e:"Fa'il marfoo' ("+AR("المُسَافِرُ")+"), Maf'ool mansoob ("+AR("اسْمَهُ")+"), aur harf-e-jar ke baad majroor ("+AR("البِطَاقَةِ")+"). Guzra hua kaam hai is liye Mazi.",
+ uq:"“مسافر نے کارڈ پر اپنا نام لکھا” — عربی ترجمہ لکھیے:",
+ uo:[AR("كَتَبَ المُسَافِرُ اسْمَهُ عَلَى البِطَاقَةِ"),AR("كَتَبَ المُسَافِرَ اسْمُهُ عَلَى البِطَاقَةِ"),AR("كَتَبَ المُسَافِرُ اسْمَهُ عَلَى البِطَاقَةُ"),AR("يَكْتُبُ المُسَافِرُ اسْمَهُ عَلَى البِطَاقَةِ")],
+ ue:"فاعل مرفوع ("+AR("المُسَافِرُ")+")، مفعول منصوب ("+AR("اسْمَهُ")+")، اور حرفِ جار کے بعد مجرور ("+AR("البِطَاقَةِ")+")۔ گزرا ہوا کام ہے اس لیے ماضی۔"});
+
+add({id:"tbw13",d:"medium",t:"write",r:"Jumla Ismiya",a:0,
+ q:"“Bag bhari hai” — jumla ismiya ki sahih shakl?",
+ o:[AR("الحَقِيبَةُ ثَقِيلَةٌ"),AR("الحَقِيبَةُ ثَقِيلٌ"),AR("الحَقِيبَةَ ثَقِيلَةٌ"),AR("الحَقِيبَةُ الثَّقِيلَةُ")],
+ e:"Khabar Mubtada ke mutabiq muannas hogi aur dono marfoo'. Agar Khabar par bhi "+AR("ال")+" laga dein to jumla khatam nahi hota — woh Murakkab Tauseefi ban jata hai.",
+ uq:"“بیگ بھاری ہے” — جملہ اسمیہ کی صحیح شکل؟",
+ uo:[AR("الحَقِيبَةُ ثَقِيلَةٌ"),AR("الحَقِيبَةُ ثَقِيلٌ"),AR("الحَقِيبَةَ ثَقِيلَةٌ"),AR("الحَقِيبَةُ الثَّقِيلَةُ")],
+ ue:"خبر مبتدا کے مطابق مونث ہوگی اور دونوں مرفوع۔ اگر خبر پر بھی "+AR("ال")+" لگا دیں تو جملہ ختم نہیں ہوتا — وہ مرکب توصیفی بن جاتا ہے۔"});
+
+add({id:"tbw14",d:"medium",t:"write",r:"Tahreer · Tasniya",a:0,
+ q:"“Main ne do bag uthaye” — sahih shakl?",
+ o:[AR("حَمَلْتُ حَقِيبَتَيْنِ"),AR("حَمَلْتُ حَقِيبَتَانِ"),AR("حَمَلْتُ حَقِيبَتَيْنَ"),AR("حَمَلْتُ حَقِيبَاتٍ")],
+ e:"Tasniya marfoo' mein "+AR("ـَانِ")+" aur nasb-o-jar mein "+AR("ـَيْنِ")+" hota hai. Yahan woh Maf'ool hai, is liye "+AR("حَقِيبَتَيْنِ")+"; Noon par hamesha zeer.",
+ uq:"“میں نے دو بیگ اٹھائے” — صحیح شکل؟",
+ uo:[AR("حَمَلْتُ حَقِيبَتَيْنِ"),AR("حَمَلْتُ حَقِيبَتَانِ"),AR("حَمَلْتُ حَقِيبَتَيْنَ"),AR("حَمَلْتُ حَقِيبَاتٍ")],
+ ue:"تثنیہ مرفوع میں "+AR("ـَانِ")+" اور نصب و جر میں "+AR("ـَيْنِ")+" ہوتا ہے۔ یہاں وہ مفعول ہے، اس لیے "+AR("حَقِيبَتَيْنِ")+"؛ نون پر ہمیشہ زیر۔"});
+
+add({id:"tbw15",d:"medium",t:"write",r:"Jumla sazi",a:0,
+ q:"Tarteeb de kar jumla banayein: "+AR("سَاعَةً / المَطَارِ / انْتَظَرْتُ / فِي"),
+ o:[AR("انْتَظَرْتُ سَاعَةً فِي المَطَارِ"),AR("انْتَظَرْتُ سَاعَةٌ فِي المَطَارِ"),AR("انْتَظَرْتُ فِي سَاعَةً المَطَارِ"),AR("سَاعَةً انْتَظَرْتُ المَطَارُ فِي")],
+ e:AR("سَاعَةً")+" Zarf-e-Zaman hai is liye mansoob, aur "+AR("فِي")+" ke baad "+AR("المَطَارِ")+" majroor. Tarteeb: Fi'l → Zarf → Jar-Majroor.",
+ uq:"ترتیب دے کر جملہ بنائیں: "+AR("سَاعَةً / المَطَارِ / انْتَظَرْتُ / فِي"),
+ uo:[AR("انْتَظَرْتُ سَاعَةً فِي المَطَارِ"),AR("انْتَظَرْتُ سَاعَةٌ فِي المَطَارِ"),AR("انْتَظَرْتُ فِي سَاعَةً المَطَارِ"),AR("سَاعَةً انْتَظَرْتُ المَطَارُ فِي")],
+ ue:AR("سَاعَةً")+" ظرفِ زمان ہے اس لیے منصوب، اور "+AR("فِي")+" کے بعد "+AR("المَطَارِ")+" مجرور۔ ترتیب: فعل ← ظرف ← جار مجرور۔"});
+
+add({id:"tbw16",d:"medium",t:"write",r:"Ghalti durust karein",a:0,
+ q:"Durust kijiye: "+AR("سَافَرَ المُسَافِرُونَ إِلَى الرِّيَاضَ"),
+ o:[AR("سَافَرَ المُسَافِرُونَ إِلَى الرِّيَاضِ"),AR("سَافَرُوا المُسَافِرُونَ إِلَى الرِّيَاضِ"),AR("سَافَرَ المُسَافِرِينَ إِلَى الرِّيَاضِ"),AR("سَافَرَ المُسَافِرُونَ إِلَى الرِّيَاضُ")],
+ e:"Ghalti sirf aakhir mein thi: "+AR("إِلَى")+" ke baad "+AR("الرِّيَاض")+" majroor hoga. Baqi jumla pehle hi durust tha — Fi'l wahid aur Fa'il jama marfoo'.",
+ uq:"درست کیجیے: "+AR("سَافَرَ المُسَافِرُونَ إِلَى الرِّيَاضَ"),
+ uo:[AR("سَافَرَ المُسَافِرُونَ إِلَى الرِّيَاضِ"),AR("سَافَرُوا المُسَافِرُونَ إِلَى الرِّيَاضِ"),AR("سَافَرَ المُسَافِرِينَ إِلَى الرِّيَاضِ"),AR("سَافَرَ المُسَافِرُونَ إِلَى الرِّيَاضُ")],
+ ue:"غلطی صرف آخر میں تھی: "+AR("إِلَى")+" کے بعد "+AR("الرِّيَاض")+" مجرور ہوگا۔ باقی جملہ پہلے ہی درست تھا — فعل واحد اور فاعل جمع مرفوع۔"});
+
+add({id:"tbw17",d:"medium",t:"write",r:"Tahreer · Huroof-e-Atf",a:0,
+ q:"“Main ne bag rakha, phir card bhara” — darmiyan mein kaunsa harf likhenge?",
+ o:[AR("ثُمَّ")+" — tarteeb aur mohlat ke liye",AR("لَكِنْ")+" — istidrak ke liye",AR("أَوْ")+" — ikhtiyar ke liye",AR("بَلْ")+" — izrab ke liye"],
+ e:"Poora jumla: "+AR("وَضَعْتُ الحَقِيبَةَ ثُمَّ مَلَأْتُ البِطَاقَةَ")+". "+AR("فَ")+" fauri tarteeb ke liye aata hai aur "+AR("ثُمَّ")+" waqfe ke saath.",
+ uq:"“میں نے بیگ رکھا، پھر کارڈ بھرا” — درمیان میں کون سا حرف لکھیں گے؟",
+ uo:[AR("ثُمَّ")+" — ترتیب اور مہلت کے لیے",AR("لَكِنْ")+" — استدراک کے لیے",AR("أَوْ")+" — اختیار کے لیے",AR("بَلْ")+" — اضراب کے لیے"],
+ ue:"پورا جملہ: "+AR("وَضَعْتُ الحَقِيبَةَ ثُمَّ مَلَأْتُ البِطَاقَةَ")+"۔ "+AR("فَ")+" فوری ترتیب کے لیے آتا ہے اور "+AR("ثُمَّ")+" وقفے کے ساتھ۔"});
+
+add({id:"tbw18",d:"medium",t:"write",r:"Tahreer · Adad",a:0,
+ q:"“Pachas dollar ada kijiye” — adad ki sahih shakl?",
+ o:[AR("اِدْفَعْ خَمْسِينَ دُولَارًا"),AR("اِدْفَعْ خَمْسُونَ دُولَارًا"),AR("اِدْفَعْ خَمْسِينَ دُولَارٍ"),AR("اِدْفَعْ خَمْسُونَ دُولَارٌ")],
+ e:"Adad yahan Maf'ool hai is liye mansoob — aur dahaiyan Jama Muzakkar Salim ke mulhaq hain, so nasb mein "+AR("ـِينَ")+". Tamyeez wahid mansoob: "+AR("دُولَارًا")+".",
+ uq:"“پچاس ڈالر ادا کیجیے” — عدد کی صحیح شکل؟",
+ uo:[AR("اِدْفَعْ خَمْسِينَ دُولَارًا"),AR("اِدْفَعْ خَمْسُونَ دُولَارًا"),AR("اِدْفَعْ خَمْسِينَ دُولَارٍ"),AR("اِدْفَعْ خَمْسُونَ دُولَارٌ")],
+ ue:"عدد یہاں مفعول ہے اس لیے منصوب — اور دہائیاں جمع مذکر سالم کے ملحق ہیں، سو نصب میں "+AR("ـِينَ")+"۔ تمییز واحد منصوب: "+AR("دُولَارًا")+"۔"});
+
+add({id:"tbw19",d:"medium",t:"write",r:"Tahreer · Amr",a:0,
+ q:"Form par hidayat likhni hai “apna naam yahan likhiye” — sahih Amr?",
+ o:[AR("اكْتُبْ اسْمَكَ هُنَا"),AR("تَكْتُبُ اسْمَكَ هُنَا"),AR("كَتَبْتَ اسْمَكَ هُنَا"),AR("اكْتُبْ اسْمُكَ هُنَا")],
+ e:"Amr banane ka tareeqa: Muzare se harf-e-mudar'at hata kar shuru mein Hamzat-ul-Wasl lagayein — "+AR("تَكْتُبُ ← اكْتُبْ")+". Maf'ool phir bhi mansoob rahega.",
+ uq:"فارم پر ہدایت لکھنی ہے ”اپنا نام یہاں لکھیے“ — صحیح امر؟",
+ uo:[AR("اكْتُبْ اسْمَكَ هُنَا"),AR("تَكْتُبُ اسْمَكَ هُنَا"),AR("كَتَبْتَ اسْمَكَ هُنَا"),AR("اكْتُبْ اسْمُكَ هُنَا")],
+ ue:"امر بنانے کا طریقہ: مضارع سے حرفِ مضارعت ہٹا کر شروع میں ہمزۃ الوصل لگائیں — "+AR("تَكْتُبُ ← اكْتُبْ")+"۔ مفعول پھر بھی منصوب رہے گا۔"});
+
+add({id:"tbw20",d:"medium",t:"vocab",r:"Lughat · maane kisi bhi zaban mein",a:0,
+ q:AR("مُوَظَّفُ الجَمَارِكِ")+" ka matlab? (mufradat ke maane kisi bhi zaban mein likhe ja sakte hain)",
+ o:["Customs officer / کسٹمز کا اہلکار","Passport officer / پاسپورٹ آفیسر","Booking clerk / بکنگ کلرک","Airline pilot / پائلٹ"],
+ e:"Paper mein sirf yehi qism aisi hai jiska jawab Arabi ke baghair bhi diya ja sakta hai — baqi har jawab Arabi mein likhna hoga.",
+ uq:AR("مُوَظَّفُ الجَمَارِكِ")+" کا مطلب؟ (مفردات کے معنی کسی بھی زبان میں لکھے جا سکتے ہیں)",
+ uo:["کسٹمز کا اہلکار / Customs officer","پاسپورٹ آفیسر","بکنگ کلرک","پائلٹ"],
+ ue:"پرچے میں صرف یہی قسم ایسی ہے جس کا جواب عربی کے بغیر بھی دیا جا سکتا ہے — باقی ہر جواب عربی میں لکھنا ہوگا۔"});
+
+/* ---------------- HARD · tarkeeb, i'rab aur chhoti tahreer ---------------- */
+add({id:"tbw21",d:"hard",t:"write",r:"Tahreer · Kana",a:0,
+ q:"“Airport bhara hua tha” — "+AR("كَانَ")+" ke saath sahih shakl?",
+ o:[AR("كَانَ المَطَارُ مُزْدَحِمًا"),AR("كَانَ المَطَارَ مُزْدَحِمٌ"),AR("كَانَ المَطَارُ مُزْدَحِمٌ"),AR("كَانَتْ المَطَارُ مُزْدَحِمًا")],
+ e:AR("كَانَ")+" apne Ism ko rafa deta hai aur Khabar ko nasab — ulta "+AR("إِنَّ")+" ka amal hai. "+AR("مَطَار")+" muzakkar hai is liye "+AR("كَانَ")+", "+AR("كَانَتْ")+" nahi.",
+ uq:"“ایئرپورٹ بھرا ہوا تھا” — "+AR("كَانَ")+" کے ساتھ صحیح شکل؟",
+ uo:[AR("كَانَ المَطَارُ مُزْدَحِمًا"),AR("كَانَ المَطَارَ مُزْدَحِمٌ"),AR("كَانَ المَطَارُ مُزْدَحِمٌ"),AR("كَانَتْ المَطَارُ مُزْدَحِمًا")],
+ ue:AR("كَانَ")+" اپنے اسم کو رفع دیتا ہے اور خبر کو نصب — الٹا "+AR("إِنَّ")+" کا عمل ہے۔ "+AR("مَطَار")+" مذکر ہے اس لیے "+AR("كَانَ")+"، "+AR("كَانَتْ")+" نہیں۔"});
+
+add({id:"tbw22",d:"hard",t:"write",r:"Tahreer · Inna",a:0,
+ q:"“Beshak safar lamba hai” — "+AR("إِنَّ")+" ke saath sahih shakl?",
+ o:[AR("إِنَّ الرِّحْلَةَ طَوِيلَةٌ"),AR("إِنَّ الرِّحْلَةُ طَوِيلَةٌ"),AR("إِنَّ الرِّحْلَةَ طَوِيلَةً"),AR("إِنَّ الرِّحْلَةُ طَوِيلَةً")],
+ e:AR("إِنَّ")+" Harf-e-Mushabbahah bil-Fi'l hai: apne Ism ko nasab aur Khabar ko rafa deta hai — yani "+AR("كَانَ")+" ka bilkul ulta.",
+ uq:"“بے شک سفر لمبا ہے” — "+AR("إِنَّ")+" کے ساتھ صحیح شکل؟",
+ uo:[AR("إِنَّ الرِّحْلَةَ طَوِيلَةٌ"),AR("إِنَّ الرِّحْلَةُ طَوِيلَةٌ"),AR("إِنَّ الرِّحْلَةَ طَوِيلَةً"),AR("إِنَّ الرِّحْلَةُ طَوِيلَةً")],
+ ue:AR("إِنَّ")+" حرفِ مشبہہ بالفعل ہے: اپنے اسم کو نصب اور خبر کو رفع دیتا ہے — یعنی "+AR("كَانَ")+" کا بالکل الٹا۔"});
+
+add({id:"tbw23",d:"hard",t:"write",r:"Tahreer · Idafa ka silsila",a:0,
+ q:"“Booking office ka mulazim” — teen lafzon ki Idafa ki sahih shakl?",
+ o:[AR("مُوَظَّفُ مَكْتَبِ الحَجْزِ"),AR("المُوَظَّفُ مَكْتَبِ الحَجْزِ"),AR("مُوَظَّفُ المَكْتَبُ الحَجْزِ"),AR("مُوَظَّفٍ مَكْتَبِ الحَجْزِ")],
+ e:"Idafa ki zanjeer mein beech ka lafz Mudaf bhi hai aur Mudaf Ilaih bhi — is liye us par na "+AR("ال")+" aati hai na tanween, magar zeer aati hai. Sirf aakhri lafz par "+AR("ال")+" aa sakti hai.",
+ uq:"“بکنگ آفس کا ملازم” — تین لفظوں کی اضافت کی صحیح شکل؟",
+ uo:[AR("مُوَظَّفُ مَكْتَبِ الحَجْزِ"),AR("المُوَظَّفُ مَكْتَبِ الحَجْزِ"),AR("مُوَظَّفُ المَكْتَبُ الحَجْزِ"),AR("مُوَظَّفٍ مَكْتَبِ الحَجْزِ")],
+ ue:"اضافت کی زنجیر میں بیچ کا لفظ مضاف بھی ہے اور مضاف الیہ بھی — اس لیے اس پر نہ "+AR("ال")+" آتی ہے نہ تنوین، مگر زیر آتی ہے۔ صرف آخری لفظ پر "+AR("ال")+" آ سکتی ہے۔"});
+
+add({id:"tbw24",d:"hard",t:"write",r:"Ghalti durust karein",a:0,
+ q:"Is jumle mein do ghaltiyan hain: "+AR("ذَهَبَتْ الطَّالِبُ إِلَى السِّفَارَةُ")+" — durust shakl?",
+ o:[AR("ذَهَبَ الطَّالِبُ إِلَى السِّفَارَةِ"),AR("ذَهَبَتْ الطَّالِبُ إِلَى السِّفَارَةِ"),AR("ذَهَبَ الطَّالِبَ إِلَى السِّفَارَةِ"),AR("ذَهَبَ الطَّالِبُ إِلَى السِّفَارَةَ")],
+ e:"Pehli ghalti: "+AR("الطَّالِب")+" muzakkar hai, so "+AR("ذَهَبَ")+" — "+AR("ذَهَبَتْ")+" nahi. Doosri: "+AR("إِلَى")+" ke baad "+AR("السِّفَارَة")+" majroor hogi.",
+ uq:"اس جملے میں دو غلطیاں ہیں: "+AR("ذَهَبَتْ الطَّالِبُ إِلَى السِّفَارَةُ")+" — درست شکل؟",
+ uo:[AR("ذَهَبَ الطَّالِبُ إِلَى السِّفَارَةِ"),AR("ذَهَبَتْ الطَّالِبُ إِلَى السِّفَارَةِ"),AR("ذَهَبَ الطَّالِبَ إِلَى السِّفَارَةِ"),AR("ذَهَبَ الطَّالِبُ إِلَى السِّفَارَةَ")],
+ ue:"پہلی غلطی: "+AR("الطَّالِب")+" مذکر ہے، سو "+AR("ذَهَبَ")+" — "+AR("ذَهَبَتْ")+" نہیں۔ دوسری: "+AR("إِلَى")+" کے بعد "+AR("السِّفَارَة")+" مجرور ہوگی۔"});
+
+add({id:"tbw25",d:"hard",t:"write",r:"Tahreer · Darkhwast",a:0,
+ q:"Darkhwast mein adab se likhna hai “barae meharbani meri booking confirm kar dein”:",
+ o:[AR("أَرْجُو أَنْ تُؤَكِّدَ حَجْزِي"),AR("أَرْجُو أَنْ تُؤَكِّدُ حَجْزِي"),AR("أَرْجُو تُؤَكِّدْ حَجْزِي"),AR("أَرْجُو أَنْ أَكَّدْتَ حَجْزِي")],
+ e:AR("أَرْجُو أَنْ…")+" khat aur darkhwast ka mamool andaz hai, aur "+AR("أَنْ")+" ke baad Muzare mansoob. "+AR("حَجْزِي")+" mein mutakallim ki Ya lagi hai.",
+ uq:"درخواست میں ادب سے لکھنا ہے ”برائے مہربانی میری بکنگ کنفرم کر دیں“:",
+ uo:[AR("أَرْجُو أَنْ تُؤَكِّدَ حَجْزِي"),AR("أَرْجُو أَنْ تُؤَكِّدُ حَجْزِي"),AR("أَرْجُو تُؤَكِّدْ حَجْزِي"),AR("أَرْجُو أَنْ أَكَّدْتَ حَجْزِي")],
+ ue:AR("أَرْجُو أَنْ…")+" خط اور درخواست کا معمول انداز ہے، اور "+AR("أَنْ")+" کے بعد مضارع منصوب۔ "+AR("حَجْزِي")+" میں متکلم کی یا لگی ہے۔"});
+
+add({id:"tbw26",d:"hard",t:"write",r:"Tahreer · Chhota paragraph",a:0,
+ q:"Airport pohanchne par teen jumlon ka sahih tareen paragraph kaunsa hai?",
+ o:[AR("وَصَلْتُ إِلَى المَطَارِ مُبَكِّرًا، ثُمَّ وَضَعْتُ حَقِيبَتِي عَلَى المِيزَانِ، وَتَسَلَّمْتُ بِطَاقَةَ الصُّعُودِ"),AR("وَصَلْتُ إِلَى المَطَارُ مُبَكِّرٌ، ثُمَّ وَضَعْتُ حَقِيبَتِي عَلَى المِيزَانُ"),AR("أَصِلُ إِلَى المَطَارِ مُبَكِّرًا، ثُمَّ وَضَعْتُ حَقِيبَتِي، وَسَأَتَسَلَّمُ"),AR("وَصَلْتُ المَطَارَ مُبَكِّرًا، ثُمَّ وَضَعْتُ حَقِيبَتَي عَلَى المِيزَانِ")],
+ e:"Pehla option har jagah durust hai: "+AR("وَصَلَ إِلَى")+" ke saath majroor, "+AR("مُبَكِّرًا")+" Haal hone ki wajah se mansoob, zamana poore paragraph mein ek hi (Mazi), aur zameer "+AR("حَقِيبَتِي")+" sahih.",
+ uq:"ایئرپورٹ پہنچنے پر تین جملوں کا صحیح ترین پیرگراف کون سا ہے؟",
+ uo:[AR("وَصَلْتُ إِلَى المَطَارِ مُبَكِّرًا، ثُمَّ وَضَعْتُ حَقِيبَتِي عَلَى المِيزَانِ، وَتَسَلَّمْتُ بِطَاقَةَ الصُّعُودِ"),AR("وَصَلْتُ إِلَى المَطَارُ مُبَكِّرٌ، ثُمَّ وَضَعْتُ حَقِيبَتِي عَلَى المِيزَانُ"),AR("أَصِلُ إِلَى المَطَارِ مُبَكِّرًا، ثُمَّ وَضَعْتُ حَقِيبَتِي، وَسَأَتَسَلَّمُ"),AR("وَصَلْتُ المَطَارَ مُبَكِّرًا، ثُمَّ وَضَعْتُ حَقِيبَتَي عَلَى المِيزَانِ")],
+ ue:"پہلا آپشن ہر جگہ درست ہے: "+AR("وَصَلَ إِلَى")+" کے ساتھ مجرور، "+AR("مُبَكِّرًا")+" حال ہونے کی وجہ سے منصوب، زمانہ پورے پیرگراف میں ایک ہی (ماضی)، اور ضمیر "+AR("حَقِيبَتِي")+" صحیح۔"});
+
+add({id:"tbw27",d:"hard",t:"write",r:"Imla · Hamza ki kursi",a:0,
+ q:"“Musafiron” (jama majroor) ka durust imla kaunsa hai?",
+ o:[AR("المُسَافِرِينَ"),AR("المُسَافِرُونَ"),AR("المُسَافِرِينْ"),AR("المُسَافِرَيْنِ")],
+ e:"Jama Muzakkar Salim marfoo' mein "+AR("ـُونَ")+" aur nasb-o-jar mein "+AR("ـِينَ")+" — Noon par hamesha zabar. Chautha option tasniya hai, teesra mein Noon ka i'rab chhoot gaya.",
+ uq:"“مسافروں” (جمع مجرور) کا درست املا کون سا ہے؟",
+ uo:[AR("المُسَافِرِينَ"),AR("المُسَافِرُونَ"),AR("المُسَافِرِينْ"),AR("المُسَافِرَيْنِ")],
+ ue:"جمع مذکر سالم مرفوع میں "+AR("ـُونَ")+" اور نصب و جر میں "+AR("ـِينَ")+" — نون پر ہمیشہ زبر۔ چوتھا آپشن تثنیہ ہے، تیسرے میں نون کا اعراب چھوٹ گیا۔"});
+
+add({id:"tbw28",d:"hard",t:"write",r:"Tahreer · Ism al-Fa'il",a:0,
+ q:"“Main bag uthaye hue hoon” — Ism al-Fa'il ke saath sahih tarkeeb?",
+ o:[AR("أَنَا حَامِلُ الحَقِيبَةِ"),AR("أَنَا حَامِلٌ الحَقِيبَةَ"),AR("أَنَا مَحْمُولُ الحَقِيبَةِ"),AR("أَنَا حَمْلُ الحَقِيبَةِ")],
+ e:"Ism al-Fa'il apne Maf'ool ke saath Idafa bana leta hai, is liye Mudaf par tanween nahi aur agla lafz majroor. "+AR("مَحْمُول")+" Ism al-Maf'ool hai (jo uthaya gaya) aur "+AR("حَمْل")+" Masdar.",
+ uq:"“میں بیگ اٹھائے ہوئے ہوں” — اسم الفاعل کے ساتھ صحیح ترکیب؟",
+ uo:[AR("أَنَا حَامِلُ الحَقِيبَةِ"),AR("أَنَا حَامِلٌ الحَقِيبَةَ"),AR("أَنَا مَحْمُولُ الحَقِيبَةِ"),AR("أَنَا حَمْلُ الحَقِيبَةِ")],
+ ue:"اسم الفاعل اپنے مفعول کے ساتھ اضافت بنا لیتا ہے، اس لیے مضاف پر تنوین نہیں اور اگلا لفظ مجرور۔ "+AR("مَحْمُول")+" اسم المفعول ہے اور "+AR("حَمْل")+" مصدر۔"});
+
+/* ---- register ---- */
+W.forEach(function(x){
   BANK.push({ id:x.id, s:"tabeer", d:x.d, t:x.t, q:x.q, o:x.o, a:x.a, e:x.e, r:x.r });
   UR_Q_DATA[x.id] = { q:x.uq, o:x.uo, e:x.ue };
 });
@@ -3795,6 +4042,7 @@ var T = {
   subjects:          ["Subjects", "مضامین"],
   subjectsHint:      ["Tap a subject for its mock tests", "ماک ٹیسٹ دیکھنے کے لیے مضمون پر ٹیپ کریں"],
   oralTag:           ["Oral", "زبانی"],
+  writtenTag:        ["Written \u00b7 Arabic", "تحریری · عربی"],
   notStarted:        ["Not started", "شروع نہیں کیا"],
   best:              ["best", "بہترین"],
   qsShort:           ["Qs", "سوالات"],
@@ -3804,9 +4052,9 @@ var T = {
   builderTitle:      ["Build a custom test", "اپنی مرضی کا ٹیسٹ بنائیں"],
   builderLead:       ["Choose your own subjects, difficulty and question count.", "اپنے مضامین، دشواری اور سوالات کی تعداد خود منتخب کریں۔"],
   builderBtn:        ["New custom test", "نیا کسٹم ٹیسٹ"],
-  oralNoteTitle:     ["About the two oral papers", "دو زبانی پرچوں کے بارے میں"],
-  oralNoteBody:      ["At-Taabeer and Al-Qira\u2019ah wal-Kitabah (with the Mu\u2019jam) are examined orally \u2014 they test vocabulary and spoken Arabic rather than written grammar, so their questions focus on lughat, useful phrases and how to say things.",
-                      "التعبیر اور القراءۃ والکتابۃ (معجم کے ساتھ) کا امتحان زبانی ہوتا ہے — ان میں تحریری قواعد کے بجائے لغت اور بول چال کی عربی پرکھی جاتی ہے، اس لیے ان کے سوالات لغت، کارآمد جملوں اور بولنے کے انداز پر مرکوز ہیں۔"],
+  oralNoteTitle:     ["How the two language papers are examined", "دو لسانی پرچے کیسے لیے جاتے ہیں"],
+  oralNoteBody:      ["At-Taabeer is now a WRITTEN paper and every answer has to be written in Arabic \u2014 the one exception is the vocabulary questions, where the meaning may be written in any language. Al-Qira\u2019ah wal-Kitabah (with the Mu\u2019jam) is still examined orally.",
+                      "التعبیر اب تحریری پرچہ ہے اور ہر جواب عربی میں لکھنا ہوگا — صرف مفردات کے معنی والے سوالات مستثنٰی ہیں، وہ کسی بھی زبان میں لکھے جا سکتے ہیں۔ القراءۃ والکتابۃ (معجم کے ساتھ) کا امتحان اب بھی زبانی ہوتا ہے۔"],
 
   allSubjects:       ["All subjects", "تمام مضامین"],
   backToSubjects:    ["All subjects", "تمام مضامین"],
@@ -3823,6 +4071,9 @@ var T = {
   fullPaper:         ["Full paper", "مکمل پرچہ"],
   mixedAll:          ["Mixed \u00b7 all subjects", "ملا جلا · تمام مضامین"],
   custom:            ["Custom", "کسٹم"],
+  writtenPaperTitle: ["This paper is written, and answered in Arabic", "یہ پرچہ تحریری ہے، اور جواب عربی میں"],
+  writtenPaperBody:  ["is a written paper. Every answer has to be written in Arabic \u2014 only the meaning of a vocabulary word may be written in any language. It is not a memory test on the chapters: what is marked is your Arabic writing, so these questions drill vocabulary, spelling (imla), sentence building and correcting mistakes.",
+                      "تحریری پرچہ ہے۔ ہر جواب عربی میں لکھنا ہوگا — صرف مفردات کے معنی کسی بھی زبان میں لکھے جا سکتے ہیں۔ یہ اسباق کا حفظی امتحان نہیں — دیکھا یہ جاتا ہے کہ آپ عربی کیسی لکھتے ہیں، اس لیے یہ سوالات لغت، املا، جملہ سازی اور غلطی درست کرنے کی مشق کراتے ہیں۔"],
   oralPaperTitle:    ["This paper is examined orally", "اس پرچے کا امتحان زبانی ہوتا ہے"],
   oralPaperBody:     ["is not a written paper \u2014 it tests vocabulary and spoken Arabic. These questions drill lughat, useful phrases and how to say things out loud, so read each option aloud before you pick it.",
                       "تحریری پرچہ نہیں ہے — اس میں لغت اور بول چال کی عربی پرکھی جاتی ہے۔ یہ سوالات لغت، کارآمد جملوں اور بولنے کے انداز کی مشق کراتے ہیں، اس لیے آپشن منتخب کرنے سے پہلے اسے بول کر پڑھیں۔"],
@@ -4015,7 +4266,7 @@ function styleLabel(q){
 var STYLE_LABEL_UR = {
   mcq:"کثیر الاختیاری", fill:"خالی جگہ پُر کریں", short:"مختصر جواب",
   tf:"صحیح یا غلط", match:"جوڑ ملائیں", trans:"ترجمہ",
-  daleel:"دلیل", speak:"بول چال", vocab:"لغت"
+  daleel:"دلیل", speak:"بول چال", vocab:"لغت", write:"تحریر"
 };
 function diffLabel(d){ return d==='easy'?t('easy') : d==='medium'?t('medium') : t('hard'); }
 
@@ -4597,7 +4848,7 @@ function renderHome(){
     var st = subjectStats(sub.id);
     html += '<button class="toc-row" data-act="nav" data-to="#/subject/'+sub.id+'">' +
       '<div class="toc-n">'+pad2(sub.n)+'</div>' +
-      '<div class="toc-main"><div class="toc-title"><strong>'+subjName(sub)+'</strong>'+(isUr()?'':'<span class="ar">'+sub.ar+'</span>')+(sub.oral?'<span class="tag tag-medium">'+t('oralTag')+'</span>':'')+'</div>' +
+      '<div class="toc-main"><div class="toc-title"><strong>'+subjName(sub)+'</strong>'+(isUr()?'':'<span class="ar">'+sub.ar+'</span>')+(sub.oral?'<span class="tag tag-medium">'+t('oralTag')+'</span>':'')+(sub.written?'<span class="tag tag-easy">'+t('writtenTag')+'</span>':'')+'</div>' +
       '<div class="toc-sub">'+subjBlurb(sub)+'</div></div>' +
       '<div class="toc-right"><div class="toc-meta">'+(st.attempts?(st.bestPct+'% '+t('best')):t('notStarted'))+'<b>'+bankCountForSubject(sub.id)+' '+t('qsShort')+'</b></div>' +
       '<span class="flipwrap">'+ICONS.chevRight.replace('<svg ','<svg class="chev" ')+'</span>' +
@@ -4636,6 +4887,9 @@ function renderSubject(id){
 
   if(sub.oral){
     html += '<div class="note" style="margin-top:20px"><h3>'+t('oralPaperTitle')+'</h3><p>'+subjName(sub)+' '+t('oralPaperBody')+'</p></div>';
+  }
+  if(sub.written){
+    html += '<div class="note" style="margin-top:20px"><h3>'+t('writtenPaperTitle')+'</h3><p>'+subjName(sub)+' '+t('writtenPaperBody')+'</p></div>';
   }
   if(sub.id==='qawaid'){
     html += '<div class="card" style="margin-top:20px;padding:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">' +
